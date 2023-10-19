@@ -1,0 +1,13 @@
+{
+  "gMargin" : 5,
+  "gPadding" : 5,
+  "gBorderRadius" : 10,
+  "gFontFamily" : "sans-serif",
+  "gBackdropFilter" : "blur(10px)",
+  "gColorBlack" : "rgba(17, 17, 17, 1)",
+  "gColorWhite" : "rgba(248, 240, 227, 1)",
+  "gBorderBlack" : "1px solid rgb(17, 17, 17)",
+  "gBorderWhite" : "1px solid rgb(248, 240, 227)",
+  "gColorBlackTransparent" : "rgba(17, 17, 17, 0.3)",
+  "gColorWhiteTransparent" : "rgba(248, 240, 227, 0.5)"
+}

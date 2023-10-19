@@ -1,0 +1,19 @@
+{
+  "pointerImgSrc" : "https://cdn.discordapp.com/attachments/993060883670511646/1068575676581564496/pointer.png",
+  "frameContainerBackgroundImage" : "https://cdn.discordapp.com/attachments/993060883670511646/1040440669526818836/20210603_211322_1.jpg",
+  "headerImgSrc" : "https://cdn.discordapp.com/attachments/993060883670511646/996336833644470333/lxRbckl.png",
+  "menuChildren" : {
+    "myProject" : "https://cdn.discordapp.com/attachments/993060883670511646/993061215347671142/myProject.png",
+    "aboutMe" : "https://cdn.discordapp.com/attachments/993060883670511646/993061232103927868/aboutMe.png",
+    "myServer" : "https://cdn.discordapp.com/attachments/993060883670511646/993061261313048706/myServer.png"
+  },
+  "footerChildren" : {
+    "https://discordapp.com/users/589900887212949522" : "https://cdn.discordapp.com/attachments/993060883670511646/997333801405526016/discord.png",
+    "https://github.com/lxRbckl" : "https://cdn.discordapp.com/attachments/993060883670511646/997333782673752146/github.png",
+    "mailto:lxrbckl@protonmail.com" : "https://cdn.discordapp.com/attachments/993060883670511646/997333749513605120/protonmail.png",
+    "https://github.com/ala2q6" : "https://cdn.discordapp.com/attachments/993060883670511646/997333782673752146/github.png",
+    "https://open.spotify.com/user/bop1bgw7rlj4m9sacbnmonjnl?si=d788fefe3e4f4b16" : "https://cdn.discordapp.com/attachments/993060883670511646/997333765854609469/spotify.png",
+    "https://www.linkedin.com/in/lxRbckl/" : "https://cdn.discordapp.com/attachments/993060883670511646/997333735655612446/linkedin.png",
+    "https://leetcode.com/lxRbckl/" : "https://cdn.discordapp.com/attachments/993060883670511646/1040443508672172142/150leetcode.png"
+  }
+}

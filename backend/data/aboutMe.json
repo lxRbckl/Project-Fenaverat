@@ -1,0 +1,20 @@
+{
+  "photo": "https://cdn.discordapp.com/attachments/993060371545985065/1113256429923602532/PXL_20221013_2009011471.jpg",
+  "biography" : {
+    "bio" : {
+      "title" : "Alex Arbuckle",
+      "icon" : null,
+      "description" : "I'm a UMKC computer science alumni who enjoys building front end, back end, and database applications to creatively solve real-world problems!"
+    },
+    "language" : {
+      "title" : "Languages, Shells, and Tools",
+      "icon" : null,
+      "description" : null
+    },
+    "library" : {
+      "title" : "Modules, Packages, and Libraries",
+      "icon" : null,
+      "description" : null
+    }
+  }
+}

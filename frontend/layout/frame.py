@@ -1,202 +1,152 @@
 # import <
-from os import listdir
-from dash import html, dcc
+from dash import html
 import dash_bootstrap_components as dbc
-from backend.scrape import scrapeFunction
-from dash.dependencies import Input, Output
-from frontend.layout.feed import feedFunction
-from frontend.layout.aboutMe import aboutMeLayout
-from frontend.layout.myServer import myServerLayout
-from frontend.layout.myProject import myProjectLayout
-from backend.utility import application, server, jsonLoad, directory
+
+from frontend.layout.badge import badgeIcon
+from frontend.layout.card import cardFunction
 
 # >
 
 
-# global <
-frameData = jsonLoad(file ='/frontend/data/frame.json')
-frameStyle = jsonLoad(file ='/frontend/resource/frame.json')
+def frameHeader(pData: dict):
+    '''  '''
 
-# >
+    return cardFunction(
+
+        pData = pData,
+        pJoin = 'default',
+        pJustify = 'center',
+        pComponent = dbc.Row(),
+        pBorder = pData['templateStyle']['gBorderBlack'],
+        pBackdropFilter = pData['templateStyle']['gBackdropFilter'],
+        pBackgroundColor = pData['templateStyle']['gColorBlackTransparent'],
+        pChildren = [
+
+            html.Img(
+
+                src = pData['frameData']['headerImgSrc'],
+                style = pData['frameStyle']['headerImgStyle']
+
+            )
+
+        ]
+
+    )
 
 
-# frame <
-application.layout = dbc.Container(
+def frameMenu(
 
-    fluid = True,
-    style = frameStyle['containerStyle'],
-    children = [
+        pData: dict,
+        pSelected: str
 
-        dcc.Location(id = 'frameLocationId'),
+):
+    '''  '''
 
-        # header <
-        dbc.Row(
+    return cardFunction(
 
-            id = 'headerRowId',
-            justify = 'center',
-            style = frameStyle['rowStyle'],
-            children = [
+        pData = pData,
+        pJoin = 'default',
+        pJustify = 'evenly',
+        pComponent = dbc.Row(),
+        pBorder = pData['templateStyle']['gBorderBlack'],
+        pBackdropFilter = pData['templateStyle']['gBackdropFilter'],
+        pBackgroundColor = pData['templateStyle']['gColorBlackTransparent'],
+        pChildren = [
 
-                html.Img(
+            dbc.Col(
 
-                    src = frameData['headerImgSrc'],
-                    style = frameStyle['headerImgStyle']
+                width = 'auto',
+                children = dbc.Button(
 
-                )
-
-            ]
-
-        ),
-
-        # >
-
-        # menu <
-        dbc.Row(
-
-            id = 'menuRowId',
-            justify = 'center',
-            style = frameStyle['rowStyle'],
-            children = [
-
-                dbc.ButtonGroup(
-
+                    id = k,
+                    href = k,
                     children = [
 
-                        dbc.Button(
+                        # pointer <
+                        # tab <
+                        html.Img(
 
-                            id = key,
-                            n_clicks = 0,
-                            outline = True,
-                            href = key.replace('ButtonId', ''),
-                            children = [
+                            src = pData['frameData']['pointerImgSrc'],
+                            style = pData['frameStyle']['pointerImgStyle']
 
-                                html.Img(
+                        ) if (k == pSelected) else None,
+                        html.Img(
 
-                                    src = image,
-                                    style = frameStyle['menuImgStyle']
-
-                                )
-
-                            ]
+                            src = v,
+                            style = pData['frameStyle']['menuImgStyle']
 
                         )
 
-                    for key, image in frameData['menuButtonGroupValue'].items()]
-
-                )
-
-            ]
-
-        ),
-
-        # >
-
-        # body <
-        dbc.Row(
-
-            id = 'bodyRowId',
-            justify = 'center',
-            style = frameStyle['bodyRowStyle']
-
-        ),
-
-        # >
-
-        # footer <
-        dbc.Row(
-
-            id = 'footerRowId',
-            justify = 'evenly',
-            style = frameStyle['rowStyle'],
-            children = [
-
-                # image <
-                dbc.Col(
-
-                    width = 'auto',
-                    children = [
-
-                        html.A(
-
-                            href = link,
-                            target = "_blank",
-                            children = [
-
-                                html.Img(
-
-                                    src = image,
-                                    style = frameStyle['footerImgStyle']
-
-                                )
-
-                            ]
-
-                        )
+                        # >
 
                     ]
 
                 )
 
-                # >
+            )
 
-            for link, image in frameData['footerRowValue'].items()]
+        for k, v in pData['frameData']['menuChildren'].items()]
 
-        )
-
-        # >
-
-    ]
-
-)
-
-# >
+    )
 
 
-# callback <
-@application.callback(Output('bodyRowId', 'style'),
-                      Output('bodyRowId', 'children'),
-                      Input('frameLocationId', 'pathname'))
-def frameCallback(pathname: str):
+def frameFooter(pData: dict):
     '''  '''
 
-    # local <
-    path = directory + '/frontend/data/feed'
-    feed = {t : jsonLoad(f'/frontend/data/feed/{t}') for t in listdir(path)}
-    layoutDict = {
+    return cardFunction(
 
-        '/' : (frameStyle['rowStyle'], aboutMeLayout),
-        '/aboutMe' : (frameStyle['rowStyle'], aboutMeLayout),
-        '/myServer' : (frameStyle['bodyRowStyle'], myServerLayout),
-        '/myProject' : (frameStyle['bodyRowStyle'], myProjectLayout)
+        pData = pData,
+        pJoin = 'default',
+        pJustify = 'evenly',
+        pComponent = dbc.Row(),
+        pBorder = pData['templateStyle']['gBorderBlack'],
+        pBackdropFilter = pData['templateStyle']['gBackdropFilter'],
+        pBackgroundColor = pData['templateStyle']['gColorBlackTransparent'],
+        pChildren = [
 
-    }
+            badgeIcon(
 
-    # >
+                pHref = k,
+                pSrc = [v],
+                pHeight = 35,
+                pData = pData,
+                pWidth = 'auto',
+                isExternal = True,
+                pStyle = pData['frameStyle']['footerBadgeStyle']
 
-    # if (page) <
-    # elif (feed) <
-    if (pathname in layoutDict.keys()): return layoutDict[pathname]
-    elif ((pathname.replace('/', '') + '.json') in feed.keys()):
+            )[0]
 
-        # output <
-        return (
+        for k, v in pData['frameData']['footerChildren'].items()]
 
-            frameStyle['feedRowStyle'],
-            feedFunction(feed[pathname.replace('/', '') + '.json'])
-
-        )
-
-        # >
-
-    # >
-
-# >
+    )
 
 
-# main <
-if (__name__ == '__main__'):
+def frameFunction(pData: dict):
+    '''  '''
 
-    application.run_server(debug = True)
-    # scrapeFunction()
+    return dbc.Container(
 
-# >
+        fluid = True,
+        id = 'frameContainerId',
+        style = dict(
+
+            **pData['frameStyle']['frameContainerStyle'],
+            backgroundImage = 'url({})'.format(pData['frameData']['frameContainerBackgroundImage'])
+
+        ),
+        children = [
+
+            # header <
+            # menu <
+            # content <
+            # footer <
+            frameHeader(pData = pData),
+            html.Div(id = 'menuDivId'),
+            html.Div(id = 'contentDivId'),
+            frameFooter(pData = pData)
+
+            # >
+
+        ]
+
+    )
