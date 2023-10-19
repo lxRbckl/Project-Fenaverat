@@ -1,0 +1,36 @@
+{
+  "cardStyle" : {
+    "marginTop" : "3%",
+    "marginBottom" : "3%",
+    "borderRadius" : 10,
+    "backgroundColor" : "rgba(17,17,17,1)"
+  },
+  "cardChildrenStyle" : {
+    "color" : "#F8F0E3",
+    "borderRadius" : 10,
+    "backgroundColor" : "rgba(17,17,17,1)"
+  },
+  "online" : "#1DB954",
+  "offline" : "#900D09",
+  "titleH4Style" : {
+    "marginBottom" : 0
+  },
+  "statusIndicatorStyle" : {
+    "paddingTop" : 10
+  },
+  "spacerHrStyle" : {
+    "marginBottom" : 0,
+    "color" : "#F8F0E3"
+  },
+  "taskListGroupStyle" : {
+    "borderRadius" : 10
+  },
+  "taskListGroupItemStyle" : {
+    "padding" : 2,
+    "paddingLeft" : 10,
+    "color" : "#111111",
+    "fontWeight" : "bold",
+    "backgroundColor" : "#F8F0E3",
+    "border" : "1px solid #111111"
+  }
+}

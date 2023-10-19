@@ -1,0 +1,46 @@
+{
+  "cardStyle" : {
+    "marginTop" : "3%",
+    "marginBottom" : "3%",
+    "borderRadius" : 10,
+    "backgroundColor" : "rgba(17,17,17,1)"
+  },
+  "cardChildrenStyle" : {
+    "color" : "#F8F0E3",
+    "borderRadius" : 10,
+    "backgroundColor" : "rgba(17,17,17,1)"
+  },
+  "bodyCardBodyStyle" : {
+    "paddingTop" : 0,
+    "paddingBottom" : 0,
+    "color" : "#F8F0E3",
+    "borderRadius" : 10,
+    "backgroundColor" : "rgba(17,17,17,1)"
+  },
+  "headerSpacerHrStyle" : {
+    "marginTop" : 7,
+    "marginBottom" : 0
+  },
+  "bodyBadgeColor" : "#F8F0E3",
+  "bodyBadgeStyle" : {
+    "marginRight" : 6,
+    "marginBottom" : 4,
+    "color" : "#111111"
+  },
+  "subjectFilter" : [
+    "header",
+    "image"
+  ],
+  "footerSpacerHrStyle" : {
+    "marginTop" : 0,
+    "marginBottom" : 7
+  },
+  "linkImgSrc" : "https://cdn.discordapp.com/attachments/934690396037054537/941726647491645490/github.png",
+  "linkImgStyle" : {
+    "height" : "20px"
+  },
+  "footerCardLinkStyle" : {
+    "textDecoration" : "None",
+    "fontFamily" : "sans serif"
+  }
+}
