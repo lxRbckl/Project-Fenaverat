@@ -1,2 +1,2 @@
-## [`Project Fenaverat 2`](http://lxrbckl.com/Project-Fenaverat-2)
-> An autonomously-updating website portfolio designed to display information about yourself, your projects, and servers. Fall 2022.
+### `Project Fenaverat 2`
+> A website portfolio crafted to showcase details about yourself, your projects, and your servers. Fall 2022.
