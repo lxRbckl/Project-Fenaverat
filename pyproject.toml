@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "project-fenaverat"
+version = "0.1.0"
+description = ""
+authors = ["lxRbckl <lxrbckl@gmail.com>"]
+readme = "README.md"
+packages = [{include = "project_fenaverat"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+dash = "^2.15.0"
+lxrbckl = "^3.0.1"
+dash-bootstrap-components = "^1.5.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
