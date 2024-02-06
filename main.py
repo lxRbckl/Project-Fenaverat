@@ -2,7 +2,7 @@
 
 
 # import <
-
+from frontend.layout.template import fTemplate
 
 # >
 
