@@ -23,25 +23,30 @@ def fTemplate():
          # header <
          # body <
          # footer <
-         
+         dbc.Row(
+            
+            justify = 'center',
+            children = None
+            
+         ),
+         dbc.Row(
+            
+            justify = 'center',
+            children = [
+               
+               # dbc.Col(children = 'demo', width = '4') #
+               
+            ]
+         ),
+         dbc.Row(
+            
+            justify = 'center',
+            children = None
+            
+         )
          
          # >
          
       ]
       
    )
-   
-   # return html.Div(
-      
-   #    children = [
-         
-   #       dbc.Row(
-            
-   #          justify = 'center',
-   #          children = dbc.Col(children = 'demo', width = '4', style = {'backgroundColor' : 'black'})
-            
-   #       )
-         
-   #    ]
-      
-   # )
