@@ -3,10 +3,12 @@
 
 # import <
 from frontend.layout.template import fTemplate
+from backend.resource import (server, application)
 
 # >
 
 
-if (__name__ == '__main__'):
-   
-   pass
+application.layout = fTemplate()
+
+
+if (__name__ == '__main__'): application.run()

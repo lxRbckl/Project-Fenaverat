@@ -1,6 +1,9 @@
 # import <
 from dash import (dcc, html)
+import dash_bootstrap_components as dbc
 from dash.dependencies import (Input, Output)
+
+from backend.resource import application
 
 # >
 
@@ -10,21 +13,35 @@ def fTemplate():
    
    return html.Div(
       
+      style = {
+         
+         
+         
+      },
       children = [
          
-         html.Img(
-            
-            className="play-once",  # Apply the CSS class for the animation
-            src="https://tenor.com/view/got-drogon-game-of-thrones-gif-10718218",  # Replace 'your-gif-url.gif' with the URL of your GIF
-            style={
-               
-                  'visibility': 'hidden',  # Initial visibility set to hidden
-                  'opacity': '0',  # Initial opacity set to 0
-                  'animation': 'playOnce 1s forwards'  # Apply the animation with a duration of 1s
-            }
-            
-         )
+         # header <
+         # body <
+         # footer <
+         
+         
+         # >
          
       ]
       
    )
+   
+   # return html.Div(
+      
+   #    children = [
+         
+   #       dbc.Row(
+            
+   #          justify = 'center',
+   #          children = dbc.Col(children = 'demo', width = '4', style = {'backgroundColor' : 'black'})
+            
+   #       )
+         
+   #    ]
+      
+   # )
