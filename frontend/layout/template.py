@@ -19,6 +19,8 @@ class template:
    def __init__(self):
       '''  '''
       
+      self.header = header()
+      self.footer = footer()
       self.content = [
          
          aboutMe(),
@@ -33,6 +35,14 @@ class template:
       
       return html.Div(
          
+         style = {
+            
+            'width' : '100vw',
+            'height' : '100vh',
+            'overflow' : 'hidden',
+            'background' : 'black'
+            
+         },
          children = [
             
             # header <
@@ -41,32 +51,32 @@ class template:
             dbc.Row(
                
                justify = 'center',
-               children = header()
+               children = self.header.component()
                
             ),
+            # dbc.Row(
+               
+            #    justify = 'center',
+            #    children = dbc.Col(
+                  
+            #       width = 5,
+            #       children = dbc.Accordion(
+                     
+            #          style = {},
+            #          children = [
+                        
+            #             dbc.AccordionItem(i)
+                        
+            #          for i in self.content]
+                     
+            #       )
+                  
+            #    )
+            # ),
             dbc.Row(
                
                justify = 'center',
-               children = dbc.Col(
-                  
-                  width = 5,
-                  children = dbc.Accordion(
-                     
-                     style = {},
-                     children = [
-                        
-                        dbc.AccordionItem(i)
-                        
-                     for i in self.content]
-                     
-                  )
-                  
-               )
-            ),
-            dbc.Row(
-               
-               justify = 'center',
-               children = footer()
+               children = self.footer.component()
                
             )
             

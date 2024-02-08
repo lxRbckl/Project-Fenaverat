@@ -8,6 +8,7 @@ from dash_bootstrap_components import themes
 
 # setup <
 # initialize <
+colWidth = 6
 refreshRate = 30
 projectPath = getProjectPath()
 

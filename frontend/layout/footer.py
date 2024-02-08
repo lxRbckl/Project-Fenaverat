@@ -1,5 +1,12 @@
 # import <
+from dash import html
+import dash_bootstrap_components as dbc
 
+from backend.resource import (
+   
+   colWidth
+   
+)
 
 # >
 
@@ -10,3 +17,19 @@ class footer:
       '''  '''
       
       pass
+   
+   
+   def component(self):
+      '''  '''
+      
+      return dbc.Col(
+         
+         width = colWidth,
+         style = {'backgroundColor' : 'white'},
+         children = [
+            
+            html.H1('footer')
+            
+         ]
+         
+      )
