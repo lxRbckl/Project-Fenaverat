@@ -3,12 +3,17 @@ from dash import (dcc, html)
 import dash_bootstrap_components as dbc
 from dash.dependencies import (Input, Output)
 
-from backend.resource import application
 from frontend.layout.header import header
 from frontend.layout.footer import footer
 from frontend.layout.body.aboutMe import aboutMe
 from frontend.layout.body.myServer import myServer
 from frontend.layout.body.myProject import myProject
+from backend.resource import (
+   
+   colWidth,
+   application
+   
+)
 
 # >
 
@@ -54,25 +59,45 @@ class template:
                children = self.header.component()
                
             ),
-            # dbc.Row(
+            dbc.Row(
                
-            #    justify = 'center',
-            #    children = dbc.Col(
+               justify = 'center',
+               children = dbc.Col(
                   
-            #       width = 5,
-            #       children = dbc.Accordion(
+                  width = colWidth,
+                  style = {
                      
-            #          style = {},
-            #          children = [
-                        
-            #             dbc.AccordionItem(i)
-                        
-            #          for i in self.content]
+                     'background' : 'blue',
+                     'margin' : 0,
+                     'padding' : 0
                      
-            #       )
+                  },
+                  children = dbc.Accordion(
+                     
+                     flush = True,
+                     always_open = True,
+                     style = {
+                        
+                        'padding' : 0,
+                        'margin' : 0,
+                        'background' : 'green'
+                        
+                     },
+                     children = [
+                        
+                        dbc.AccordionItem(
+                           
+                           children = i.page(),
+                           style = {'background' : 'red'}
+                        
+                        )
+                        
+                     for i in self.content]
+                     
+                  )
                   
-            #    )
-            # ),
+               )
+            ),
             dbc.Row(
                
                justify = 'center',
