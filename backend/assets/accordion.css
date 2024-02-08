@@ -1,0 +1,12 @@
+/* custom.css */
+
+.custom-accordion .card-header {
+   background-color: #f0f0f0;
+   color: #333;
+}
+
+.custom-accordion .card-header:hover {
+   background-color: #000000;
+}
+
+/* Add more custom styles as needed */

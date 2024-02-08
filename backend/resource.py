@@ -8,7 +8,7 @@ from dash_bootstrap_components import themes
 
 # setup <
 # initialize <
-colWidth = 6
+colWidth = 8
 refreshRate = 30
 projectPath = getProjectPath()
 
@@ -22,7 +22,8 @@ application = Dash(
    external_stylesheets = [
       
       themes.GRID,
-      themes.BOOTSTRAP
+      themes.BOOTSTRAP,
+      'backend/assets/accordion.css'
       
    ]
    

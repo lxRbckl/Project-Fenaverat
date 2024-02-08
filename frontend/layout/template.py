@@ -67,7 +67,6 @@ class template:
                   width = colWidth,
                   style = {
                      
-                     'background' : 'blue',
                      'margin' : 0,
                      'padding' : 0
                      
@@ -78,9 +77,7 @@ class template:
                      always_open = True,
                      style = {
                         
-                        'padding' : 0,
-                        'margin' : 0,
-                        'background' : 'green'
+                        'outline' : 'red'
                         
                      },
                      children = [
@@ -88,8 +85,14 @@ class template:
                         dbc.AccordionItem(
                            
                            children = i.page(),
-                           style = {'background' : 'red'}
-                        
+                           style = {
+                              
+                              'outline' : 'red',
+                              'padding' : 0,
+                              'margin' : 0
+                              
+                           }
+                           
                         )
                         
                      for i in self.content]
