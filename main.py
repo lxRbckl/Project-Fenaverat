@@ -2,13 +2,14 @@
 
 
 # import <
-from frontend.layout.template import fTemplate
+from frontend.layout.template import template
 from backend.resource import (server, application)
 
 # >
 
 
-application.layout = fTemplate()
+template = template()
+application.layout = template.component()
 
 
-if (__name__ == '__main__'): application.run()
+if (__name__ == '__main__'): application.run(debug = True)
