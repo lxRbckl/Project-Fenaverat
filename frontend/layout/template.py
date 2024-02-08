@@ -84,6 +84,7 @@ class template:
                         
                         dbc.AccordionItem(
                            
+                           title = 'title',
                            children = i.page(),
                            style = {
                               
