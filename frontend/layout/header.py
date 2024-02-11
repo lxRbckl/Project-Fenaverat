@@ -28,7 +28,16 @@ class header:
          style = {'backgroundColor' : 'white'},
          children = [
             
-            html.H1(id = 'headerlogo', children = 'logo')
+            html.H1(id = 'headerlogo', children = 'logo'),
+            html.Video(
+               
+               autoPlay = True,
+               src = 'https://www.w3schools.com/html/mov_bbb.mp4',
+               controls = False,
+               
+               style = {'width' : '50%', 'borderRadius' : 5}
+               
+            )
             
          ]
          
