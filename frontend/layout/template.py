@@ -1,4 +1,5 @@
 # import <
+from time import sleep
 from dash import (dcc, html)
 import dash_bootstrap_components as dbc
 from dash.dependencies import (Input, Output)
@@ -11,7 +12,8 @@ from frontend.layout.body.myProject import myProject
 from backend.resource import (
    
    colWidth,
-   application
+   application,
+   defaultBoard
    
 )
 
@@ -26,13 +28,14 @@ class template:
       
       self.header = header()
       self.footer = footer()
-      self.content = {
+      self.content = [
          
-         'About Me' : aboutMe(),
-         'My Projects' : myProject(),
-         'My Servers' : myServer()
+         aboutMe(),
+         myProject(),
+         myServer()
          
-      }
+      ]
+      
       
    
    def component(self):
@@ -74,29 +77,21 @@ class template:
                   children = dbc.Accordion(
                      
                      flush = True,
+                     active_item = None,
                      always_open = True,
-                     style = {
-                        
-                        'outline' : 'red'
-                        
-                     },
+                     id = 'bodyAccordion',
                      children = [
                         
                         dbc.AccordionItem(
                            
-                           title = i,
-                           children = j.page(),
-                           style = {
-                              
-                              'outline' : 'red',
-                              'padding' : 0,
-                              'margin' : 0
-                              
-                           }
+                           item_id = i.id,
+                           title = i.title,
+                           style = i.style,
+                           children = i.board()
                            
                         )
                         
-                     for i, j in (self.content).items()]
+                     for i in self.content]
                      
                   )
                   
@@ -114,3 +109,15 @@ class template:
          ]
          
       )
+      
+
+@application.callback(
+   
+   Output('bodyAccordion', 'active_item'),
+   Input('headerlogo', 'children')
+   
+)
+def bodyCallback(i):
+   
+   sleep(2)
+   return 'b1'

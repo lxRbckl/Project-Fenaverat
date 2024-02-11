@@ -28,7 +28,7 @@ class header:
          style = {'backgroundColor' : 'white'},
          children = [
             
-            html.H1('logo')
+            html.H1(id = 'headerlogo', children = 'logo')
             
          ]
          

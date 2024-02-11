@@ -16,10 +16,16 @@ class aboutMe:
    def __init__(self):
       '''  '''
       
-      pass
+      self.id = 'b1'
+      self.title = 'About Me'
+      self.style = {
+         
+         
+         
+      }
    
    
-   def page(self):
+   def board(self):
       '''  '''
       
       return [

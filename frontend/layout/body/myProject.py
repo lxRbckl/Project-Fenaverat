@@ -16,10 +16,16 @@ class myProject:
    def __init__(self):
       '''  '''
       
-      pass
+      self.id = 'b2'
+      self.title = 'My Projects'
+      self.style = {
+         
+         
+         
+      }
    
    
-   def page(self):
+   def board(self):
       '''  '''
       
       return [
