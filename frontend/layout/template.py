@@ -26,13 +26,13 @@ class template:
       
       self.header = header()
       self.footer = footer()
-      self.content = [
+      self.content = {
          
-         aboutMe(),
-         myProject(),
-         myServer()
+         'About Me' : aboutMe(),
+         'My Projects' : myProject(),
+         'My Servers' : myServer()
          
-      ]
+      }
       
    
    def component(self):
@@ -44,8 +44,8 @@ class template:
             
             'width' : '100vw',
             'height' : '100vh',
-            'overflow' : 'hidden',
-            'background' : 'black'
+            # 'overflow' : 'hidden',
+            # 'background' : 'black'
             
          },
          children = [
@@ -84,8 +84,8 @@ class template:
                         
                         dbc.AccordionItem(
                            
-                           title = 'title',
-                           children = i.page(),
+                           title = i,
+                           children = j.page(),
                            style = {
                               
                               'outline' : 'red',
@@ -96,7 +96,7 @@ class template:
                            
                         )
                         
-                     for i in self.content]
+                     for i, j in (self.content).items()]
                      
                   )
                   

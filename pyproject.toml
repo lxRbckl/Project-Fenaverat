@@ -2,17 +2,16 @@
 name = "project-fenaverat"
 version = "0.1.0"
 description = ""
-authors = ["lxRbckl <lxrbckl@gmail.com>"]
-readme = "README.md"
-packages = [{include = "project_fenaverat"}]
+authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
-dash = "^2.15.0"
+python = "^3.10"
 lxrbckl = "^3.0.1"
 dash-bootstrap-components = "^1.5.0"
+dash = "^2.15.0"
 
+[tool.poetry.dev-dependencies]
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"

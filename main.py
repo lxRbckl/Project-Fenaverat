@@ -8,8 +8,7 @@ from backend.resource import (server, application)
 # >
 
 
-template = template()
-application.layout = template.component()
+application.layout = template().component()
 
 
 if (__name__ == '__main__'): application.run(debug = True)
