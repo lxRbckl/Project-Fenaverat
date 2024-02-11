@@ -4,6 +4,7 @@ import dash_bootstrap_components as dbc
 
 from backend.resource import (
    
+   explore,
    colWidth
    
 )

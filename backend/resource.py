@@ -19,12 +19,11 @@ application = Dash(
    title = 'lxRbckl',
    
    suppress_callback_exceptions = True,
-   # assets_folder = (projectPath + 'backend/assets'),
+   assets_folder = (projectPath + 'backend/assets'),
    external_stylesheets = [
       
       themes.GRID,
-      themes.BOOTSTRAP,
-      # 'backend/assets/accordion.css'
+      themes.BOOTSTRAP
       
    ]
    
@@ -32,6 +31,13 @@ application = Dash(
 server = application.server
 
 # >
+
+
+explore = {
+   
+   
+   
+}
 
 
 # remote <
