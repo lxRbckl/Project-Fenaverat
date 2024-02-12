@@ -28,7 +28,7 @@ class header:
          style = {'backgroundColor' : 'white'},
          children = [
             
-            html.H1(id = 'headerlogo', children = 'logo'),
+            html.H1(id = 'headerlogo', children = 'logo', style = {'fontFamily' : 'YourCustomFont'}),
             html.Video(
                
                autoPlay = True,
