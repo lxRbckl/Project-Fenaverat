@@ -45,9 +45,11 @@ class template:
          
          style = {
             
-            'padding' : '2%',
             'width' : '100vw',
             'height' : '100vh',
+            'paddingTop' : '1%',
+            'overflow' : 'hidden',
+            'paddingBottom' : '1%',
             'background' : '#181A1B'
             
          },
@@ -78,7 +80,7 @@ class template:
                      
                      flush = True,
                      active_item = None,
-                     always_open = True,
+                     # always_open = True,
                      id = 'bodyAccordion',
                      children = [
                         

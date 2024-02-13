@@ -8,7 +8,7 @@ from dash_bootstrap_components import themes
 
 # setup <
 # initialize <
-colWidth = 7
+colWidth = 8
 refreshRate = 30
 defaultBoard = 'b1'
 projectPath = getProjectPath()
@@ -35,7 +35,11 @@ server = application.server
 
 socials = {
    
-   
+   'ala2q6' : 'https://github.com/ala2q6',
+   'lxRbckl' : 'https://github.com/lxRbckl',
+   'Email' : 'mailto:lxrbckl@protonmail.com',
+   'LeetCode' : 'https://leetcode.com/lxRbckl/',
+   'LinkedIn' : 'https://www.linkedin.com/in/lxRbckl/'
    
 }
 

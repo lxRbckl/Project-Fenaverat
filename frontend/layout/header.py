@@ -26,7 +26,12 @@ class header:
          
          width = colWidth,
          id = 'headerColId',
-         style = {'background' : '#F7F5F1'},
+         style = {
+            
+            'padding' : 0,
+            'background' : '#F7F5F1'
+            
+         },
          children = [
          
             dbc.Row(
@@ -44,7 +49,7 @@ class header:
                            
                            'fontSize' : 85,
                            'color' : '#181A1B',
-                           'margin' : '0 0 -30px 0',
+                           'margin' : '0 0 -10px 0',
                            'fontFamily' : 'Helveticamazing'
                            
                         }
@@ -55,62 +60,38 @@ class header:
                   dbc.Col(
                      
                      width = 'auto',
-                     children = dbc.Spinner(size = 'sm')
+                     style = {'paddingTop' : 10},
+                     children = [
+                        
+                        dbc.Spinner(
+                           
+                           size = 'sm',
+                           color = '#181A1B',
+                           id = 'colSpinnerId',
+                           spinner_style = {
+                              
+                              'border-width' : 1.5, 
+                              'animation-play-state' : 'running' # running or paused #
+                           
+                           }
+                           
+                        ),
+                        dbc.Tooltip(
+                           
+                           target = 'colSpinnerId',
+                           children = 'example'
+                           
+                        )
+                        
+                     ]
                      
                   )
                   
                ]
                
             ),
-            html.Hr()
-            
-            
-            
-            
-            
-            
-            
+            html.Div(style = {'borderBottom' : '1.5px solid #181A1B'})
             
          ]
          
       )
-
-      # = = = = = = = =
-
-      # return dbc.Col(
-         
-      #    width = colWidth,
-      #    style = {
-            
-      #       'background' : 'red'
-      #       # 'backgroundColor' : '#F7F5F1'
-            
-      #    },
-      #    children = [
-            
-      #       html.Div(
-            
-      #          # title <
-      #          # background <
-      #          html.H1(
-                  
-      #             children = 'Alex Arbuckle',
-      #             style = {
-                     
-      #                'fontSize' : 85,
-      #                'textAlign' : 'center',
-      #                'margin' : '0 0 -25px 0',
-      #                'fontFamily' : 'Helveticamazing'
-                     
-      #             }
-                  
-      #          )
-               
-      #          # >
-            
-      #       ),
-      #       html.Hr()
-            
-      #    ]
-         
-      # )

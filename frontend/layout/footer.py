@@ -22,19 +22,71 @@ class footer:
    
    def component(self):
       '''  '''
-      
+
       return dbc.Col(
          
          width = colWidth,
-         style = {'backgroundColor' : '#F7F5F1'},
-         children = [
+         style = {
             
-            html.Hr(),
-            html.H1(
+            'padding' : 0,
+            'backgroundColor' : '#F7F5F1'
+         
+         },
+         children = dbc.Row(
+            
+            justify = 'between',
+            children = [
                
-               children = 'footer', 
-               style = {'fontWeight' : 'bold', 'fontFamily' : 'Helvetica'})
+               html.Div(style = {'borderBottom' : '1.5px solid #181A1B'}),
+               *[
+                  
+                  dbc.Col(
+                     
+                     width = 'auto',
+                     children = html.H1(
+                        
+                        children = i,
+                        style = {
+                           
+                           'fontSize' : 18,
+                           'fontFamily' : 'helvetica',
+                           'textDecoration' : 'underline'
+                           
+                        }
+                     
+                     )
+                     
+                  )
+                  
+               for i in socials]
+            ]
             
-         ]
+         )
          
       )
+      
+      # return dbc.Col(
+         
+      #    width = colWidth,
+      #    style = {'backgroundColor' : '#F7F5F1'},
+      #    children = [
+            
+      #       html.Div(style = {'borderBottom' : '1.5px solid #181A1B'}),
+      #       *[
+               
+      #          html.H2(
+                  
+      #             children = i
+                  
+      #          )
+               
+      #       for i in socials]
+
+      #       # html.H1(
+               
+      #       #    children = 'footer', 
+      #       #    style = {'fontWeight' : 'bold', 'fontFamily' : 'Helvetica'})
+            
+      #    ]
+         
+      # )
