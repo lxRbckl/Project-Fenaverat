@@ -28,16 +28,36 @@ class header:
          style = {'backgroundColor' : 'white'},
          children = [
             
-            html.H1(id = 'headerlogo', children = 'logo', style = {'fontFamily' : 'YourCustomFont'}),
-            html.Video(
+            html.Div([
                
-               autoPlay = True,
-               src = 'https://www.w3schools.com/html/mov_bbb.mp4',
-               controls = False,
+               html.Video(
+                  
+                  autoPlay = True,
+                  controls = False,
+                  src = 'https://static.videezy.com/system/resources/previews/000/038/652/original/alb_glitch1048_1080p_24fps.mp4',
+                  style = {
+                     
+                     'width' : '100%',
+                     'height' : '15vh',
+                     'objectFit' : 'cover'
+                     
+                  }
+                  # children = html.H3(
+                     
+                  #    id = 'headerlogo',
+                  #    style = {'zindex' : 0, 
+                  #             'background' : 'red'},
+                  #    children = 'demodemodemode ome domed ome domed oemd oedm ')
+                  
+               ),
+               html.H1('demo', className = 'overlay', style = {
+                  
+                  'padding' : '-50% 0 0 0'
+                  
+               })
                
-               style = {'width' : '50%', 'borderRadius' : 5}
-               
-            )
+         ])
+
             
          ]
          
