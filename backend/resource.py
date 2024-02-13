@@ -8,7 +8,7 @@ from dash_bootstrap_components import themes
 
 # setup <
 # initialize <
-colWidth = 6
+colWidth = 7
 refreshRate = 30
 defaultBoard = 'b1'
 projectPath = getProjectPath()
@@ -33,7 +33,7 @@ server = application.server
 # >
 
 
-explore = {
+socials = {
    
    
    

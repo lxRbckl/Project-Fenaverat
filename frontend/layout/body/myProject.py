@@ -30,6 +30,6 @@ class myProject:
       
       return [
          
-         html.H1('my project')
+
          
       ]

@@ -45,10 +45,10 @@ class template:
          
          style = {
             
+            'padding' : '2%',
             'width' : '100vw',
             'height' : '100vh',
-            # 'overflow' : 'hidden',
-            # 'background' : 'black'
+            'background' : '#181A1B'
             
          },
          children = [
@@ -114,7 +114,7 @@ class template:
 @application.callback(
    
    Output('bodyAccordion', 'active_item'),
-   Input('headerlogo', 'children')
+   Input('headerColId', 'children')
    
 )
 def bodyCallback(i):

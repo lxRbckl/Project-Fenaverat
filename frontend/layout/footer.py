@@ -4,7 +4,7 @@ import dash_bootstrap_components as dbc
 
 from backend.resource import (
    
-   explore,
+   socials,
    colWidth
    
 )
@@ -26,10 +26,14 @@ class footer:
       return dbc.Col(
          
          width = colWidth,
-         style = {'backgroundColor' : 'white'},
+         style = {'backgroundColor' : '#F7F5F1'},
          children = [
             
-            html.H1('footer')
+            html.Hr(),
+            html.H1(
+               
+               children = 'footer', 
+               style = {'fontWeight' : 'bold', 'fontFamily' : 'Helvetica'})
             
          ]
          

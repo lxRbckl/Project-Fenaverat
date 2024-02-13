@@ -21,44 +21,96 @@ class header:
    
    def component(self):
       '''  '''
-      
+
       return dbc.Col(
          
          width = colWidth,
-         style = {'backgroundColor' : 'white'},
+         id = 'headerColId',
+         style = {'background' : '#F7F5F1'},
          children = [
+         
+            dbc.Row(
+               
+               justify = 'between',
+               children = [
+                  
+                  dbc.Col(
+                     
+                     width = 'auto',
+                     children = html.H1(
+                        
+                        children = 'Alex Arbuckle',
+                        style = {
+                           
+                           'fontSize' : 85,
+                           'color' : '#181A1B',
+                           'margin' : '0 0 -30px 0',
+                           'fontFamily' : 'Helveticamazing'
+                           
+                        }
+                        
+                     )
+                     
+                  ),
+                  dbc.Col(
+                     
+                     width = 'auto',
+                     children = dbc.Spinner(size = 'sm')
+                     
+                  )
+                  
+               ]
+               
+            ),
+            html.Hr()
             
-            html.Div([
-               
-               html.Video(
-                  
-                  autoPlay = True,
-                  controls = False,
-                  src = 'https://static.videezy.com/system/resources/previews/000/038/652/original/alb_glitch1048_1080p_24fps.mp4',
-                  style = {
-                     
-                     'width' : '100%',
-                     'height' : '15vh',
-                     'objectFit' : 'cover'
-                     
-                  }
-                  # children = html.H3(
-                     
-                  #    id = 'headerlogo',
-                  #    style = {'zindex' : 0, 
-                  #             'background' : 'red'},
-                  #    children = 'demodemodemode ome domed ome domed oemd oedm ')
-                  
-               ),
-               html.H1('demo', className = 'overlay', style = {
-                  
-                  'padding' : '-50% 0 0 0'
-                  
-               })
-               
-         ])
-
+            
+            
+            
+            
+            
+            
             
          ]
          
       )
+
+      # = = = = = = = =
+
+      # return dbc.Col(
+         
+      #    width = colWidth,
+      #    style = {
+            
+      #       'background' : 'red'
+      #       # 'backgroundColor' : '#F7F5F1'
+            
+      #    },
+      #    children = [
+            
+      #       html.Div(
+            
+      #          # title <
+      #          # background <
+      #          html.H1(
+                  
+      #             children = 'Alex Arbuckle',
+      #             style = {
+                     
+      #                'fontSize' : 85,
+      #                'textAlign' : 'center',
+      #                'margin' : '0 0 -25px 0',
+      #                'fontFamily' : 'Helveticamazing'
+                     
+      #             }
+                  
+      #          )
+               
+      #          # >
+            
+      #       ),
+      #       html.Hr()
+            
+      #    ]
+         
+      # )

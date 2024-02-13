@@ -30,6 +30,6 @@ class aboutMe:
       
       return [
          
-         html.H1('about me')
+
          
       ]
