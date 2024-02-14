@@ -1,15 +1,13 @@
 # import <
-from os import listdir
+from lxrbckl.local import fileGet
 from lxrbckl.remote import requestsGet
-
-from resource import projectPath
 
 # >
 
 
 class load:
    
-   def __init__(self, pType):
+   def __init__(self):
       '''  '''
       
       self.links = {
@@ -34,47 +32,21 @@ class load:
          
       }
       
+
+   def fetch(self, pType):
+      '''  '''
+      
       rData = {}
-      for k in self.links.keys():
-         
-         print(k)
-         for i, j in self.links[k].items():
-            
-            print(i)
-            
-            
-         print()
-      
-      
-      # return {
-         
-      #    'local' : self.getLocal,
-      #    'remote' : self.getRemote
-         
-      # }[pType]()
-   
-   
-   # def getLocal(self):
-   #    '''  '''
+      for k1 in self.links.keys():
 
-   #    rData = {}
-   #    for k in self.links.keys():
-         
-   #       print(k)
-   #       for f in listdir(projectPath + f'frontend/{k}'):
+         rData[k1] = {}
+         for k2, v in self.links[k1].items():
             
-   #          print(f)
-         
-   #       print()
-   
-   
-   # def getRemote(self):
-   #    '''  '''
-      
-   #    rData = {}
-   #    for k, v in self.links.items():
-         
-   #       pass
-
-
-x = load(pType = 'local')
+            rData[k1][k2] = {
+               
+               'remote' : requestsGet(v),
+               'local' : fileGet(f'frontend/{k1}/{k2}.json')
+               
+            }[pType]
+                  
+      return rData
