@@ -12,6 +12,7 @@ colWidth = 8
 refreshRate = 30
 defaultBoard = 'b1'
 projectPath = getProjectPath()
+tooltipResponse = 'this is an example of a tooltip message.'
 
 application = Dash(
    
@@ -33,7 +34,8 @@ server = application.server
 # >
 
 
-socials = {
+# connections <
+connections = {
    
    'ala2q6' : 'https://github.com/ala2q6',
    'lxRbckl' : 'https://github.com/lxRbckl',
@@ -42,6 +44,8 @@ socials = {
    'LinkedIn' : 'https://www.linkedin.com/in/lxRbckl/'
    
 }
+
+# >
 
 
 # remote <

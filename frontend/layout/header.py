@@ -4,7 +4,8 @@ import dash_bootstrap_components as dbc
 
 from backend.resource import (
    
-   colWidth
+   colWidth,
+   tooltipResponse
    
 )
 
@@ -25,73 +26,78 @@ class header:
       return dbc.Col(
          
          width = colWidth,
-         id = 'headerColId',
          style = {
             
-            'padding' : 0,
+            'paddingTop' : '1%',
             'background' : '#F7F5F1'
             
          },
-         children = [
-         
-            dbc.Row(
+         children = dbc.Row(
                
-               justify = 'between',
-               children = [
+            justify = 'between',
+            children = [
+               
+               # title <
+               # loader <
+               dbc.Col(
                   
-                  dbc.Col(
+                  width = 'auto',
+                  children = html.H1(
                      
-                     width = 'auto',
-                     children = html.H1(
-                        
-                        children = 'Alex Arbuckle',
-                        style = {
-                           
-                           'fontSize' : 85,
-                           'color' : '#181A1B',
-                           'margin' : '0 0 -10px 0',
-                           'fontFamily' : 'Helveticamazing'
-                           
-                        }
-                        
-                     )
-                     
-                  ),
-                  dbc.Col(
-                     
-                     width = 'auto',
-                     style = {'paddingTop' : 10},
-                     children = [
-                        
-                        dbc.Spinner(
-                           
-                           size = 'sm',
-                           color = '#181A1B',
-                           id = 'colSpinnerId',
-                           spinner_style = {
+                     children = 'Alex Arbuckle',
+                     style = {
                               
-                              'border-width' : 1.5, 
-                              'animation-play-state' : 'running' # running or paused #
-                           
-                           }
-                           
-                        ),
-                        dbc.Tooltip(
-                           
-                           target = 'colSpinnerId',
-                           children = 'example'
-                           
-                        )
+                        'margin' : 0,     
+                        'fontSize' : 85,
+                        'lineHeight' : 0.9,
+                        'color' : '#181A1B',
+                        'fontFamily' : 'Helveticamazing'
                         
-                     ]
+                     }
                      
                   )
                   
-               ]
+               ),
+               dbc.Col(
+                  
+                  width = 'auto',
+                  style = {'marginTop' : -5},
+                  children = [
+                     
+                     html.Div(
+                        
+                        id = 'headerTargetId',
+                        children = dbc.Spinner(
+                           
+                           size = 'sm',
+                           color = '#181A1B',
+                           id = 'headerSpinnerId',
+                           spinner_style = {
+                              
+                              'border-width' : 1.5, 
+                              'animation-play-state' : 'running'
+                              
+                           }
+                           
+                        )
+                        
+                     ),
+                     dbc.Tooltip(
+                        
+                        placement = 'left',
+                        target = 'headerTargetId',
+                        children = tooltipResponse
+                        
+                     )
+                     
+                  ]
+                  
+               )
                
-            ),
-            html.Div(style = {'borderBottom' : '1.5px solid #181A1B'})
+               # >
+               
+            ]
             
-         ]
-         
+         )
+                     
       )

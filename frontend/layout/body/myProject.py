@@ -17,7 +17,7 @@ class myProject:
       '''  '''
       
       self.id = 'b2'
-      self.title = 'My Projects'
+      self.title = 'my projects'
       self.style = {
          
          

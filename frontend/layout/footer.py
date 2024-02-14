@@ -4,8 +4,8 @@ import dash_bootstrap_components as dbc
 
 from backend.resource import (
    
-   socials,
-   colWidth
+   colWidth,
+   connections
    
 )
 
@@ -28,7 +28,7 @@ class footer:
          width = colWidth,
          style = {
             
-            'padding' : 0,
+            'paddingBottom' : '0.5%',
             'backgroundColor' : '#F7F5F1'
          
          },
@@ -37,18 +37,20 @@ class footer:
             justify = 'between',
             children = [
                
-               html.Div(style = {'borderBottom' : '1.5px solid #181A1B'}),
                *[
                   
                   dbc.Col(
                      
                      width = 'auto',
-                     children = html.H1(
+                     children = html.A(
                         
+                        href = j,
                         children = i,
+                        target = '_blank',
                         style = {
-                           
+
                            'fontSize' : 18,
+                           'color' : '#181A1B',
                            'fontFamily' : 'helvetica',
                            'textDecoration' : 'underline'
                            
@@ -58,35 +60,9 @@ class footer:
                      
                   )
                   
-               for i in socials]
+               for i, j in connections.items()]
             ]
             
          )
          
       )
-      
-      # return dbc.Col(
-         
-      #    width = colWidth,
-      #    style = {'backgroundColor' : '#F7F5F1'},
-      #    children = [
-            
-      #       html.Div(style = {'borderBottom' : '1.5px solid #181A1B'}),
-      #       *[
-               
-      #          html.H2(
-                  
-      #             children = i
-                  
-      #          )
-               
-      #       for i in socials]
-
-      #       # html.H1(
-               
-      #       #    children = 'footer', 
-      #       #    style = {'fontWeight' : 'bold', 'fontFamily' : 'Helvetica'})
-            
-      #    ]
-         
-      # )

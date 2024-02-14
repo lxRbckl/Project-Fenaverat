@@ -37,12 +37,75 @@ class template:
       ]
       
       
+   def loadHeader(self):
+      '''  '''
+      
+      return dbc.Row(
+         
+         justify = 'center',
+         children = self.header.component()
+         
+      )
+   
+   
+   def loadBody(self):
+      '''  '''
+      
+      return dbc.Row(
+         
+         justify = 'center',
+         children = dbc.Col(
+            
+            width = colWidth,
+            style = {'background' : '#F7F5F1'},
+            children = dbc.Accordion(
+               
+               flush = True,
+               active_item = None,
+               id = 'bodyAccordionId',
+               style = {
+                  
+                  'borderTop' : '1px solid #181A1B',
+                  'borderBottom' : '1px solid #181A1B'
+                  
+               },
+               children = [
+                  
+                  dbc.AccordionItem(
+                     
+                     item_id = i.id,
+                     title = i.title,
+                     style = i.style,
+                     children = i.board()
+                     
+                  )
+                  
+               for i in self.content]
+               
+            )
+            
+         )
+         
+      )
+
+   
+   def loadFooter(self):
+      '''  '''
+
+      return dbc.Row(
+         
+         justify = 'center',
+         children = self.footer.component()
+         
+      )
+   
    
    def component(self):
       '''  '''
       
       return html.Div(
          
+         id = 'templateDivId',
          style = {
             
             'width' : '100vw',
@@ -58,53 +121,9 @@ class template:
             # header <
             # body <
             # footer <
-            dbc.Row(
-               
-               justify = 'center',
-               children = self.header.component()
-               
-            ),
-            dbc.Row(
-               
-               justify = 'center',
-               children = dbc.Col(
-                  
-                  width = colWidth,
-                  style = {
-                     
-                     'margin' : 0,
-                     'padding' : 0
-                     
-                  },
-                  children = dbc.Accordion(
-                     
-                     flush = True,
-                     active_item = None,
-                     # always_open = True,
-                     id = 'bodyAccordion',
-                     children = [
-                        
-                        dbc.AccordionItem(
-                           
-                           item_id = i.id,
-                           title = i.title,
-                           style = i.style,
-                           children = i.board()
-                           
-                        )
-                        
-                     for i in self.content]
-                     
-                  )
-                  
-               )
-            ),
-            dbc.Row(
-               
-               justify = 'center',
-               children = self.footer.component()
-               
-            )
+            self.loadHeader(),
+            self.loadBody(),
+            self.loadFooter()
             
             # >
             
@@ -112,14 +131,14 @@ class template:
          
       )
       
-
+      
 @application.callback(
    
-   Output('bodyAccordion', 'active_item'),
+   Output('bodyAccordionId', 'active_item'),
    Input('headerColId', 'children')
    
 )
 def bodyCallback(i):
    
    sleep(2)
-   return 'b1'
+   return defaultBoard

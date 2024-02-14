@@ -17,7 +17,7 @@ class aboutMe:
       '''  '''
       
       self.id = 'b1'
-      self.title = 'About Me'
+      self.title = 'about me'
       self.style = {
          
          
