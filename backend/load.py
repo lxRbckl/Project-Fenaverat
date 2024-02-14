@@ -1,4 +1,5 @@
 # import <
+from os import listdir
 from lxrbckl.remote import requestsGet
 
 from resource import projectPath
@@ -23,43 +24,57 @@ class load:
          },
          'data' : {
             
-            'header' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/data/header.json',
-            'footer' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/data/footer.json',
-            'aboutMe' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/data/body/aboutMe.json',
-            'myServer' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/data/body/myServer.json',
-            'myProject' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/data/body/myProject.json'
+            'header' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/data/header.json',
+            'footer' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/data/footer.json',
+            'aboutMe' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/data/aboutMe.json',
+            'myServers' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/data/myServers.json',
+            'myProjects' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/data/myProject.json'
          
          }
          
       }
       
-      # try (if load successful) <
-      # except (then failed to load) <
-      try:
-         
-         return {
-            
-            'local' : self.getLocal,
-            'remote' : self.getRemote
-            
-         }[pType]()
-      
-      except: return False
-      
-      # >
-   
-   
-   def getLocal(self):
-      '''  '''
-      
       rData = {}
-      print(projectPath)
-   
-   
-   def getRemote(self):
-      '''  '''
+      for k in self.links.keys():
+         
+         print(k)
+         for i, j in self.links[k].items():
+            
+            print(i)
+            
+            
+         print()
       
-      pass
+      
+      # return {
+         
+      #    'local' : self.getLocal,
+      #    'remote' : self.getRemote
+         
+      # }[pType]()
+   
+   
+   # def getLocal(self):
+   #    '''  '''
+
+   #    rData = {}
+   #    for k in self.links.keys():
+         
+   #       print(k)
+   #       for f in listdir(projectPath + f'frontend/{k}'):
+            
+   #          print(f)
+         
+   #       print()
+   
+   
+   # def getRemote(self):
+   #    '''  '''
+      
+   #    rData = {}
+   #    for k, v in self.links.items():
+         
+   #       pass
 
 
 x = load(pType = 'local')

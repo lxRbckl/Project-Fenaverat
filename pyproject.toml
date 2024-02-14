@@ -6,6 +6,7 @@ authors = ["lxRxRbckl <lxrbckl@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+lxrbckl = "^3.1.0"
 
 [tool.poetry.dev-dependencies]
 
