@@ -49,7 +49,7 @@ class footer:
                         target = '_blank',
                         style = {
 
-                           'fontSize' : 18,
+                           'fontSize' : 16,
                            'color' : '#181A1B',
                            'fontFamily' : 'helvetica',
                            'textDecoration' : 'underline'

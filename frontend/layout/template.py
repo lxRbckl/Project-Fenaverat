@@ -57,7 +57,12 @@ class template:
          children = dbc.Col(
             
             width = colWidth,
-            style = {'background' : '#F7F5F1'},
+            style = {
+               
+               'background' : '#F7F5F1',
+               'paddingBottom' : '0.5%'
+            
+            },
             children = dbc.Accordion(
                
                flush = True,
