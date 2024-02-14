@@ -1,3 +1,1 @@
-backend/__pycache__
-frontend/layout/__pycache__
-frontend/layout/body/__pycache__
+*.pyc
