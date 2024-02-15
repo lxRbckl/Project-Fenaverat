@@ -1,13 +1,8 @@
 # import <
+from backend.resource import colWidth
+
 from dash import html
 import dash_bootstrap_components as dbc
-
-from backend.resource import (
-   
-   colWidth,
-   connections
-   
-)
 
 # >
 
@@ -20,7 +15,13 @@ class footer:
       pass
    
    
-   def component(self):
+   def component(
+      
+      self,
+      pStyle,
+      pContent
+      
+   ):
       '''  '''
 
       return dbc.Col(
@@ -60,7 +61,7 @@ class footer:
                      
                   )
                   
-               for i, j in connections.items()]
+               for i, j in pContent['connections'].items()]
             ]
             
          )

@@ -8,7 +8,9 @@ from backend.resource import (server, application)
 # >
 
 
-application.layout = template().component()
+obj = template()
+obj.registerCallbacks()
+application.layout = obj.component()
 
 
 if (__name__ == '__main__'): application.run(debug = True)

@@ -11,13 +11,13 @@ from backend.resource import (
 # >
 
 
-class myProject:
+class myServers:
    
    def __init__(self):
       '''  '''
       
-      self.id = 'b2'
-      self.title = 'my projects'
+      self.id = 'b3'
+      self.title = 'my servers'
       self.style = {
          
          

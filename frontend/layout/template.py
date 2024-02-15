@@ -1,21 +1,22 @@
 # import <
+from backend.load import load
+from frontend.layout.header import header
+from frontend.layout.footer import footer
+from frontend.layout.body.aboutMe import aboutMe
+from frontend.layout.body.myServers import myServers
+from frontend.layout.body.myProjects import myProjects
+from backend.resource import (
+   
+   colWidth,
+   refreshRate,
+   application
+   
+)
+
 from time import sleep
 from dash import (dcc, html)
 import dash_bootstrap_components as dbc
 from dash.dependencies import (Input, Output)
-
-from frontend.layout.header import header
-from frontend.layout.footer import footer
-from frontend.layout.body.aboutMe import aboutMe
-from frontend.layout.body.myServer import myServer
-from frontend.layout.body.myProject import myProject
-from backend.resource import (
-   
-   colWidth,
-   application,
-   defaultBoard
-   
-)
 
 # >
 
@@ -26,29 +27,48 @@ class template:
    def __init__(self):
       '''  '''
       
+      self.load = load()
       self.header = header()
       self.footer = footer()
-      self.content = [
+      self.body = [
          
          aboutMe(),
-         myProject(),
-         myServer()
+         myProjects(),
+         myServers()
          
       ]
       
       
-   def loadHeader(self):
+   def loadHeader(
+      
+      self, 
+      pData,
+      pStatus
+   
+   ):
       '''  '''
       
       return dbc.Row(
          
          justify = 'center',
-         children = self.header.component()
+         children = self.header.component(
+            
+            pStatus = pStatus,
+            pStyle = pData['style']['header']
+            pContent = pData['data']['header'],
+            
+         )
          
       )
    
    
-   def loadBody(self):
+   def loadBody(
+      
+      self, 
+      pData,
+      pStyle
+   
+   ):
       '''  '''
       
       return dbc.Row(
@@ -85,7 +105,7 @@ class template:
                      
                   )
                   
-               for i in self.content]
+               for i in self.body]
                
             )
             
@@ -94,13 +114,24 @@ class template:
       )
 
    
-   def loadFooter(self):
+   def loadFooter(
+      
+      self, 
+      pData,
+      pStyle
+   
+   ):
       '''  '''
 
       return dbc.Row(
          
          justify = 'center',
-         children = self.footer.component()
+         children = self.footer.component(
+            
+            pStyle = pData['style']['footer'],
+            pContent = pData['data']['footer']
+            
+         )
          
       )
    
@@ -110,7 +141,6 @@ class template:
       
       return html.Div(
          
-         id = 'templateDivId',
          style = {
             
             'width' : '100vw',
@@ -120,30 +150,72 @@ class template:
             'paddingBottom' : '1%',
             'background' : '#181A1B'
             
-         },
+         },                  
          children = [
             
-            # header <
-            # body <
-            # footer <
-            self.loadHeader(),
-            self.loadBody(),
-            self.loadFooter()
+            dcc.Interval(
+               
+               n_intervals = 0,
+               id = 'templateIntervalId',
+               interval = (60000 * refreshRate)
+               
+            ),
+            html.Div(
+               
+               children = None,
+               id = 'templateDivId'
             
-            # >
-            
+            )
+                        
          ]
          
       )
+   
+   
+   def registerCallbacks(self):
+      '''  '''
+      
+      @application.callback(
+         
+         Output('templateDivId', 'children'),
+         Input('templateIntervalId', 'n_intervals')
+         
+      )
+      def intervalCallback(i):
+         '''  '''
+         
+         data, status = self.load.get()
+         
+         return [
+            
+            self.loadHeader(
+               
+               pData = data,
+               pStatus = status
+               
+            ),
+            self.loadBody(data),
+            self.loadFooter(data)
+            
+         ]
       
       
-@application.callback(
-   
-   Output('bodyAccordionId', 'active_item'),
-   Input('headerColId', 'children')
-   
-)
-def bodyCallback(i):
-   
-   sleep(2)
-   return defaultBoard
+      # @application.callback(
+         
+      #    Output('', ''),
+      #    Input('', '')
+         
+      # )
+      # def bodyCallback(i):
+      #    '''  '''
+         
+      #    print(i)
+      
+      
+      
+      
+      
+      # TODO
+      # we need to deal with the load methods.
+      # in the parameters, we need to break our parameters apart
+      # we need to break them apart into (style and data) and pass them into loads

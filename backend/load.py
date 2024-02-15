@@ -20,7 +20,7 @@ class load:
             'template' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/style/template.json'
             
          },
-         'data' : {
+         'content' : {
             
             'header' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/data/header.json',
             'footer' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/data/footer.json',
@@ -33,20 +33,28 @@ class load:
       }
       
 
-   def fetch(self, pType):
+   def get(self):
       '''  '''
       
       rData = {}
+      rStatus = True
       for k1 in self.links.keys():
-
+         
          rData[k1] = {}
          for k2, v in self.links[k1].items():
             
-            rData[k1][k2] = {
+            # # try (remote) <
+            # # except (then local) <
+            # try: file = requestsGet(v)
+            # except: 
                
-               'remote' : requestsGet(v),
-               'local' : fileGet(f'frontend/{k1}/{k2}.json')
-               
-            }[pType]
-                  
-      return rData
+            #    rStatus = False
+            #    file = fileGet(f'frontend/{k1}/{k2}.json')
+            
+            # # >
+            
+            file = fileGet(f'frontend/{k1}/{k2}.json')
+            
+            rData[k1][k2] = file
+         
+      return [rData, rStatus]
