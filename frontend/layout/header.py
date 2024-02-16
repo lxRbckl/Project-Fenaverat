@@ -84,11 +84,78 @@ class header(framework):
                      ),
                      dbc.Tooltip(
                         
-                        placement = 'left',
+                        placement = 'right',
                         target = 'headerTargetId',
                         children = [
                            
+                           # rate <
+                           # status <
+                           html.P(
+                              
+                              children = f'Updated every {pRate} minutes.',
+                              style = {
+                                 
+                                 'fontSize' : 13,
+                                 'color' : '#F7F5F1',
+                                 'fontFamily' : 'helvetica',
+                                 'textDecoration' : 'underline'
+                                 
+                              }
+                              
+                           ),
+                           *[
+                              
+                              html.Div(
+                                 
+                                 style = {'marginBottom' : 10},
+                                 children = [
+                                 
+                                    html.P(
+                                       
+                                       children = k1.title(),
+                                       style = {
+                                          
+                                          'margin' : 0,
+                                          'fontSize' : 13,
+                                          'color' : '#F7F5F1',
+                                          'paddingBottom' : 5,
+                                          'textAlign' : 'left',
+                                          'textDecoration' : 'underline'
+                                          
+                                       }
+                                       
+                                    ),
+                                    *[
+                                       
+                                       html.P(
+                                          
+                                          children = f'{k2}.json',
+                                          style = {
+                                             
+                                             'margin' : 0,
+                                             'fontSize' : 13,
+                                             'paddingLeft' : 5,
+                                             'textAlign' : 'left',
+                                             'color' : {
+                                                
+                                                'local' : '#B22B27',
+                                                'remote' : '#27B271'
+                                                
+                                             }[v]
+                                             
+                                          }
+                                          
+                                       )
+                                       
+                                    for k2, v in pStatus[k1].items()]
+                                 
+                                 ]
+                                 
+                              )
+                              
+                           for k1 in pStatus.keys()]
                            
+                           # >
                            
                         ]
                         
