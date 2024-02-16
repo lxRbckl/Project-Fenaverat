@@ -1,5 +1,5 @@
 # import <
-from backend.resource import colWidth
+from .framework import framework
 
 from dash import html
 import dash_bootstrap_components as dbc
@@ -7,17 +7,15 @@ import dash_bootstrap_components as dbc
 # >
 
 
-class header:
+class header(framework):
    
-   def __init__(self):
-      '''  '''
-      
-      pass
+   def __init__(self): super().__init__()
    
    
    def component(
       
       self,
+      pRate,
       pStyle,
       pStatus,
       pContent
@@ -27,7 +25,7 @@ class header:
 
       return dbc.Col(
          
-         width = colWidth,
+         width = self.colWidth,
          style = {
             
             'paddingTop' : '1%',
@@ -77,12 +75,7 @@ class header:
                            spinner_style = {
                               
                               'border-width' : 1.5,
-                              'animation-play-state' : {
-                                 
-                                 True : 'running',
-                                 False : 'paused'
-                                 
-                              }[pStatus]
+                              'animation-play-state' : 'running'
                               
                            }
                            
@@ -93,7 +86,11 @@ class header:
                         
                         placement = 'left',
                         target = 'headerTargetId',
-                        children = pContent['tooltipResponse']
+                        children = [
+                           
+                           
+                           
+                        ]
                         
                      )
                      

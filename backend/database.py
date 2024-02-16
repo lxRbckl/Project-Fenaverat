@@ -5,7 +5,7 @@ from lxrbckl.remote import requestsGet
 # >
 
 
-class load:
+class database:
    
    def __init__(self):
       '''  '''
@@ -32,29 +32,46 @@ class load:
          
       }
       
-
+      self.rate = 30
+      self.status = self.links
+      self.developerMode = True
+      self.intervalRate = (60000 * self.rate)
+      
+      
    def get(self):
       '''  '''
       
       rData = {}
-      rStatus = True
-      for k1 in self.links.keys():
+      for k1 in (self.links).keys():
          
          rData[k1] = {}
-         for k2, v in self.links[k1].items():
+         for k2, v in (self.links[k1]).items():
+        
+            # if (default) <
+            # else (then developer) <
+            if (not self.developerMode):
             
-            # # try (remote) <
-            # # except (then local) <
-            # try: file = requestsGet(v)
-            # except: 
+               # try (load remotely) <
+               # except (then local) <
+               try:
+                  
+                  f = requestsGet(v)
+                  self.status[k1][k2] = 'remote'
+                              
+               except:
+                  
+                  self.status[k1][k2] = 'local'
+                  f = fileGet(f'frontend/{k1}/{k2}.json')
                
-            #    rStatus = False
-            #    file = fileGet(f'frontend/{k1}/{k2}.json')
+               # >
+                           
+            else:
+               
+               self.status[k1][k2] = 'local'
+               f = fileGet(f'frontend/{k1}/{k2}.json')
             
-            # # >
-            
-            file = fileGet(f'frontend/{k1}/{k2}.json')
-            
-            rData[k1][k2] = file
+            # >
          
-      return [rData, rStatus]
+            rData[k1][k2] = f
+         
+      return rData

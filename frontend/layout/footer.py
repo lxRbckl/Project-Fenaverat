@@ -1,5 +1,5 @@
 # import <
-from backend.resource import colWidth
+from .framework import framework
 
 from dash import html
 import dash_bootstrap_components as dbc
@@ -7,12 +7,9 @@ import dash_bootstrap_components as dbc
 # >
 
 
-class footer:
+class footer(framework):
    
-   def __init__(self):
-      '''  '''
-      
-      pass
+   def __init__(self): super().__init__()
    
    
    def component(
@@ -26,7 +23,7 @@ class footer:
 
       return dbc.Col(
          
-         width = colWidth,
+         width = self.colWidth,
          style = {
             
             'paddingBottom' : '0.5%',
