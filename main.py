@@ -26,8 +26,9 @@ obj.body = {
    
 }
 
-
+obj.registerBodyCallback()
 obj.registerIntervalCallback()
+
 application.layout = obj.framework()
 
 

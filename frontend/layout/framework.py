@@ -25,54 +25,6 @@ class framework:
       self.defaultBoard = 'b1'
       
       # >
-   
-   
-   
-   # def loadBody(self, pData):
-   #    '''  '''
-      
-   #    return dbc.Row(
-         
-   #       justify = 'center',
-   #       children = dbc.Col(
-            
-   #          width = self.colWidth,
-   #          style = {
-               
-   #             'background' : '#F7F5F1',
-   #             'paddingBottom' : '0.5%'
-            
-   #          },
-   #          children = dbc.Accordion(
-               
-   #             flush = True,
-   #             active_item = None,
-   #             id = 'bodyAccordionId',
-   #             style = {
-                  
-   #                'borderTop' : '1px solid #181A1B',
-   #                'borderBottom' : '1px solid #181A1B'
-                  
-   #             },
-   #             children = [
-                  
-   #                dbc.AccordionItem(
-                     
-   #                   item_id = i.id,
-   #                   title = i.title,
-   #                   style = i.style,
-   #                   children = i.board()
-                     
-   #                )
-                  
-   #             for i in self.body]
-               
-   #          )
-            
-   #       )
-         
-   #    )
-
 
    
    def framework(self):
@@ -139,7 +91,48 @@ class framework:
             )
             
          ),
-         None,
+         dbc.Row(
+            
+            id = 'bodyRowId',
+            justify = 'center',
+            children = dbc.Col(
+               
+               width = self.colWidth,
+               style = {
+                  
+                  'background' : '#F7F5F1',
+                  'paddingBottom' : '0.5%'
+                  
+               },
+               children = dbc.Accordion(
+                  
+                  flush = True,
+                  active_item = None,
+                  id = 'bodyAccordionId',
+                  style = {
+                     
+                     'borderTop' : '1px solid #181A1B',
+                     'borderBottom' : '1px solid #181A1B'
+                     
+                  },
+                  children = [
+                     
+                     dbc.AccordionItem(
+                        
+                        item_id = v.id,
+                        title = v.title,
+                        style = v.style,
+                        children = v.board()
+                        
+                     )
+                     
+                  for v in (self.body).values()]
+                  
+               )
+               
+            )
+            
+         ),
          dbc.Row(
             
             justify = 'center',
@@ -178,16 +171,17 @@ class framework:
          )
 
       
-   # def registerBodyCallback(self):
-   #    '''  '''
+   def registerBodyCallback(self):
+      '''  '''
       
-      # @application.callback(
+      @application.callback(
          
-      #    Output('', ''),
-      #    Input('', '')
+         Output('bodyAccordionId', 'active_item'),
+         Input('bodyRowId', 'children')
          
-      # )
-      # def bodyCallback(i):
-      #    '''  '''
+      )
+      def bodyCallback(i):
+         '''  '''
          
-      #    print(i)
+         sleep(self.database.boardDelay)
+         return self.defaultBoard

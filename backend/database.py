@@ -33,6 +33,7 @@ class database:
       }
       
       self.rate = 30
+      self.boardDelay = 2
       self.status = self.links
       self.developerMode = True
       self.intervalRate = (60000 * self.rate)
