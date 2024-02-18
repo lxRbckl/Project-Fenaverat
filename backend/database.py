@@ -12,6 +12,12 @@ class database:
       
       self.links = {
          
+         'data' : {
+            
+            'projects' : 'https://raw.githubusercontent.com/lxRbckl/Project-Heimir/Project-Heimir-2/data.json',
+            'servers' : 'https://raw.githubusercontent.com/lxRbckl/Project-Acta-Mea/Project-Acta-Mea-5/data.json'
+            
+         },
          'style' : {
             
             'body' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/style/content.json',
@@ -28,12 +34,6 @@ class database:
             'myServers' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/data/myServers.json',
             'myProjects' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/data/myProject.json'
          
-         },
-         'data' : {
-            
-            'projects' : 'https://raw.githubusercontent.com/lxRbckl/Project-Heimir/Project-Heimir-2/data.json',
-            'servers' : 'https://raw.githubusercontent.com/lxRbckl/Project-Acta-Mea/Project-Acta-Mea-5/data.json'
-            
          }
          
       }

@@ -1,5 +1,6 @@
 # import <
 from dash import html
+from dash_player import DashPlayer
 import dash_bootstrap_components as dbc
 
 # >
@@ -28,19 +29,37 @@ class aboutMe:
          style = {'position' : 'relative'},
          children = [
             
-            html.Video(
+            # html.Video(
+               
+            #    muted = True,
+            #    autoPlay = True,
+            #    controls = True,
+            #    id = 'backgroundVideoId',
+            #    src = pContent['background'],
+            #    style = {
+                  
+            #       'width' : '100vw',
+            #       'height' : '40vh',
+            #       'display' : 'block',
+            #       'object-fit' : 'cover'
+                  
+            #    }
+               
+            # ),
+            
+            DashPlayer(
                
                muted = True,
-               autoPlay = None,
+               width = '110%',
+               height = 'auto',
+               playing = False,
                id = 'backgroundVideoId',
-               src = pContent['background'],
+               url = pContent['background'],
                style = {
                   
-                  'width' : '100vw',
-                  'height' : '40vh',
-                  'display' : 'block',
-                  'object-fit' : 'cover'
+                  'margin' : '0 0 -1% 0',
                   
+               
                }
                
             ),
