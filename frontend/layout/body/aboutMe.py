@@ -15,6 +15,30 @@ class aboutMe:
       self.title = 'about me'
    
    
+   def badge(
+      
+      self,
+      pList,
+      pColor,
+      pTextColor
+   
+   ):
+      '''  '''
+   
+      return [
+         
+         dbc.Badge(
+            
+            children = i,
+            color = pColor,
+            text_color = pTextColor,
+            class_name = 'border me-1'
+            
+         )
+         
+      for i in pList]
+   
+   
    def board(
       
       self,
@@ -29,24 +53,6 @@ class aboutMe:
          style = {'position' : 'relative'},
          children = [
             
-            # html.Video(
-               
-            #    muted = True,
-            #    autoPlay = True,
-            #    controls = True,
-            #    id = 'backgroundVideoId',
-            #    src = pContent['background'],
-            #    style = {
-                  
-            #       'width' : '100vw',
-            #       'height' : '40vh',
-            #       'display' : 'block',
-            #       'object-fit' : 'cover'
-                  
-            #    }
-               
-            # ),
-            
             DashPlayer(
                
                muted = True,
@@ -55,12 +61,7 @@ class aboutMe:
                playing = False,
                id = 'backgroundVideoId',
                url = pContent['background'],
-               style = {
-                  
-                  'margin' : '0 0 -1% 0',
-                  
-               
-               }
+               style = {'margin' : '0 0 -1% 0'}
                
             ),
             html.Div(
@@ -70,14 +71,41 @@ class aboutMe:
                   'top' : 0,
                   'width' : '100%',
                   'padding' : '1%',
-                  'height' : '40vh',
                   'position' : 'absolute'
                   
                },
                children = [
                   
-                  # <
-                  # <
+                  # title <
+                  # body <
+                  # footer <
+                  dbc.Row(
+                     
+                     children = [
+                        
+                        dbc.Col(width = 4),
+                        dbc.Col(
+                           
+                           width = 8,
+                           children = html.H1(
+                              
+                              children = pContent['title'],
+                              style = {
+                                 
+                                 'color' : '#181A1B',
+                                 'fontFamily' : 'helvetica',
+                                 'backdropFilter' : 'blur(15px)',
+                                 'borderTop' : '1px solid #181A1B'
+                                 
+                              }
+                           
+                           )
+                           
+                        )
+                        
+                     ]
+                     
+                  ),
                   dbc.Row(
                      
                      children = [
@@ -93,6 +121,7 @@ class aboutMe:
                                  children = i,
                                  style = {
                                     
+                                    'fontSize' : 15,
                                     'color' : '#181A1B',
                                     'textAlign' : 'justify',
                                     'backdropFilter' : 'blur(15px)',
@@ -104,7 +133,7 @@ class aboutMe:
                               
                            )
                            
-                        for i in pContent['information']]
+                        for i in pContent['body']]
                         
                      ]
                      
@@ -114,38 +143,33 @@ class aboutMe:
                      children = [
                         
                         dbc.Col(width = 4),
-                        dbc.Col(
+                        *[
                            
-                           width = 3,
-                           children = html.Div(
+                           dbc.Col(
                               
-                              children = html.H1('ok'), # <
-                              style = {
+                              width = v['width'],
+                              children = html.Div(
                                  
-                                 'backdropFilter' : 'blur(15px)',
-                                 'borderTop' : '1px solid #181A1B'
-                              
-                              }
+                                 style = {
+                                    
+                                    'justify' : 'align',
+                                    'backdropFilter' : 'blur(15px)',
+                                    'borderTop' : '1px solid #181A1B'
+                                    
+                                 },
+                                 children = self.badge(
+                                    
+                                    pList = v['list'],
+                                    pColor = '#181A1B',
+                                    pTextColor = '#F7F5F1'
+                                    
+                                 )                                 
+                                 
+                              )
                               
                            )
                            
-                        ),
-                        dbc.Col(
-                           
-                           width = 5,
-                           children = html.Div(
-                              
-                              children = html.H1('ok'), # <
-                              style = {
-                                 
-                                 'backdropFilter' : 'blur(15px)',
-                                 'borderTop' : '1px solid #181A1B'
-                              
-                              }
-                              
-                           )
-                           
-                        )
+                        for k, v in pContent['footer'].items()]
                         
                      ]
                      

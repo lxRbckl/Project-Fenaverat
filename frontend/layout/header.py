@@ -41,7 +41,7 @@ class header(framework):
                # loader <
                dbc.Col(
                   
-                  width = 'auto',
+                  width = 'auto',                  
                   children = html.H1(
                      
                      children = pContent['title'],
