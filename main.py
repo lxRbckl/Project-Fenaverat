@@ -27,12 +27,13 @@ obj.body = {
 }
 
 obj.registerBodyCallback()
+obj.registerAboutMeCallback()
 obj.registerIntervalCallback()
 
 application.layout = obj.framework()
 
 
-
-
-
+# main <
 if (__name__ == '__main__'): application.run(debug = True)
+
+# >

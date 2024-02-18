@@ -14,9 +14,9 @@ class database:
          
          'style' : {
             
+            'body' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/style/content.json',
             'footer' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/style/footer.json',
             'header' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/style/header.json',
-            'content' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/style/content.json',
             'template' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/style/template.json'
             
          },
@@ -28,12 +28,19 @@ class database:
             'myServers' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/data/myServers.json',
             'myProjects' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/data/myProject.json'
          
+         },
+         'data' : {
+            
+            'projects' : 'https://raw.githubusercontent.com/lxRbckl/Project-Heimir/Project-Heimir-2/data.json',
+            'servers' : 'https://raw.githubusercontent.com/lxRbckl/Project-Acta-Mea/Project-Acta-Mea-5/data.json'
+            
          }
          
       }
       
       self.rate = 30
-      self.boardDelay = 2
+      self.bodyDelay = 1
+      self.aboutMeDelay = 2
       self.status = self.links
       self.developerMode = True
       self.intervalRate = (60000 * self.rate)

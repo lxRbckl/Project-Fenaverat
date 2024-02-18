@@ -12,14 +12,15 @@ class myServers:
       
       self.id = 'b3'
       self.title = 'my servers'
-      self.style = {
-         
-         
-         
-      }
    
    
-   def board(self):
+   def board(
+      
+      self,
+      pStyle,
+      pContent
+   
+   ):
       '''  '''
       
       return [

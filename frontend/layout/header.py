@@ -67,6 +67,7 @@ class header(framework):
                      html.Div(
                         
                         id = 'headerTargetId',
+                        style = {'padding' : '0.25%'},
                         children = dbc.Spinner(
                            
                            size = 'sm',
@@ -84,7 +85,7 @@ class header(framework):
                      ),
                      dbc.Tooltip(
                         
-                        placement = 'right',
+                        placement = 'bottom',
                         target = 'headerTargetId',
                         children = [
                            

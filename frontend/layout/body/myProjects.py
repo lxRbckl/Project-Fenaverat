@@ -12,14 +12,15 @@ class myProjects:
       
       self.id = 'b2'
       self.title = 'my projects'
-      self.style = {
-         
-         
-         
-      }
    
    
-   def board(self):
+   def board(
+      
+      self,
+      pStyle,
+      pContent
+   
+   ):
       '''  '''
       
       return [

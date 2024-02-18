@@ -21,8 +21,8 @@ class framework:
       self.footer = None
       self.database = None
       
-      self.colWidth = 8
       self.defaultBoard = 'b1'
+      self.colWidth = 'col-sm-11 col-md-8 col-lg-10 col-xl-9'
       
       # >
 
@@ -36,8 +36,8 @@ class framework:
             
             'width' : '100vw',
             'height' : '100vh',
-            'paddingTop' : '1%',
-            'overflow' : 'hidden',
+            'paddingTop' : '2%',
+            'overflow-x' : 'hidden',
             'paddingBottom' : '1%',
             'background' : '#181A1B'
             
@@ -47,14 +47,14 @@ class framework:
             dcc.Interval(
                
                n_intervals = 0,
-               id = 'templateIntervalId',
+               id = 'frameworkIntervalId',
                interval = self.database.intervalRate
                
             ),
             html.Div(
                
                children = None,
-               id = 'templateDivId'
+               id = 'frameworkDivId'
             
             )
                         
@@ -72,7 +72,7 @@ class framework:
       
    ):
       '''  '''
-
+      
       return [
          
          # header <
@@ -121,12 +121,16 @@ class framework:
                         
                         item_id = v.id,
                         title = v.title,
-                        style = v.style,
-                        children = v.board()
+                        children = v.board(
+                           
+                           pContent = pData['content'][k],
+                           pStyle = pData['style']['body']
+                           
+                        )
                         
                      )
                      
-                  for v in (self.body).values()]
+                  for k, v in (self.body).items()]
                   
                )
                
@@ -148,28 +152,7 @@ class framework:
          # >
          
       ]
-   
-   
-   def registerIntervalCallback(self):
-      '''  '''
       
-      @application.callback(
-         
-         Output('templateDivId', 'children'),
-         Input('templateIntervalId', 'n_intervals')
-         
-      )
-      def intervalCallback(i):
-         '''  '''
-         
-         return self.components(
-            
-            pRate = self.database.rate,
-            pData = self.database.get(),
-            pStatus = self.database.status
-            
-         )
-
       
    def registerBodyCallback(self):
       '''  '''
@@ -183,5 +166,50 @@ class framework:
       def bodyCallback(i):
          '''  '''
                   
-         sleep(self.database.boardDelay)
+         sleep(self.database.bodyDelay)
          return self.defaultBoard
+      
+   
+   def registerAboutMeCallback(self):
+      '''  '''
+   
+      @application.callback(
+         
+         Output('backgroundVideoId', 'autoPlay'),
+         Input('bodyAccordionId', 'active_item')
+         
+      )
+      def aboutMeCallback(i):
+         '''  '''
+         
+         # <
+         # <
+         if (self.defaultBoard == i):
+            
+            sleep(self.database.aboutMeDelay)
+            return True
+         
+         else: return False
+         
+         # >
+   
+   
+   def registerIntervalCallback(self):
+      '''  '''
+      
+      @application.callback(
+         
+         Output('frameworkDivId', 'children'),
+         Input('frameworkIntervalId', 'n_intervals')
+         
+      )
+      def intervalCallback(i):
+         '''  '''
+         
+         return self.components(
+            
+            pRate = self.database.rate,
+            pData = self.database.get(),
+            pStatus = self.database.status
+            
+         )

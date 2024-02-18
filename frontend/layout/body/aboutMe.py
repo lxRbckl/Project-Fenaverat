@@ -12,18 +12,132 @@ class aboutMe:
       
       self.id = 'b1'
       self.title = 'about me'
-      self.style = {
-         
-         
-         
-      }
    
    
-   def board(self):
-      '''  '''
+   def board(
       
-      return [
-         
+      self,
+      pStyle,
+      pContent
+   
+   ):
+      '''  '''
 
+      return html.Div(
          
-      ]
+         style = {'position' : 'relative'},
+         children = [
+            
+            html.Video(
+               
+               muted = True,
+               autoPlay = None,
+               id = 'backgroundVideoId',
+               src = pContent['background'],
+               style = {
+                  
+                  'width' : '100vw',
+                  'height' : '40vh',
+                  'display' : 'block',
+                  'object-fit' : 'cover'
+                  
+               }
+               
+            ),
+            html.Div(
+               
+               style = {
+                  
+                  'top' : 0,
+                  'width' : '100%',
+                  'padding' : '1%',
+                  'height' : '40vh',
+                  'position' : 'absolute'
+                  
+               },
+               children = [
+                  
+                  # <
+                  # <
+                  dbc.Row(
+                     
+                     children = [
+                        
+                        dbc.Col(width = 4),
+                        *[
+                           
+                           dbc.Col(
+                              
+                              width = 4,
+                              children = html.P(
+                                 
+                                 children = i,
+                                 style = {
+                                    
+                                    'color' : '#181A1B',
+                                    'textAlign' : 'justify',
+                                    'backdropFilter' : 'blur(15px)',
+                                    'borderBottom' : '1px solid #181A1B'
+                                    
+                                 }
+                                 
+                              )
+                              
+                           )
+                           
+                        for i in pContent['information']]
+                        
+                     ]
+                     
+                  ),
+                  dbc.Row(
+                     
+                     children = [
+                        
+                        dbc.Col(width = 4),
+                        dbc.Col(
+                           
+                           width = 3,
+                           children = html.Div(
+                              
+                              children = html.H1('ok'), # <
+                              style = {
+                                 
+                                 'backdropFilter' : 'blur(15px)',
+                                 'borderTop' : '1px solid #181A1B'
+                              
+                              }
+                              
+                           )
+                           
+                        ),
+                        dbc.Col(
+                           
+                           width = 5,
+                           children = html.Div(
+                              
+                              children = html.H1('ok'), # <
+                              style = {
+                                 
+                                 'backdropFilter' : 'blur(15px)',
+                                 'borderTop' : '1px solid #181A1B'
+                              
+                              }
+                              
+                           )
+                           
+                        )
+                        
+                     ]
+                     
+                  )
+                  
+                  # >
+                  
+               ]
+               
+            )
+            
+         ]
+         
+      )
