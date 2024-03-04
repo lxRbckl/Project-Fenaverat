@@ -10,6 +10,9 @@ class database:
    def __init__(self):
       '''  '''
       
+      self.updateRate = 30
+      self.developerMode = True
+      self.intervalRate = (60000 * self.updateRate)
       self.links = {
          
          'data' : {
@@ -38,13 +41,6 @@ class database:
          
       }
       
-      self.rate = 30
-      self.bodyDelay = 1
-      self.aboutMeDelay = 2
-      self.status = self.links
-      self.developerMode = True
-      self.intervalRate = (60000 * self.rate)
-      
       
    def get(self):
       '''  '''
@@ -54,32 +50,21 @@ class database:
          
          rData[k1] = {}
          for k2, v in (self.links[k1]).items():
-        
-            # if (default) <
-            # else (then developer) <
-            if (not self.developerMode):
-            
-               # try (load remotely) <
-               # except (then local) <
-               try:
+
+            rData[k1][k2] = {
+               
+               # if (data) <
+               # else (then style/content) <
+               False : requestsGet(v),
+               True : {
                   
-                  f = requestsGet(v)
-                  self.status[k1][k2] = 'remote'
-                              
-               except:
-                  
-                  self.status[k1][k2] = 'local'
-                  f = fileGet(f'frontend/{k1}/{k2}.json')
+                  False : lambda : requestsGet(v),
+                  True : lambda : fileGet(f'frontend/{k1}/{k2}.json')
+               
+               }[self.developerMode]()
                
                # >
-                           
-            else:
                
-               self.status[k1][k2] = 'local'
-               f = fileGet(f'frontend/{k1}/{k2}.json')
-            
-            # >
-         
-            rData[k1][k2] = f
+            }[k1 in ['style', 'content']]
          
       return rData

@@ -2,11 +2,33 @@
 
    "connections" : {
 
-      "ala2q6" : "https://github.com/ala2q6",
-      "lxRbckl" : "https://github.com/lxRbckl",
-      "Email" : "mailto:lxrbckl@protonmail.com",
-      "LeetCode" : "https://leetcode.com/lxRbckl/",
-      "LinkedIn" : "https://www.linkedin.com/in/lxRbckl/"
+      "ala2q6" : {
+         
+         "icon" : "https://cdn.discordapp.com/attachments/1206755132813873203/1213866493255884830/Untitled.png?ex=65f70844&is=65e49344&hm=90af40698565b0e7cdedd041017a7abef8b71c9faf2b3017501aca98b937b49c&",
+         "link" : "https://github.com/ala2q6"
+      
+      },
+      "lxRbckl" : {
+         
+         "icon" : "https://cdn.discordapp.com/attachments/1206755132813873203/1213866493255884830/Untitled.png?ex=65f70844&is=65e49344&hm=90af40698565b0e7cdedd041017a7abef8b71c9faf2b3017501aca98b937b49c&",
+         "link" : "https://github.com/lxRbckl"
+      
+      },
+      "Email" : {
+         
+         "link" : "mailto:lxrbckl@protonmail.com"
+      
+      },
+      "LeetCode" : {
+         
+         "link" : "https://leetcode.com/lxRbckl/"
+      
+      },
+      "LinkedIn" : {
+         
+         "link" : "https://www.linkedin.com/in/lxRbckl/"
+      
+      }
 
    }
 

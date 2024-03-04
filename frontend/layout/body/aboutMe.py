@@ -11,7 +11,8 @@ class aboutMe:
    def __init__(self):
       '''  '''
       
-      self.id = 'b1'
+      self.id = 'b1'   
+      self.waitVideo = 2
       self.title = 'about me'
    
    
@@ -42,6 +43,7 @@ class aboutMe:
    def board(
       
       self,
+      pData,
       pStyle,
       pContent
    
@@ -60,8 +62,8 @@ class aboutMe:
                height = 'auto',
                playing = False,
                id = 'backgroundVideoId',
-               url = pContent['background'],
-               style = {'margin' : '0 0 -1% 0'}
+               style = {'margin' : '0 0 -1% 0'},
+               url = pContent['aboutMe']['background']
                
             ),
             html.Div(
@@ -89,7 +91,7 @@ class aboutMe:
                            width = 8,
                            children = html.H1(
                               
-                              children = pContent['title'],
+                              children = pContent['aboutMe']['title'],
                               style = {
                                  
                                  'color' : '#181A1B',
@@ -133,7 +135,7 @@ class aboutMe:
                               
                            )
                            
-                        for i in pContent['body']]
+                        for i in pContent['aboutMe']['body']]
                         
                      ]
                      
@@ -152,7 +154,7 @@ class aboutMe:
                                  
                                  style = {
                                     
-                                    'justify' : 'align',
+                                    'paddingTop' : '1%',
                                     'backdropFilter' : 'blur(15px)',
                                     'borderTop' : '1px solid #181A1B'
                                     
@@ -169,7 +171,7 @@ class aboutMe:
                               
                            )
                            
-                        for k, v in pContent['footer'].items()]
+                        for k, v in pContent['aboutMe']['footer'].items()]
                         
                      ]
                      

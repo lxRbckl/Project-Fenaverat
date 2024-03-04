@@ -21,8 +21,9 @@ class framework:
       self.footer = None
       self.database = None
       
-      self.defaultBoard = 'b1'
-      self.colWidth = 'col-sm-11 col-md-8 col-lg-10 col-xl-9'
+      self.bodyDelay = 2
+      self.colWidth = 1000
+      self.defaultBoard = 'b2'
       
       # >
 
@@ -67,12 +68,11 @@ class framework:
       
       self, 
       pData,
-      pRate,
-      pStatus
+      pUpdateRate
       
    ):
       '''  '''
-      
+            
       return [
          
          # header <
@@ -83,8 +83,7 @@ class framework:
             justify = 'center',
             children = self.header.component(
                
-               pRate = pRate,
-               pStatus = pStatus,
+               pUpdateRate = pUpdateRate,
                pStyle = pData['style']['header'],
                pContent = pData['content']['header']
                
@@ -97,11 +96,12 @@ class framework:
             justify = 'center',
             children = dbc.Col(
                
-               width = self.colWidth,
                style = {
                   
-                  'background' : '#F7F5F1',
-                  'paddingBottom' : '0.5%'
+                  'paddingBottom' : '0.5%',
+                  'minWidth' : self.colWidth,
+                  'maxWidth' : self.colWidth,
+                  'backgroundColor' : '#F7F5F1'
                   
                },
                children = dbc.Accordion(
@@ -123,8 +123,9 @@ class framework:
                         title = v.title,
                         children = v.board(
                            
-                           pContent = pData['content'][k],
-                           pStyle = pData['style']['body']
+                           pData = pData['data'],
+                           pStyle = pData['style'],
+                           pContent = pData['content']
                            
                         )
                         
@@ -166,7 +167,7 @@ class framework:
       def bodyCallback(i):
          '''  '''
                   
-         sleep(self.database.bodyDelay)
+         sleep(self.bodyDelay)
          return self.defaultBoard
       
    
@@ -182,11 +183,11 @@ class framework:
       def aboutMeCallback(i):
          '''  '''
          
-         # <
-         # <
-         if (self.defaultBoard == i):
+         # if () <
+         # else (then ) <
+         if ((i) == self.body['aboutMe'].id):
             
-            sleep(self.database.aboutMeDelay)
+            sleep(self.body['aboutMe'].waitVideo)
             return True
          
          else: return False
@@ -208,8 +209,7 @@ class framework:
          
          return self.components(
             
-            pRate = self.database.rate,
-            pData = self.database.get(),
-            pStatus = self.database.status
+            pUpdateRate = self.database.updateRate,
+            pData = self.database.get()
             
          )
