@@ -12,6 +12,7 @@ class myProjects:
       
       self.id = 'b2'
       self.title = 'my projects'
+      self.y = 1
    
    
    def cardsLoad(self, pIterable):
