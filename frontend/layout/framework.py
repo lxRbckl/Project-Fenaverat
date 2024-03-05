@@ -21,8 +21,8 @@ class framework:
       self.footer = None
       self.database = None
       
-      self.bodyDelay = 2
       self.colWidth = 1000
+      self.bodyLoadDelay = 0
       self.defaultBoard = 'b2'
       
       # >
@@ -34,12 +34,12 @@ class framework:
       return html.Div(
          
          style = {
-            
+                        
             'width' : '100vw',
             'height' : '100vh',
-            'paddingTop' : '2%',
-            'overflow-x' : 'hidden',
+            'paddingTop' : '1%',
             'paddingBottom' : '1%',
+            'overflow-x' : 'hidden',
             'background' : '#181A1B'
             
          },                  
@@ -98,7 +98,7 @@ class framework:
                
                style = {
                   
-                  'paddingBottom' : '0.5%',
+                  'paddingBottom' : 5,
                   'minWidth' : self.colWidth,
                   'maxWidth' : self.colWidth,
                   'backgroundColor' : '#F7F5F1'
@@ -110,7 +110,7 @@ class framework:
                   active_item = None,
                   id = 'bodyAccordionId',
                   style = {
-                     
+                                          
                      'borderTop' : '1px solid #181A1B',
                      'borderBottom' : '1px solid #181A1B'
                      
@@ -167,7 +167,7 @@ class framework:
       def bodyCallback(i):
          '''  '''
                   
-         sleep(self.bodyDelay)
+         sleep(self.bodyLoadDelay)
          return self.defaultBoard
       
    

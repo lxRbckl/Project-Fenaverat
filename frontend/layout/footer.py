@@ -43,11 +43,12 @@ class footer(framework):
                      width = 'auto',
                      children = dbc.Row(
                         
+                        justify = 'between',
                         children = [
                            
                            dbc.Col(
                               
-                              width = 1,
+                              width = 'auto',
                               children = {
                                  
                                  'link' : html.A(
@@ -71,7 +72,8 @@ class footer(framework):
                                     src = v,
                                     style = {
                                        
-                                       'height' : '1.1em',
+                                       'marginRight' : -25,
+                                       'height' : '1.2em',
                                        'vertical-align' : 'middle'
                                        
                                     }

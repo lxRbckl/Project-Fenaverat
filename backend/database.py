@@ -17,8 +17,8 @@ class database:
          
          'data' : {
             
-            'projects' : 'https://raw.githubusercontent.com/lxRbckl/Project-Heimir/Project-Heimir-2/data.json',
-            'servers' : 'https://raw.githubusercontent.com/lxRbckl/Project-Acta-Mea/Project-Acta-Mea-5/data.json'
+            'myProjects' : 'https://raw.githubusercontent.com/lxRbckl/Project-Heimir/Project-Heimir-2/data.json',
+            'myServers' : 'https://raw.githubusercontent.com/lxRbckl/Project-Acta-Mea/Project-Acta-Mea-5/data.json'
             
          },
          'style' : {

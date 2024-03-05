@@ -1,5 +1,6 @@
 # import <
 from dash import html
+from random import shuffle
 import dash_bootstrap_components as dbc
 
 # >
@@ -11,14 +12,51 @@ class myProjects:
       '''  '''
       
       self.id = 'b2'
+      self.maxHeight = 350
       self.title = 'my projects'
-      self.y = 1
-   
-   
-   def cardsLoad(self, pIterable):
+      self.cardsPriority = ['guide']
+      self.cards = {
+         
+         'project' : self.cardProject,
+         'picture' : self.cardPicture,
+         'guide' : self.cardGuide
+         
+      }
+      
+      
+   def cardGuide(i):
       '''  '''
-
-      print(pIterable)
+   
+      pass
+   
+   
+   def cardPicture(i):
+      '''  '''
+   
+      pass
+   
+   
+   def cardProject(i):
+      '''  '''
+   
+      pass
+   
+   
+   def cardsLoad(
+      
+      self,
+      pCards, # <- possible removal LATER
+      pIterable
+      
+   ):
+      '''  '''
+   
+      rCards = []
+      for t, i in pIterable:
+         
+         rCards.append(html.H1('ok'))
+      
+      return rCards
    
    
    def board(
@@ -26,35 +64,55 @@ class myProjects:
       self,
       pData,
       pStyle,
-      pContent
+      pContent,
+      
+      pKey = 'myProjects'
    
    ):
       '''  '''
-
-      projects = pData['projects']
-      images = pContent['myProjects']['images']
-      information = pContent['myProjects']['information']
             
-      self.cardsLoad(pIterable = {
-         
-         'images' : images,
-         'information' : information,
-         'projects' : {k2 : v2 for v in projects.values() for k2, v2 in v.items()}
-         
-      })
-      
-      
       return dbc.Row(
          
          style = {
+
+            'display' : 'grid',
+            'overflow-x': 'auto',
+            'overflow-y': 'hidden',
+            'scrollbar-width' : 'thin',
+            'grid-auto-flow' : 'column',
             
-            'backgroundColor' : '#F7F5F1'
+            'backgroundSize' : 'cover',
+            'backgroundRepeat' : 'noRepeat',
+            'backgroundPosition' : 'center',
+            'backgroundImage' : 'url({})'.format(pContent[pKey]['background'])
          
          },
          children = [
             
-            html.H1('ok')
+            dbc.Col(
+               
+               width = 'auto',
+               children = c,
+               style = {
+
+
+                  'display' : 'grid'
+
+               }
+               
+            )
             
-         ]
+         for c in self.cardsLoad(
+            
+            pCards = self.cards,
+            pIterable = [
+            
+               *[('picture', i) for i in pContent[pKey]['picture']],
+               *[('guide', kv) for kv in pContent[pKey]['guide'].items()],
+               *[('project', kv) for v in pData[pKey].values() for kv in v.items()]
+               
+            ]
+            
+         )]
          
       )

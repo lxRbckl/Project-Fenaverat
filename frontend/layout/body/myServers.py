@@ -16,9 +16,20 @@ class myServers(myProjects):
       
       self.id = 'b3'
       self.title = 'my servers'
-
+      self.cards = {
+         
+         'project' : self.cardProject,
+         'picture' : self.cardPicture,
+         'guide' : self.cardGuide
+         
+      }
    
-
+   
+   
+   def cardServer(i):
+      '''  '''
+   
+      pass
    
    
    def board(
@@ -30,6 +41,8 @@ class myServers(myProjects):
    
    ):
       '''  '''
+      
+      
       
       return dbc.Row(
          

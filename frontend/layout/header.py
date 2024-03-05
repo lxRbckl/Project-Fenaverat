@@ -46,11 +46,12 @@ class header(framework):
                      
                      children = pContent['title'],
                      style = {
-                              
-                        'margin' : 0,     
+                                                      
+                        'padding' : 0,
                         'fontSize' : 85,
                         'lineHeight' : 0.9,
                         'color' : '#181A1B',
+                        'margin' : '0 0 -10px 0',
                         'fontFamily' : 'Helveticamazing'
                         
                      }

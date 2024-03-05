@@ -1,12 +1,18 @@
 {
+   "icon" : {
+
+      "wiki" : "https://cdn.discordapp.com/attachments/1206754760280113182/1214243542348865616/Untitled_2.png?ex=65f8676c&is=65e5f26c&hm=787eba9750986d0fb8ce027944a4c10dc8e8e0d7fbfb9f291b0c5846920cb41e&",
+      "github" : "https://cdn.discordapp.com/attachments/1206754760280113182/1214241950690189442/Untitled_1.png?ex=65f865f0&is=65e5f0f0&hm=9b422541bf4b7c105f1701fc9704542aaf93b97f2bdd34fd266e67087c4a51c1&"
+
+   },
    "background" : "https://cdn.discordapp.com/attachments/768440729303253022/922028208944209942/20210326_065642.jpg?ex=65f69c2f&is=65e4272f&hm=e19853d67d7dae8c4b94319feed07c5691f6c4240760f5f8a19e1725fd0caa6e&",
-   "images" : [
+   "picture" : [
 
       "https://www.thisiscolossal.com/wp-content/uploads/2020/05/hubble-3.jpg",
       "https://www.thisiscolossal.com/wp-content/uploads/2020/05/hubble-3.jpg"
 
    ],
-   "information" : {
+   "guide" : {
 
       "Explore" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
 
