@@ -28,8 +28,55 @@ class myProjects(aboutMe):
       
    def cardGuide(self, i):
       '''  '''
-   
-      return None
+
+      return dbc.CardBody(
+         
+         style = {'padding' : 5},
+         children = [
+            
+            html.H4(
+               
+               children = i[0],
+               style = {
+                  
+                  'fontSize' : 29,
+                  'color' : '#F7F5F1',
+                  'fontWeight' : 'bold',
+                  'fontFamily' : 'helvetica',
+                  'margin' : '-7px 0px 0px -1px'
+                  
+               }
+               
+            ),
+            html.Hr(style = {
+               
+               'padding' : 0,
+               'color' : '#F7F5F1',
+               'margin' : '2px 0px 4px 0px'
+               
+            }),
+            *[
+               
+               html.P(
+                  
+                  children = j,
+                  style = {
+                     
+                     'fontSize' : 15,
+                     'color' : '#F7F5F1',
+                     'textAlign' : 'justify',
+                     'fontFamily' : 'helvetica',
+                     'margin' : '0px 0px 7px 0px'
+                     
+                  }
+                  
+               )
+               
+            for j in i[1]]
+            
+         ]
+         
+      )
    
    
    def cardImage(self, i):
@@ -39,7 +86,7 @@ class myProjects(aboutMe):
          
          src = i,
          style = {
-                        
+                       
             'width' : '100%', 
             'height' : '100%',
             'borderRadius' : 0,
@@ -89,7 +136,7 @@ class myProjects(aboutMe):
                'borderRadius' : 0,
                'background' : 'transparent',
                'border' : '1px solid #181A1B',
-               'backdropFilter' : 'blur(15px)'
+               'backdropFilter' : 'blur(20px)'
                
             }
             
