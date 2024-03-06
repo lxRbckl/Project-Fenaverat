@@ -40,7 +40,8 @@ class framework:
             'paddingTop' : '1%',
             'paddingBottom' : '1%',
             'overflow-x' : 'hidden',
-            'background' : '#181A1B'
+            'background' : '#181A1B',
+            'scrollbar-width' : 'thin'
             
          },                  
          children = [

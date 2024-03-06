@@ -18,9 +18,9 @@ class myServers(myProjects):
       self.title = 'my servers'
       self.cards = {
          
-         'project' : self.cardProject,
-         'picture' : self.cardPicture,
-         'guide' : self.cardGuide
+         'image' : self.cardImage,
+         'guide' : self.cardGuide,
+         'server' : self.cardServer
          
       }
    

@@ -17,35 +17,50 @@ class myProjects:
       self.cardsPriority = ['guide']
       self.cards = {
          
-         'project' : self.cardProject,
-         'picture' : self.cardPicture,
-         'guide' : self.cardGuide
+         'guide' : self.cardGuide,
+         'image' : self.cardImage,
+         'project' : self.cardProject
          
       }
       
       
-   def cardGuide(i):
+   def cardGuide(self, i):
       '''  '''
    
-      pass
+      return None
    
    
-   def cardPicture(i):
+   def cardImage(self, i):
+      '''  '''
+
+      return dbc.CardImg(
+         
+         src = i,
+         style = {
+            
+            'background' : 'blue',
+            
+            'padding' : 2.5,
+            'width' : '100%', 
+            'height' : '100%',
+            'borderRadius' : 0,
+            'object-fit' : 'cover'
+                  
+         }
+                  
+      )
+   
+   
+   def cardProject(self, i):
       '''  '''
    
-      pass
-   
-   
-   def cardProject(i):
-      '''  '''
-   
-      pass
+      return None
    
    
    def cardsLoad(
       
       self,
-      pCards, # <- possible removal LATER
+      pCards,
       pIterable
       
    ):
@@ -54,7 +69,30 @@ class myProjects:
       rCards = []
       for t, i in pIterable:
          
-         rCards.append(html.H1('ok'))
+         {
+            
+            # if (not priority) <
+            # else (then priority) <
+            False : lambda i : rCards.append(i),
+            True : lambda i : rCards.insert(0, i)
+            
+            # >
+            
+         }[t in self.cardsPriority](dbc.Card(
+            
+            children = pCards[t](i),
+            style = {
+               
+               'padding' : 0,
+               'width' : '18rem',
+               'height' : '21rem',
+               'margin' : '2.5px',
+               'background' : 'red',
+               'borderRadius' : 0
+               
+            }
+            
+         ))
       
       return rCards
    
@@ -76,43 +114,28 @@ class myProjects:
          style = {
 
             'display' : 'grid',
-            'overflow-x': 'auto',
+            'overflow-x' : 'auto',
             'overflow-y': 'hidden',
             'scrollbar-width' : 'thin',
-            'grid-auto-flow' : 'column',
             
-            'backgroundSize' : 'cover',
-            'backgroundRepeat' : 'noRepeat',
-            'backgroundPosition' : 'center',
+            'grid-auto-flow' : 'column',
+            'padding' : '2.5px 15px 2.5px 14px',
+            
+            'object-fit' : 'cover',
             'backgroundImage' : 'url({})'.format(pContent[pKey]['background'])
          
          },
-         children = [
-            
-            dbc.Col(
-               
-               width = 'auto',
-               children = c,
-               style = {
-
-
-                  'display' : 'grid'
-
-               }
-               
-            )
-            
-         for c in self.cardsLoad(
+         children = self.cardsLoad(
             
             pCards = self.cards,
             pIterable = [
-            
-               *[('picture', i) for i in pContent[pKey]['picture']],
+               
+               *[('image', i) for i in pContent[pKey]['image']],
                *[('guide', kv) for kv in pContent[pKey]['guide'].items()],
                *[('project', kv) for v in pData[pKey].values() for kv in v.items()]
                
             ]
             
-         )]
+         )
          
       )
