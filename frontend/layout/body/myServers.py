@@ -12,7 +12,7 @@ class myServers(myProjects):
    def __init__(self):
       '''  '''
       
-      super().__init__()
+      # super().__init__()
       
       self.id = 'b3'
       self.title = 'my servers'
@@ -23,7 +23,6 @@ class myServers(myProjects):
          'server' : self.cardServer
          
       }
-   
    
    
    def cardServer(i):

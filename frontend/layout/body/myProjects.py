@@ -1,4 +1,6 @@
 # import <
+from .aboutMe import aboutMe
+
 from dash import html
 from random import shuffle
 import dash_bootstrap_components as dbc
@@ -6,7 +8,7 @@ import dash_bootstrap_components as dbc
 # >
 
 
-class myProjects:
+class myProjects(aboutMe):
    
    def __init__(self):
       '''  '''
@@ -37,10 +39,7 @@ class myProjects:
          
          src = i,
          style = {
-            
-            'background' : 'blue',
-            
-            'padding' : 2.5,
+                        
             'width' : '100%', 
             'height' : '100%',
             'borderRadius' : 0,
@@ -83,12 +82,14 @@ class myProjects:
             children = pCards[t](i),
             style = {
                
-               'padding' : 0,
                'width' : '18rem',
+               'padding' : '5px',
                'height' : '21rem',
                'margin' : '2.5px',
-               'background' : 'red',
-               'borderRadius' : 0
+               'borderRadius' : 0,
+               'background' : 'transparent',
+               'border' : '1px solid #181A1B',
+               'backdropFilter' : 'blur(15px)'
                
             }
             
@@ -121,7 +122,8 @@ class myProjects:
             'grid-auto-flow' : 'column',
             'padding' : '2.5px 15px 2.5px 14px',
             
-            'object-fit' : 'cover',
+            'backgroundSize' : 'cover',
+            'backgroundPosition' : 'center',
             'backgroundImage' : 'url({})'.format(pContent[pKey]['background'])
          
          },
