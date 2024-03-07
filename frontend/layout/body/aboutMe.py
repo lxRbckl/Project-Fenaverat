@@ -20,38 +20,56 @@ class aboutMe:
       
       self,
       pStyle,
-      pIterable
+      pIterable,
+      
+      isService = True
       
    ):
       '''  '''
-   
+
       return [
-         
-         dbc.Badge(
-            
-            color = None,
-            children = i,
-            text_color = None,
-            style = {
+                     
+            dbc.Badge(
                
-               'color' : '#181A1B',
-               'fontFamily' : 'helvetica',
-               'margin' : '1px 2px 1px 2px',
-               'border' : '1px solid #F7F5F1',
-               'backgroundColor' : {
+               color = None,
+               children = i.replace('-', ' ') if (i) else None,
+               text_color = None,
+               style = {
                   
-                  '...' : '#C6AF97',
-                  'package' : '#AA7F74',
-                  'language' : '#96867F'
+                  'color' : '#181A1B',
+                  'fontFamily' : 'helvetica',
+                  'margin' : '1px 2px 1px 2px',
+                  'border' : '1px solid #F7F5F1',
+                  'backgroundColor' : {
+                     
+                     'service' : '#C6AF97',
+                     'packages' : '#AA7F74',
+                     'languages' : '#96867F'
+                     
+                  }[k],
+                  **{
+                     
+                     True : {
+                        
+                        'width' : '100%',
+                        'textAlign' : 'left'
+                        
+                     },
+                     False : {
+                        
+                        'width' : 'auto',
+                        'textAlign' : 'center'
+                        
+                     }
+                     
+                  }[isService]
                   
-               }[t]
+               }
                
-            }
-            
-         )
+            )
          
-      for t, i in pIterable]
-   
+      for k, v in pIterable.items() for i in v]
+         
    
    def board(
       
@@ -75,7 +93,7 @@ class aboutMe:
                height = 'auto',
                playing = False,
                id = 'backgroundVideoId',
-               style = {'margin' : '0 0 -5px 0'}, # <- was -5%
+               style = {'margin' : '0 0 -5px 0'},
                url = pContent['aboutMe']['background']
                
             ),
@@ -187,7 +205,7 @@ class aboutMe:
                            style = {
                               
                               'margin' : '0px 0px 0px 0px',
-                              'padding' : '3px 1px 4px 3px',
+                              'padding' : '3px 7px 4px 3px',
                               'backdropFilter' : 'blur(20px)',
                               'borderLeft' : '1px solid #181A1B',
                               'borderRight' : '1px solid #181A1B',

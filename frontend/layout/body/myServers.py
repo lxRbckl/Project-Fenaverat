@@ -11,9 +11,7 @@ class myServers(myProjects):
    
    def __init__(self):
       '''  '''
-      
-      # super().__init__()
-      
+            
       self.id = 'b3'
       self.title = 'my servers'
       self.cards = {

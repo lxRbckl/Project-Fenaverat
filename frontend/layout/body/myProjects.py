@@ -99,10 +99,7 @@ class myProjects(aboutMe):
    
    def cardProject(self, i):
       '''  '''
-   
-      print(i[0]) # remove
-      print(i[1]) # remove
-      print('--------------') # remove
+
       return [
          
          dbc.CardHeader(
@@ -133,7 +130,7 @@ class myProjects(aboutMe):
                      'color' : '#F7F5F1',
                      'textAlign' : 'justify',
                      'fontFamily' : 'helvetica',
-                     'margin' : '-3px 0px 7px 0px'
+                     'margin' : '-3px 0px 4px 0px'
                      
                   }
                   
@@ -142,7 +139,7 @@ class myProjects(aboutMe):
                   
                   'padding' : 0,
                   'color' : '#F7F5F1',
-                  'margin' : '0px 0px 4px 0px'
+                  'margin' : '0px 0px -3px 0px'
                   
                })
                            
@@ -151,13 +148,33 @@ class myProjects(aboutMe):
          ),
          dbc.CardBody(
             
-            style = {'padding' : 10, 'border' : 'none'},
-            children = None
+            style = {
+                     
+               'border' : 'none',
+               'padding' : '0px 12px 10px 8px'
+               
+            },
+            children = self.badge(
+               
+               pStyle = None,
+               pIterable = {
+                  
+                  'languages' : i[1]['languages'],
+                  'packages' : i[1]['packages']
+                  
+               }
+               
+            )
             
          ),
          dbc.CardFooter(
             
-            style = {'padding' : 10, 'border' : 'none'},
+            style = {
+               
+               'border' : 'none',
+               'padding' : 10
+               
+            },
             children = None
             
          )
