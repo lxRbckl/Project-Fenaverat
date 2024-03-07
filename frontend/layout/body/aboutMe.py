@@ -122,7 +122,7 @@ class aboutMe:
                                  'color' : '#181A1B',
                                  'marginLeft' : '-3px',
                                  'fontFamily' : 'helvetica',
-                                 'margin' : '-7px 0px -10px -2px'
+                                 'margin' : '-7px 0px -10px -1px'
                                  
                               }
                               

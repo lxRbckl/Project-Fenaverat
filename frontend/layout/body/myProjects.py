@@ -31,7 +31,7 @@ class myProjects(aboutMe):
 
       return dbc.CardBody(
          
-         style = {'padding' : 5},
+         style = {'padding' : 10},
          children = [
             
             html.H4(
@@ -100,7 +100,69 @@ class myProjects(aboutMe):
    def cardProject(self, i):
       '''  '''
    
-      return None
+      print(i[0]) # remove
+      print(i[1]) # remove
+      print('--------------') # remove
+      return [
+         
+         dbc.CardHeader(
+            
+            style = {'padding' : 10, 'border' : 'none'},
+            children = [
+               
+               html.H4(
+                  
+                  children = i[0].replace('-', ' '),
+                  style = {
+                                          
+                     'fontSize' : 29,
+                     'color' : '#F7F5F1',
+                     'fontWeight' : 'bold',
+                     'fontFamily' : 'helvetica',
+                     'margin' : '-7px 0px 0px 0px'
+                     
+                  }
+                  
+               ),
+               html.P(
+                  
+                  children = i[1]['description'],
+                  style = {
+                     
+                     'fontSize' : 15,
+                     'color' : '#F7F5F1',
+                     'textAlign' : 'justify',
+                     'fontFamily' : 'helvetica',
+                     'margin' : '-3px 0px 7px 0px'
+                     
+                  }
+                  
+               ),
+               html.Hr(style = {
+                  
+                  'padding' : 0,
+                  'color' : '#F7F5F1',
+                  'margin' : '0px 0px 4px 0px'
+                  
+               })
+                           
+            ]
+            
+         ),
+         dbc.CardBody(
+            
+            style = {'padding' : 10, 'border' : 'none'},
+            children = None
+            
+         ),
+         dbc.CardFooter(
+            
+            style = {'padding' : 10, 'border' : 'none'},
+            children = None
+            
+         )
+         
+      ]
    
    
    def cardsLoad(
@@ -129,8 +191,8 @@ class myProjects(aboutMe):
             children = pCards[t](i),
             style = {
                
+               'padding' : 0,
                'width' : '18rem',
-               'padding' : '5px',
                'height' : '21rem',
                'margin' : '2.5px',
                'borderRadius' : 0,
