@@ -26,47 +26,67 @@ class myProjects(aboutMe):
       }
       
       
-   def cardGuide(self, i):
+   def cardGuide(
+      
+      self,
+      i,
+      pStyle,
+      pContent
+      
+   ):
       '''  '''
 
-      return dbc.CardBody(
+      return [
          
-         style = {'padding' : 10},
-         children = [
+         dbc.CardHeader(
             
-            html.H4(
+            style = {
+               
+               'padding' : 5,
+               'borderRadius' : 0,
+               'border' : '1px solid #F7F5F1'
+               
+            },
+            children = html.H4(
                
                children = i[0],
                style = {
-                  
+                                    
+                  'padding' : 0,                  
                   'fontSize' : 29,
                   'color' : '#F7F5F1',
                   'fontWeight' : 'bold',
                   'fontFamily' : 'helvetica',
-                  'margin' : '-7px 0px 0px -1px'
+                  'margin' : '-7px 0px -8px -1px'
                   
                }
                
-            ),
-            html.Hr(style = {
+            )
+            
+         ),
+         dbc.CardBody(
+            
+            style = {
                
-               'padding' : 0,
-               'color' : '#F7F5F1',
-               'margin' : '2px 0px 4px 0px'
+               'padding' : 5,
+               'borderLeft' : '1px solid #F7F5F1',
+               'borderRight' : '1px solid #F7F5F1',
+               'borderBottom' : '1px solid #F7F5F1'
                
-            }),
-            *[
+            },
+            children = [
                
                html.P(
                   
                   children = j,
                   style = {
-                     
+                                          
                      'fontSize' : 15,
                      'color' : '#F7F5F1',
                      'textAlign' : 'justify',
                      'fontFamily' : 'helvetica',
-                     'margin' : '0px 0px 7px 0px'
+                     'margin' : '-6px 0px 0px 0px',
+                     'padding' : '0px 0px 5px 0px'
                      
                   }
                   
@@ -74,12 +94,19 @@ class myProjects(aboutMe):
                
             for j in i[1]]
             
-         ]
+         )
          
-      )
+      ]
    
    
-   def cardImage(self, i):
+   def cardImage(
+      
+      self,
+      i,
+      pStyle,
+      pContent
+      
+   ):
       '''  '''
 
       return dbc.CardImg(
@@ -97,14 +124,28 @@ class myProjects(aboutMe):
       )
    
    
-   def cardProject(self, i):
+   def cardProject(
+      
+      self,
+      i,
+      pStyle,
+      pContent
+      
+   ):
       '''  '''
 
       return [
          
          dbc.CardHeader(
             
-            style = {'padding' : 10, 'border' : 'none'},
+            style = {
+               
+               'padding' : 5, 
+               'border' : 'none',
+               'borderRadius' : 0,
+               'border' : '1px solid #F7F5F1'
+            
+            },
             children = [
                
                html.H4(
@@ -125,23 +166,16 @@ class myProjects(aboutMe):
                   
                   children = i[1]['description'],
                   style = {
-                     
+                                          
                      'fontSize' : 15,
                      'color' : '#F7F5F1',
                      'textAlign' : 'justify',
                      'fontFamily' : 'helvetica',
-                     'margin' : '-3px 0px 4px 0px'
+                     'margin' : '-4px -1px -7px 0px'
                      
                   }
                   
-               ),
-               html.Hr(style = {
-                  
-                  'padding' : 0,
-                  'color' : '#F7F5F1',
-                  'margin' : '0px 0px -3px 0px'
-                  
-               })
+               )
                            
             ]
             
@@ -150,8 +184,10 @@ class myProjects(aboutMe):
             
             style = {
                      
+               'padding' : 5,
                'border' : 'none',
-               'padding' : '0px 12px 10px 8px'
+               'borderLeft' : '1px solid #F7F5F1',
+               'borderRight' : '1px solid #F7F5F1'
                
             },
             children = self.badge(
@@ -171,11 +207,74 @@ class myProjects(aboutMe):
             
             style = {
                
+               'padding' : 5,
                'border' : 'none',
-               'padding' : 10
+               'borderRadius' : 0,
+               'border' : '1px solid #F7F5F1'
                
             },
-            children = None
+            children = [
+               
+               dbc.Row(
+                  
+                  justify = 'between',
+                  style = {'margin' : '-5px -12px -3px -12px'},
+                  children = [
+                     
+                     # repo <
+                     # wiki <
+                     dbc.Col(
+                        
+                        width = 'auto',
+                        children = html.A(
+
+                           target = '_blank',
+                           href = i[1]['url'],
+                           children = html.Img(
+                              
+                              src = pContent['myProjects']['icon']['repo'],
+                              style = {
+                                 
+                                 'width' : 'auto',
+                                 'height' : '17px'
+                                 
+                              }
+                              
+                           )
+                           
+                        )
+                        
+                     ),
+                     dbc.Col(
+                        
+                        width = 'auto',
+                        children = html.A(
+                           
+                           target = '_blank',
+                           href = i[1]['url'] + '/wiki',
+                           children = html.Img(
+                              
+                              src = pContent['myProjects']['icon']['wiki'],
+                              style = {
+                                 
+                                 'width' : 'auto',
+                                 'height' : '17px'
+                                 
+                              }
+                              
+                           )
+                           
+                        )
+                        
+                     )
+                     
+                     # >
+                     
+                  ]
+                  
+               )
+               
+            ]
             
          )
          
@@ -186,6 +285,8 @@ class myProjects(aboutMe):
       
       self,
       pCards,
+      pStyle,
+      pContent,
       pIterable
       
    ):
@@ -205,7 +306,13 @@ class myProjects(aboutMe):
             
          }[t in self.cardsPriority](dbc.Card(
             
-            children = pCards[t](i),
+            children = pCards[t](
+               
+               i = i,
+               pStyle = pStyle,
+               pContent = pContent
+            
+            ),
             style = {
                
                'padding' : 0,
@@ -255,7 +362,9 @@ class myProjects(aboutMe):
          },
          children = self.cardsLoad(
             
+            pStyle = pStyle,
             pCards = self.cards,
+            pContent = pContent,
             pIterable = [
                
                *[('image', i) for i in pContent[pKey]['image']],
