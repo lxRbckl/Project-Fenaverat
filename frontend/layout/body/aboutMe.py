@@ -19,10 +19,9 @@ class aboutMe:
    def badge(
       
       self,
-      pList,
-      pColor,
-      pTextColor
-   
+      pStyle,
+      pIterable
+      
    ):
       '''  '''
    
@@ -30,14 +29,28 @@ class aboutMe:
          
          dbc.Badge(
             
+            color = None,
             children = i,
-            color = pColor,
-            text_color = pTextColor,
-            class_name = 'border me-1'
+            text_color = None,
+            style = {
+               
+               'color' : '#181A1B',
+               'fontFamily' : 'helvetica',
+               'margin' : '1px 2px 1px 2px',
+               'border' : '1px solid #F7F5F1',
+               'backgroundColor' : {
+                  
+                  '...' : '#C6AF97',
+                  'package' : '#AA7F74',
+                  'language' : '#96867F'
+                  
+               }[t]
+               
+            }
             
          )
          
-      for i in pList]
+      for t, i in pIterable]
    
    
    def board(
@@ -62,45 +75,57 @@ class aboutMe:
                height = 'auto',
                playing = False,
                id = 'backgroundVideoId',
-               style = {'margin' : '0 0 -1% 0'},
+               style = {'margin' : '0 0 -5px 0'}, # <- was -5%
                url = pContent['aboutMe']['background']
                
             ),
-            html.Div(
+            dbc.Row(
                
                style = {
                   
                   'top' : 0,
+                  'margin' : 0,
                   'width' : '100%',
-                  'padding' : '1%',
+                  'padding' : '5px',
                   'position' : 'absolute'
                   
                },
                children = [
                   
                   # title <
-                  # body <
-                  # footer <
+                  # content <
+                  # ecosystem <
                   dbc.Row(
                      
+                     style = {'padding' : 0, 'margin' : 0},
                      children = [
                         
                         dbc.Col(width = 4),
                         dbc.Col(
                            
                            width = 8,
+                           style = {
+                                                            
+                              'margin' : 0,
+                              'padding' : 5,
+                              'border' : '1px solid #181A1B',
+                              'backdropFilter' : 'blur(20px)'
+                              
+                           },
                            children = html.H1(
                               
                               children = pContent['aboutMe']['title'],
                               style = {
-                                 
+
+                                 'padding' : 0,
+                                 'fontSize' : 38,
                                  'color' : '#181A1B',
+                                 'marginLeft' : '-3px',
                                  'fontFamily' : 'helvetica',
-                                 'backdropFilter' : 'blur(15px)',
-                                 'borderTop' : '1px solid #181A1B'
+                                 'margin' : '-7px 0px -10px -2px'
                                  
                               }
-                           
+                              
                            )
                            
                         )
@@ -108,16 +133,26 @@ class aboutMe:
                      ]
                      
                   ),
-                  dbc.Row(
+                  *[
                      
-                     children = [
+                     dbc.Row(
                         
-                        dbc.Col(width = 4),
-                        *[
+                        style = {'margin' : 0, 'padding' : 0},
+                        children = [
                            
+                           dbc.Col(width = 4),
                            dbc.Col(
                               
-                              width = 4,
+                              style = {
+                                 
+                                 'padding' : 5,
+                                 'margin' : '0px 0px 0px 0px',
+                                 'backdropFilter' : 'blur(20px)',
+                                 'borderLeft' : '1px solid #181A1B',
+                                 'borderRight' : '1px solid #181A1B',
+                                 'borderBottom' : '1px solid #181A1B'
+                                 
+                              },
                               children = html.P(
                                  
                                  children = i,
@@ -126,8 +161,8 @@ class aboutMe:
                                     'fontSize' : 15,
                                     'color' : '#181A1B',
                                     'textAlign' : 'justify',
-                                    'backdropFilter' : 'blur(15px)',
-                                    'borderBottom' : '1px solid #181A1B'
+                                    'fontFamily' : 'helvetica',
+                                    'margin' : '-6px 0px -6px -1px'
                                     
                                  }
                                  
@@ -135,43 +170,38 @@ class aboutMe:
                               
                            )
                            
-                        for i in pContent['aboutMe']['body']]
+                        ]
                         
-                     ]
+                     )
                      
-                  ),
+                  for i in pContent['aboutMe']['content']],
                   dbc.Row(
                      
+                     style = {'margin' : 0, 'padding' : 0},
                      children = [
                         
                         dbc.Col(width = 4),
-                        *[
+                        dbc.Col(
                            
-                           dbc.Col(
+                           width = 8,
+                           style = {
                               
-                              width = v['width'],
-                              children = html.Div(
-                                 
-                                 style = {
-                                    
-                                    'paddingTop' : '1%',
-                                    'backdropFilter' : 'blur(15px)',
-                                    'borderTop' : '1px solid #181A1B'
-                                    
-                                 },
-                                 children = self.badge(
-                                    
-                                    pList = v['list'],
-                                    pColor = '#181A1B',
-                                    pTextColor = '#F7F5F1'
-                                    
-                                 )                                 
-                                 
-                              )
+                              'margin' : '0px 0px 0px 0px',
+                              'padding' : '3px 1px 4px 3px',
+                              'backdropFilter' : 'blur(20px)',
+                              'borderLeft' : '1px solid #181A1B',
+                              'borderRight' : '1px solid #181A1B',
+                              'borderBottom' : '1px solid #181A1B'
+                              
+                           },
+                           children = self.badge(
+
+                              pStyle = pStyle,
+                              pIterable = pContent['aboutMe']['ecosystem']
                               
                            )
                            
-                        for k, v in pContent['aboutMe']['footer'].items()]
+                        )
                         
                      ]
                      
@@ -180,7 +210,7 @@ class aboutMe:
                   # >
                   
                ]
-               
+
             )
             
          ]

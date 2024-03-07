@@ -60,6 +60,7 @@ class footer(framework):
                                        
                                        'fontSize' : 16,
                                        'color' : '#181A1B',
+                                       'textDecoration' : 'none',
                                        'fontFamily' : 'helvetica',
                                        'vertical-align' : 'middle'
                                        
@@ -72,8 +73,8 @@ class footer(framework):
                                     src = v,
                                     style = {
                                        
-                                       'marginRight' : -25,
                                        'height' : '1.2em',
+                                       'marginRight' : -25,
                                        'vertical-align' : 'middle'
                                        
                                     }
