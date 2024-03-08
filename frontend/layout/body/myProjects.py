@@ -295,14 +295,21 @@ class myProjects(aboutMe):
       pCards,
       pStyle,
       pContent,
-      pIterable
+      pIterable,
+      
+      isShuffled = True
       
    ):
       '''  '''
    
+      c = 0
       rCards = []
       for t, i in pIterable:
-         
+                  
+         # index <
+         # add card <
+         if (t in self.cardsPriority): c += 1
+                  
          {
             
             # if (not priority) <
@@ -335,9 +342,20 @@ class myProjects(aboutMe):
             }
             
          ))
+         
+         # >
+            
+      if (isShuffled):
+         
+         first = rCards[:c]
+         
+         last = rCards[c:]
+         shuffle(last)
+         
+         return [*first, *last]
       
-      return rCards
-   
+      else: return rCards
+         
    
    def board(
       

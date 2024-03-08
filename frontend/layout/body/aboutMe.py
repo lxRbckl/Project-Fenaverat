@@ -22,7 +22,7 @@ class aboutMe:
       pStyle,
       pIterable,
       
-      isService = True
+      isService = False
       
    ):
       '''  '''
