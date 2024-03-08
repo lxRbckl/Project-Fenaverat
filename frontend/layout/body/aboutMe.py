@@ -32,8 +32,8 @@ class aboutMe:
             dbc.Badge(
                
                color = None,
-               children = i.replace('-', ' ') if (i) else None,
                text_color = None,
+               children = i.replace('-', ' ') if (i) else None,
                style = {
                   
                   'color' : '#181A1B',
@@ -42,7 +42,7 @@ class aboutMe:
                   'border' : '1px solid #F7F5F1',
                   'backgroundColor' : {
                      
-                     'service' : '#C6AF97',
+                     'service' : '#705854',
                      'packages' : '#AA7F74',
                      'languages' : '#96867F'
                      

@@ -348,7 +348,6 @@ class myProjects(aboutMe):
       if (isShuffled):
          
          first = rCards[:c]
-         
          last = rCards[c:]
          shuffle(last)
          
