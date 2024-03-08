@@ -22,7 +22,7 @@ class aboutMe:
       pStyle,
       pIterable,
       
-      isService = False
+      isService = True
       
    ):
       '''  '''
@@ -125,7 +125,7 @@ class aboutMe:
                            style = {
                                                             
                               'margin' : 0,
-                              'padding' : 5,
+                              'padding' : 10,
                               'border' : '1px solid #181A1B',
                               'backdropFilter' : 'blur(20px)'
                               
@@ -140,7 +140,7 @@ class aboutMe:
                                  'color' : '#181A1B',
                                  'marginLeft' : '-3px',
                                  'fontFamily' : 'helvetica',
-                                 'margin' : '-7px 0px -10px -1px'
+                                 'margin' : '-7px 0px -11px -1px'
                                  
                               }
                               
@@ -163,7 +163,7 @@ class aboutMe:
                               
                               style = {
                                  
-                                 'padding' : 5,
+                                 'padding' : 10,
                                  'margin' : '0px 0px 0px 0px',
                                  'backdropFilter' : 'blur(20px)',
                                  'borderLeft' : '1px solid #181A1B',
@@ -204,18 +204,23 @@ class aboutMe:
                            width = 8,
                            style = {
                               
+                              'padding' : 10,
                               'margin' : '0px 0px 0px 0px',
-                              'padding' : '3px 7px 4px 3px',
                               'backdropFilter' : 'blur(20px)',
                               'borderLeft' : '1px solid #181A1B',
                               'borderRight' : '1px solid #181A1B',
                               'borderBottom' : '1px solid #181A1B'
                               
                            },
-                           children = self.badge(
-
-                              pStyle = pStyle,
-                              pIterable = pContent['aboutMe']['ecosystem']
+                           children = html.Div(
+                              
+                              style = {'margin' : '-2px 2px -1px -2px'},
+                              children = self.badge(
+                                 
+                                 pStyle = pStyle,
+                                 pIterable = pContent['aboutMe']['ecosystem']
+                                 
+                              )
                               
                            )
                            

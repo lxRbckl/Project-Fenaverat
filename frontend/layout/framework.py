@@ -23,7 +23,7 @@ class framework:
       
       self.colWidth = 1000
       self.bodyLoadDelay = 0
-      self.defaultBoard = 'b2'
+      self.defaultBoard = 'b1'
       
       # >
 
