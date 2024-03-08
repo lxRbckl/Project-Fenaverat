@@ -13,7 +13,7 @@ class myProjects(aboutMe):
    def __init__(self):
       '''  '''
       
-      self.id = 'b2'
+      self.id = 'b3'
       self.maxHeight = 350
       self.title = 'my projects'
       self.cardsPriority = ['guide']

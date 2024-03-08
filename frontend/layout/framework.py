@@ -22,8 +22,8 @@ class framework:
       self.database = None
       
       self.colWidth = 1000
-      self.bodyLoadDelay = 0
-      self.defaultBoard = 'b3'
+      self.bodyLoadDelay = 2
+      self.defaultBoard = 'b1'
       
       # >
 
