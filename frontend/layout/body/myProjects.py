@@ -42,7 +42,7 @@ class myProjects(aboutMe):
             
             style = {
                
-               'padding' : 5,
+               'padding' : 10,
                'borderRadius' : 0,
                'border' : '1px solid #F7F5F1'
                
@@ -68,7 +68,7 @@ class myProjects(aboutMe):
             
             style = {
                
-               'padding' : 5,
+               'padding' : 10,
                'borderLeft' : '1px solid #F7F5F1',
                'borderRight' : '1px solid #F7F5F1',
                'borderBottom' : '1px solid #F7F5F1'
@@ -82,6 +82,7 @@ class myProjects(aboutMe):
                   style = {
                                           
                      'fontSize' : 15,
+                     'lineHeight' : 1.5,
                      'color' : '#F7F5F1',
                      'textAlign' : 'justify',
                      'fontFamily' : 'helvetica',
@@ -140,7 +141,7 @@ class myProjects(aboutMe):
             
             style = {
                
-               'padding' : 5, 
+               'padding' : 10, 
                'border' : 'none',
                'borderRadius' : 0,
                'border' : '1px solid #F7F5F1'
@@ -167,7 +168,8 @@ class myProjects(aboutMe):
                   children = i[1]['description'],
                   style = {
                                           
-                     'fontSize' : 15,
+                     'fontSize' : 14,
+                     'lineHeight' : 1.5,
                      'color' : '#F7F5F1',
                      'textAlign' : 'justify',
                      'fontFamily' : 'helvetica',
@@ -184,21 +186,27 @@ class myProjects(aboutMe):
             
             style = {
                      
-               'padding' : 5,
+               'padding' : 10,
                'border' : 'none',
+               'overflow' : 'hidden',
                'borderLeft' : '1px solid #F7F5F1',
                'borderRight' : '1px solid #F7F5F1'
                
             },
-            children = self.badge(
+            children = html.Div(
                
-               pStyle = None,
-               pIterable = {
-                  
-                  'languages' : i[1]['languages'],
-                  'packages' : i[1]['packages']
-                  
-               }
+               style = {'margin' : '-3px 2px -2px -2px'},
+               children = self.badge(
+               
+                  pStyle = pStyle,
+                  pIterable = {
+                     
+                     'languages' : i[1]['languages'],
+                     'packages' : i[1]['packages']
+                     
+                  }
+               
+               )
                
             )
             
@@ -207,7 +215,7 @@ class myProjects(aboutMe):
             
             style = {
                
-               'padding' : 5,
+               'padding' : 10,
                'border' : 'none',
                'borderRadius' : 0,
                'border' : '1px solid #F7F5F1'
@@ -218,7 +226,7 @@ class myProjects(aboutMe):
                dbc.Row(
                   
                   justify = 'between',
-                  style = {'margin' : '-5px -12px -3px -12px'},
+                  style = {'margin' : '-5px -12px -2px -12px'},
                   children = [
                      
                      # repo <
