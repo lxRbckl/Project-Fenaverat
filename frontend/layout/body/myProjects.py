@@ -87,7 +87,7 @@ class myProjects(aboutMe):
                      'textAlign' : 'justify',
                      'fontFamily' : 'helvetica',
                      'margin' : '-6px 0px 0px 0px',
-                     'padding' : '0px 0px 5px 0px'
+                     'padding' : '0px 0px 15px 0px'
                      
                   }
                   
