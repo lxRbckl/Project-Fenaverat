@@ -80,6 +80,10 @@ class aboutMe:
    
    ):
       '''  '''
+      
+      print(pContent) # remove
+      print('+=======+')
+      print(pContent['aboutMe'])
 
       return html.Div(
          
