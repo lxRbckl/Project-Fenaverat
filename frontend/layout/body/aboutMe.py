@@ -22,6 +22,7 @@ class aboutMe:
       pStyle,
       pIterable,
       
+      pKey = 'aboutMe',
       isService = False
       
    ):
@@ -80,10 +81,6 @@ class aboutMe:
    
    ):
       '''  '''
-      
-      print(pContent) # remove
-      print('+=======+')
-      print(pContent['aboutMe'])
 
       return html.Div(
          

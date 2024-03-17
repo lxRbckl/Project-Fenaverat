@@ -31,7 +31,9 @@ class myProjects(aboutMe):
       self,
       i,
       pStyle,
-      pContent
+      pContent,
+      
+      pKey = 'myProjects'
       
    ):
       '''  '''

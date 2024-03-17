@@ -16,7 +16,9 @@ class footer(framework):
       
       self,
       pStyle,
-      pContent
+      pContent,
+      
+      pKey = 'footer'
       
    ):
       '''  '''

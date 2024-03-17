@@ -17,7 +17,9 @@ class header(framework):
       self,
       pStyle,
       pContent,
-      pUpdateRate
+      pIntervalRate,
+      
+      pKey = 'header'
    
    ):
       '''  '''
@@ -90,7 +92,7 @@ class header(framework):
                         target = 'headerTargetId',
                         children = html.P(
                            
-                           children = f'Updated every {pUpdateRate} minutes',
+                           children = f'Updated every {pIntervalRate} minutes',
                            style = {
                               
                               'margin' : 0,

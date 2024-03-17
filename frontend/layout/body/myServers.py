@@ -30,7 +30,9 @@ class myServers(myProjects):
       self,
       i,
       pStyle,
-      pContent
+      pContent,
+      
+      pKey = 'myServers'
    
    ):
       '''  '''

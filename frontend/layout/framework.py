@@ -30,20 +30,9 @@ class framework:
    
    def framework(self):
       '''  '''
-      
+
       return html.Div(
          
-         style = {
-                        
-            'width' : '100vw',
-            'height' : '100vh',
-            'paddingTop' : '1%',
-            'paddingBottom' : '1%',
-            'overflow-x' : 'hidden',
-            'background' : '#181A1B',
-            'scrollbar-width' : 'thin'
-            
-         },                  
          children = [
             
             dcc.Interval(
@@ -59,7 +48,7 @@ class framework:
                id = 'frameworkDivId'
             
             )
-                        
+            
          ]
          
       )
@@ -68,8 +57,10 @@ class framework:
    def components(
       
       self, 
-      pData,
-      pUpdateRate
+      pDatabase,
+      pIntervalRate,
+      
+      pKey = 'components'
       
    ):
       '''  '''
@@ -84,9 +75,9 @@ class framework:
             justify = 'center',
             children = self.header.component(
                
-               pUpdateRate = pUpdateRate,
-               pStyle = pData['style']['header'],
-               pContent = pData['content']['header']
+               pIntervalRate = pIntervalRate,
+               pStyle = pDatabase['style']['header'],
+               pContent = pDatabase['content']['header']
                
             )
             
@@ -124,9 +115,9 @@ class framework:
                         title = v.title,
                         children = v.board(
                            
-                           pData = pData['data'],
-                           pStyle = pData['style'],
-                           pContent = pData['content']
+                           pData = pDatabase['data'],
+                           pStyle = pDatabase['style'],
+                           pContent = pDatabase['content']
                            
                         )
                         
@@ -144,8 +135,8 @@ class framework:
             justify = 'center',
             children = self.footer.component(
                
-               pStyle = pData['style']['footer'],
-               pContent = pData['content']['footer']
+               pStyle = pDatabase['style']['footer'],
+               pContent = pDatabase['content']['footer']
                
             )
             
@@ -201,6 +192,7 @@ class framework:
       
       @application.callback(
          
+         Output('frameworkDivId', 'style'),
          Output('frameworkDivId', 'children'),
          Input('frameworkIntervalId', 'n_intervals')
          
@@ -208,9 +200,26 @@ class framework:
       def intervalCallback(i):
          '''  '''
          
-         return self.components(
+         database = self.database.get()
+         
+         return [
             
-            pUpdateRate = self.database.updateRate,
-            pData = self.database.get()
+            {
+               
+               'width' : '100vw',
+               'height' : '100vh',
+               'paddingTop' : '1%',
+               'paddingBottom' : '1%',
+               'overflow-x' : 'hidden',
+               'background' : '#181A1B',
+               'scrollbar-width' : 'thin'
+               
+            },
+            self.components(
+               
+               pDatabase = database,
+               pIntervalRate = self.database.intervalRate
+               
+            )
             
-         )
+         ]
