@@ -9,7 +9,10 @@ import dash_bootstrap_components as dbc
 
 class footer(framework):
    
-   def __init__(self): super().__init__()
+   def __init__(self): 
+      
+      super().__init__()
+      self.file = 'footer'
    
    
    def component(
@@ -18,7 +21,7 @@ class footer(framework):
       pStyle,
       pContent,
       
-      pKey = 'footer'
+      pKey = 'component'
       
    ):
       '''  '''
@@ -27,10 +30,10 @@ class footer(framework):
          
          style = {
             
-            'paddingBottom' : '0.5%',
             'minWidth' : self.colWidth,
             'maxWidth' : self.colWidth,
-            'backgroundColor' : '#F7F5F1'
+            **pStyle[self.file][pKey]['col'],
+            'background' : pStyle['framework']['colorWhite']
          
          },
          children = dbc.Row(
@@ -53,6 +56,12 @@ class footer(framework):
                               width = 'auto',
                               children = {
                                  
+                                 'icon' : html.Img(
+                                    
+                                    src = v,
+                                    style = pStyle[self.file][pKey]['colIcon']
+                                    
+                                 ),
                                  'link' : html.A(
                                  
                                     href = v,
@@ -60,24 +69,8 @@ class footer(framework):
                                     target = '_blank',
                                     style = {
                                        
-                                       'fontSize' : 16,
-                                       'color' : '#181A1B',
-                                       'textDecoration' : 'none',
-                                       'fontFamily' : 'helvetica',
-                                       'vertical-align' : 'middle'
-                                       
-                                    }
-                                       
-                                    
-                                 ),
-                                 'icon' : html.Img(
-                                    
-                                    src = v,
-                                    style = {
-                                       
-                                       'height' : '1.2em',
-                                       'marginRight' : -25,
-                                       'vertical-align' : 'middle'
+                                       **pStyle[self.file][pKey]['colLink'],
+                                       'color' : pStyle['framework']['colorBlack']
                                        
                                     }
                                     
@@ -93,7 +86,7 @@ class footer(framework):
                      
                   )
                   
-               for i, j in pContent['connections'].items()]
+               for i, j in pContent[self.file]['connections'].items()]
                
             ]
             

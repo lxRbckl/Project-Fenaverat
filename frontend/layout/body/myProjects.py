@@ -15,6 +15,7 @@ class myProjects(aboutMe):
       
       self.id = 'b3'
       self.maxHeight = 350
+      self.file = 'myProjects'
       self.title = 'my projects'
       self.cardsPriority = ['guide']
       self.cards = {
@@ -33,7 +34,8 @@ class myProjects(aboutMe):
       pStyle,
       pContent,
       
-      pKey = 'myProjects'
+      pKey = 'cardGuide',
+      pFile = 'myProjects'
       
    ):
       '''  '''
@@ -44,22 +46,17 @@ class myProjects(aboutMe):
             
             style = {
                
-               'padding' : 10,
-               'borderRadius' : 0,
-               'border' : '1px solid #F7F5F1'
+               **pStyle[pFile][pKey]['cardHeader'],
+               'border' : pStyle['framework']['borderWhite']
                
             },
             children = html.H4(
                
                children = i[0],
                style = {
-                                    
-                  'padding' : 0,                  
-                  'fontSize' : 29,
-                  'color' : '#F7F5F1',
-                  'fontWeight' : 'bold',
-                  'fontFamily' : 'helvetica',
-                  'margin' : '-7px 0px -8px -1px'
+
+                  **pStyle[pFile][pKey]['cardGuideH4'],
+                  'color' : pStyle['framework']['colorWhite']
                   
                }
                
@@ -70,10 +67,10 @@ class myProjects(aboutMe):
             
             style = {
                
-               'padding' : 10,
-               'borderLeft' : '1px solid #F7F5F1',
-               'borderRight' : '1px solid #F7F5F1',
-               'borderBottom' : '1px solid #F7F5F1'
+               **pStyle[pFile][pKey]['cardBody'],
+               'borderLeft' : pStyle['framework']['borderWhite'],
+               'borderRight' : pStyle['framework']['borderWhite'],
+               'borderBottom' : pStyle['framework']['borderWhite']
                
             },
             children = [
@@ -82,14 +79,9 @@ class myProjects(aboutMe):
                   
                   children = j,
                   style = {
-                                          
-                     'fontSize' : 15,
-                     'lineHeight' : 1.5,
-                     'color' : '#F7F5F1',
-                     'textAlign' : 'justify',
-                     'fontFamily' : 'helvetica',
-                     'margin' : '-6px 0px 0px 0px',
-                     'padding' : '0px 0px 15px 0px'
+                     
+                     **pStyle[pFile][pKey]['cardGuideP'],
+                     'color' : pStyle['framework']['colorWhite']
                      
                   }
                   
@@ -107,22 +99,18 @@ class myProjects(aboutMe):
       self,
       i,
       pStyle,
-      pContent
+      pContent,
+      
+      pKey = 'cardImage',
+      pFile = 'myProjects'
       
    ):
       '''  '''
-
+      
       return dbc.CardImg(
          
          src = i,
-         style = {
-                       
-            'width' : '100%', 
-            'height' : '100%',
-            'borderRadius' : 0,
-            'object-fit' : 'cover'
-                  
-         }
+         style = pStyle[pFile][pKey]['cardImg']
                   
       )
    
@@ -132,7 +120,9 @@ class myProjects(aboutMe):
       self,
       i,
       pStyle,
-      pContent
+      pContent,
+      
+      pKey = 'cardProject'
       
    ):
       '''  '''
@@ -142,11 +132,9 @@ class myProjects(aboutMe):
          dbc.CardHeader(
             
             style = {
-               
-               'padding' : 10, 
-               'border' : 'none',
-               'borderRadius' : 0,
-               'border' : '1px solid #F7F5F1'
+
+               **pStyle[self.file][pKey]['cardHeader'],
+               'border' : pStyle['framework']['borderWhite']
             
             },
             children = [
@@ -156,11 +144,8 @@ class myProjects(aboutMe):
                   children = i[0].replace('-', ' '),
                   style = {
                                           
-                     'fontSize' : 29,
-                     'color' : '#F7F5F1',
-                     'fontWeight' : 'bold',
-                     'fontFamily' : 'helvetica',
-                     'margin' : '-7px 0px 0px 0px'
+                     **pStyle[self.file][pKey]['cardProjectH4'],
+                     'color' : pStyle['framework']['colorWhite']
                      
                   }
                   
@@ -170,12 +155,8 @@ class myProjects(aboutMe):
                   children = i[1]['description'],
                   style = {
                                           
-                     'fontSize' : 14,
-                     'lineHeight' : 1.5,
-                     'color' : '#F7F5F1',
-                     'textAlign' : 'justify',
-                     'fontFamily' : 'helvetica',
-                     'margin' : '-4px -1px -7px 0px'
+                     **pStyle[self.file][pKey]['cardProjectP'],
+                     'color' : pStyle['framework']['colorWhite']
                      
                   }
                   
@@ -187,17 +168,15 @@ class myProjects(aboutMe):
          dbc.CardBody(
             
             style = {
-                     
-               'padding' : 10,
-               'border' : 'none',
-               'overflow' : 'hidden',
-               'borderLeft' : '1px solid #F7F5F1',
-               'borderRight' : '1px solid #F7F5F1'
+               
+               **pStyle[self.file][pKey]['cardBody'],
+               'borderLeft' : pStyle['framework']['borderWhite'],
+               'borderRight' : pStyle['framework']['borderWhite']
                
             },
             children = html.Div(
                
-               style = {'margin' : '-3px 2px -2px -2px'},
+               style = pStyle[self.file][pKey]['cardBodyDiv'],
                children = self.badge(
                
                   pStyle = pStyle,
@@ -217,10 +196,8 @@ class myProjects(aboutMe):
             
             style = {
                
-               'padding' : 10,
-               'border' : 'none',
-               'borderRadius' : 0,
-               'border' : '1px solid #F7F5F1'
+               **pStyle[self.file][pKey]['cardFooter'],
+               'border' : pStyle['framework']['borderWhite']
                
             },
             children = [
@@ -228,7 +205,7 @@ class myProjects(aboutMe):
                dbc.Row(
                   
                   justify = 'between',
-                  style = {'margin' : '-5px -12px -2px -12px'},
+                  style = pStyle[self.file][pKey]['cardFooterRow'],
                   children = [
                      
                      # repo <
@@ -242,13 +219,8 @@ class myProjects(aboutMe):
                            href = i[1]['url'],
                            children = html.Img(
                               
-                              src = pContent['myProjects']['icon']['repo'],
-                              style = {
-                                 
-                                 'width' : 'auto',
-                                 'height' : '17px'
-                                 
-                              }
+                              src = pContent[self.file]['icon']['repo'],
+                              style = pStyle[self.file][pKey]['cardFooterImg']
                               
                            )
                            
@@ -264,13 +236,8 @@ class myProjects(aboutMe):
                            href = i[1]['url'] + '/wiki',
                            children = html.Img(
                               
-                              src = pContent['myProjects']['icon']['wiki'],
-                              style = {
-                                 
-                                 'width' : 'auto',
-                                 'height' : '17px'
-                                 
-                              }
+                              src = pContent[self.file]['icon']['wiki'],
+                              style = pStyle[self.file][pKey]['cardFooterImg']
                               
                            )
                            
@@ -299,7 +266,9 @@ class myProjects(aboutMe):
       pContent,
       pIterable,
       
-      isShuffled = True
+      isShuffled = True,
+      pKey = 'cardsLoad',
+      pFile = 'myProjects'
       
    ):
       '''  '''
@@ -332,14 +301,9 @@ class myProjects(aboutMe):
             ),
             style = {
                
-               'padding' : 0,
-               'width' : '18rem',
-               'height' : '21rem',
-               'margin' : '2.5px',
-               'borderRadius' : 0,
-               'background' : 'transparent',
-               'border' : '1px solid #181A1B',
-               'backdropFilter' : 'blur(20px)'
+               **pStyle[pFile][pKey]['card'],
+               'border' : pStyle['framework']['borderBlack'],
+               'backdropFilter' : pStyle['framework']['backdropFilter']
                
             }
             
@@ -365,7 +329,7 @@ class myProjects(aboutMe):
       pStyle,
       pContent,
       
-      pKey = 'myProjects'
+      pKey = 'board'
    
    ):
       '''  '''
@@ -374,17 +338,8 @@ class myProjects(aboutMe):
          
          style = {
 
-            'display' : 'grid',
-            'overflow-x' : 'auto',
-            'overflow-y': 'hidden',
-            'scrollbar-width' : 'thin',
-            
-            'grid-auto-flow' : 'column',
-            'padding' : '2.5px 15px 2.5px 14px',
-            
-            'backgroundSize' : 'cover',
-            'backgroundPosition' : 'center',
-            'backgroundImage' : 'url({})'.format(pContent[pKey]['background'])
+            **pStyle[self.file][pKey]['row'],
+            'backgroundImage' : 'url({})'.format(pContent[self.file]['background'])
          
          },
          children = self.cardsLoad(
@@ -394,9 +349,9 @@ class myProjects(aboutMe):
             pContent = pContent,
             pIterable = [
                
-               *[('image', i) for i in pContent[pKey]['image']],
-               *[('guide', kv) for kv in pContent[pKey]['guide'].items()],
-               *[('project', kv) for v in pData[pKey].values() for kv in v.items()]
+               *[('image', i) for i in pContent[self.file]['image']],
+               *[('guide', kv) for kv in pContent[self.file]['guide'].items()],
+               *[('project', kv) for v in pData[self.file].values() for kv in v.items()]
                
             ]
             

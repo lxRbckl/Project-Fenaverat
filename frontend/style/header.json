@@ -1,3 +1,43 @@
 {
+   "component" : {
+
+      "col" : {
+
+         "paddingTop" : "1%"
+
+      },
+      "titleH1" : {
+
+         "padding" : 0,
+         "fontSize" : 85,
+         "lineHeight" : 1,
+         "margin" : "0 0 -10px 0",
+         "fontFamily" : "Helveticamazing"
+
+      },
+      "loaderCol" : {
+
+         "marginTop" : -5
    
+      },
+      "loaderDiv" : {
+   
+         "padding" : "0.25%"
+      
+      },
+      "loaderSpinner" : {
+   
+         "border-width" : 1.5,
+         "animation-play-state" : "running"
+   
+      },
+      "loaderTooltip" : {
+   
+         "margin" : 0,
+         "fontFamily" : "helvetica"
+   
+      }
+
+   }
+
 }

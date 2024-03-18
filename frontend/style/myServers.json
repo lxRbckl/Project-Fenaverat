@@ -1,3 +1,71 @@
 {
-   
+   "cardServer" : {
+
+      "borderGroup" : {
+
+         "host" : "3px solid #13315C",
+         "swarm" : "3px solid #134074"
+
+      },
+      "cardHeader" : {
+
+         "border" : "none",
+         "borderRadius" : 0,
+         "padding" : "10px 10px 0 10px"
+
+      },
+      "textCol" : {
+
+         "margin" : "-5px 0px -4px -1px"
+
+      },
+      "textH4" : {
+
+         "fontSize" : 25,
+         "fontWeight" : "bold",
+         "fontFamily" : "helvetica"
+
+      },
+      "imageCol" : {
+
+         "margin" : "-5px 0px 0px 0px"
+
+      },
+      "imageImg" : {
+
+         "width" : "auto",
+         "height" : "1.4rem"
+
+      },
+      "cardBody" : {
+
+         "padding" : 10,
+         "border" : "none",
+         "overflow" : "hidden"
+
+      },
+      "cardBodyDiv" : {
+
+         "margin" : "-2px 2px 0px -2px"
+
+      }
+
+   },
+   "board" : {
+
+      "row" : {
+
+         "display" : "grid",
+         "overflow-x" : "auto",
+         "overflow-y" : "hidden",
+         "backgroundSize" : "cover",
+         "scrollbar-width" : "thin",
+         "grid-auto-flow" : "column",
+         "backgroundPosition" : "center",
+         "padding" : "2.5px 15px 2.5px 14px"
+
+      }
+
+   }
+
 }

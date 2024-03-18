@@ -13,6 +13,7 @@ class aboutMe:
       
       self.id = 'b1'   
       self.waitVideo = 2
+      self.file = 'aboutMe'
       self.title = 'about me'
    
    
@@ -22,7 +23,8 @@ class aboutMe:
       pStyle,
       pIterable,
       
-      pKey = 'aboutMe',
+      pKey = 'badge',
+      pFile = 'aboutMe',
       isService = False
       
    ):
@@ -37,33 +39,15 @@ class aboutMe:
                children = i.replace('-', ' ') if (i) else None,
                style = {
                   
-                  'color' : '#181A1B',
-                  'fontFamily' : 'helvetica',
-                  'margin' : '1px 2px 1px 2px',
-                  'border' : '1px solid #F7F5F1',
-                  'backgroundColor' : {
+                  **pStyle[pFile][pKey]['badge'],
+                  'color' : pStyle['framework']['colorBlack'],
+                  'background' : pStyle[pFile][pKey]['colorGroup'][k],
+                  **pStyle[pFile][pKey]['type'][{
                      
-                     'service' : '#705854',
-                     'packages' : '#AA7F74',
-                     'languages' : '#96867F'
+                     False : 'other',
+                     True : 'service'
                      
-                  }[k],
-                  **{
-                     
-                     True : {
-                        
-                        'width' : '100%',
-                        'textAlign' : 'left'
-                        
-                     },
-                     False : {
-                        
-                        'width' : 'auto',
-                        'textAlign' : 'center'
-                        
-                     }
-                     
-                  }[isService]
+                  }[isService]]
                   
                }
                
@@ -77,14 +61,16 @@ class aboutMe:
       self,
       pData,
       pStyle,
-      pContent
+      pContent,
+      
+      pKey = 'board'
    
    ):
       '''  '''
 
       return html.Div(
          
-         style = {'position' : 'relative'},
+         style = pStyle[self.file][pKey]['div'],
          children = [
             
             DashPlayer(
@@ -94,21 +80,13 @@ class aboutMe:
                height = 'auto',
                playing = False,
                id = 'backgroundVideoId',
-               style = {'margin' : '0 0 -5px 0'},
-               url = pContent['aboutMe']['background']
+               url = pContent[self.file]['background'],
+               style = pStyle[self.file][pKey]['DashPlayer']
                
             ),
             dbc.Row(
                
-               style = {
-                  
-                  'top' : 0,
-                  'margin' : 0,
-                  'width' : '100%',
-                  'padding' : '5px',
-                  'position' : 'absolute'
-                  
-               },
+               style = pStyle[self.file][pKey]['row'],
                children = [
                   
                   # title <
@@ -116,7 +94,7 @@ class aboutMe:
                   # ecosystem <
                   dbc.Row(
                      
-                     style = {'padding' : 0, 'margin' : 0},
+                     style = pStyle[self.file][pKey]['titleRow'],
                      children = [
                         
                         dbc.Col(width = 4),
@@ -124,24 +102,19 @@ class aboutMe:
                            
                            width = 8,
                            style = {
-                                                            
-                              'margin' : 0,
-                              'padding' : 10,
-                              'border' : '1px solid #181A1B',
-                              'backdropFilter' : 'blur(20px)'
+                              
+                              **pStyle[self.file][pKey]['titleCol'],
+                              'border' : pStyle['framework']['borderBlack'],
+                              'backdropFilter' : pStyle['framework']['backdropFilter']
                               
                            },
                            children = html.H1(
                               
-                              children = pContent['aboutMe']['title'],
+                              children = pContent[self.file]['title'],
                               style = {
 
-                                 'padding' : 0,
-                                 'fontSize' : 38,
-                                 'color' : '#181A1B',
-                                 'marginLeft' : '-3px',
-                                 'fontFamily' : 'helvetica',
-                                 'margin' : '-7px 0px -11px -1px'
+                                 **pStyle[self.file][pKey]['titleH1'],
+                                 'color' : pStyle['framework']['colorBlack']
                                  
                               }
                               
@@ -156,7 +129,7 @@ class aboutMe:
                      
                      dbc.Row(
                         
-                        style = {'margin' : 0, 'padding' : 0},
+                        style = pStyle[self.file][pKey]['contentRow'],
                         children = [
                            
                            dbc.Col(width = 4),
@@ -164,12 +137,11 @@ class aboutMe:
                               
                               style = {
                                  
-                                 'padding' : 10,
-                                 'margin' : '0px 0px 0px 0px',
-                                 'backdropFilter' : 'blur(20px)',
-                                 'borderLeft' : '1px solid #181A1B',
-                                 'borderRight' : '1px solid #181A1B',
-                                 'borderBottom' : '1px solid #181A1B'
+                                 **pStyle[self.file][pKey]['contentCol'],
+                                 'borderLeft' : pStyle['framework']['borderBlack'],
+                                 'borderRight' : pStyle['framework']['borderBlack'],
+                                 'borderBottom' : pStyle['framework']['borderBlack'],
+                                 'backdropFilter' : pStyle['framework']['backdropFilter']
                                  
                               },
                               children = html.P(
@@ -177,11 +149,8 @@ class aboutMe:
                                  children = i,
                                  style = {
                                     
-                                    'fontSize' : 15,
-                                    'color' : '#181A1B',
-                                    'textAlign' : 'justify',
-                                    'fontFamily' : 'helvetica',
-                                    'margin' : '-6px 0px -6px -1px'
+                                    **pStyle[self.file][pKey]['contentP'],
+                                    'color' : pStyle['framework']['colorBlack']
                                     
                                  }
                                  
@@ -193,10 +162,10 @@ class aboutMe:
                         
                      )
                      
-                  for i in pContent['aboutMe']['content']],
+                  for i in pContent[self.file]['content']],
                   dbc.Row(
                      
-                     style = {'margin' : 0, 'padding' : 0},
+                     style = pStyle[self.file][pKey]['ecosystemRow'],
                      children = [
                         
                         dbc.Col(width = 4),
@@ -205,21 +174,20 @@ class aboutMe:
                            width = 8,
                            style = {
                               
-                              'padding' : 10,
-                              'margin' : '0px 0px 0px 0px',
-                              'backdropFilter' : 'blur(20px)',
-                              'borderLeft' : '1px solid #181A1B',
-                              'borderRight' : '1px solid #181A1B',
-                              'borderBottom' : '1px solid #181A1B'
+                              **pStyle[self.file][pKey]['ecosystemCol'],
+                              'borderLeft' : pStyle['framework']['borderBlack'],
+                              'borderRight' : pStyle['framework']['borderBlack'],
+                              'borderBottom' : pStyle['framework']['borderBlack'],
+                              'backdropFilter' : pStyle['framework']['backdropFilter']
                               
                            },
                            children = html.Div(
                               
-                              style = {'margin' : '-2px 2px -1px -2px'},
+                              style = pStyle[self.file][pKey]['ecosystemDiv'],
                               children = self.badge(
                                  
                                  pStyle = pStyle,
-                                 pIterable = pContent['aboutMe']['ecosystem']
+                                 pIterable = pContent[self.file]['ecosystem']
                                  
                               )
                               

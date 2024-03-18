@@ -9,7 +9,10 @@ import dash_bootstrap_components as dbc
 
 class header(framework):
    
-   def __init__(self): super().__init__()
+   def __init__(self): 
+      
+      super().__init__()
+      self.file = 'header'
    
    
    def component(
@@ -19,7 +22,7 @@ class header(framework):
       pContent,
       pIntervalRate,
       
-      pKey = 'header'
+      pKey = 'component'
    
    ):
       '''  '''
@@ -28,10 +31,10 @@ class header(framework):
          
          style = {
             
-            'paddingTop' : '1%',
             'minWidth' : self.colWidth,
             'maxWidth' : self.colWidth,
-            'backgroundColor' : '#F7F5F1'
+            **pStyle[self.file][pKey]['col'],
+            'background' : pStyle['framework']['colorWhite']
             
          },
          children = dbc.Row(
@@ -46,15 +49,11 @@ class header(framework):
                   width = 'auto',                  
                   children = html.H1(
                      
-                     children = pContent['title'],
+                     children = pContent[self.file]['title'],
                      style = {
                                                       
-                        'padding' : 0,
-                        'fontSize' : 85,
-                        'lineHeight' : 0.9,
-                        'color' : '#181A1B',
-                        'margin' : '0 0 -10px 0',
-                        'fontFamily' : 'Helveticamazing'
+                        **pStyle[self.file][pKey]['titleH1'],
+                        'background' : pStyle['framework']['colorWhite']
                         
                      }
                      
@@ -64,24 +63,19 @@ class header(framework):
                dbc.Col(
                   
                   width = 'auto',
-                  style = {'marginTop' : -5},
+                  style = pStyle[self.file][pKey]['loaderCol'],
                   children = [
                      
                      html.Div(
                         
                         id = 'headerTargetId',
-                        style = {'padding' : '0.25%'},
+                        style = pStyle[self.file][pKey]['loaderDiv'],
                         children = dbc.Spinner(
                            
                            size = 'sm',
-                           color = '#181A1B',
                            id = 'headerSpinnerId',
-                           spinner_style = {
-                              
-                              'border-width' : 1.5,
-                              'animation-play-state' : 'running'
-                              
-                           }
+                           color = pStyle['framework']['colorBlack'],
+                           spinner_style = pStyle[self.file][pKey]['loaderSpinner']
                            
                         )
                         
@@ -92,13 +86,8 @@ class header(framework):
                         target = 'headerTargetId',
                         children = html.P(
                            
-                           children = f'Updated every {pIntervalRate} minutes',
-                           style = {
-                              
-                              'margin' : 0,
-                              'fontFamily' : 'helvetica'
-                              
-                           }
+                           style = pStyle[self.file][pKey]['loaderTooltip'],
+                           children = f'Updated every {pIntervalRate} minutes'
                         
                         )
                            

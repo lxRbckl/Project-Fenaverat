@@ -22,6 +22,7 @@ class framework:
       self.database = None
       
       self.colWidth = 1000
+      self.file = 'framework'
       self.bodyLoadDelay = 2
       self.defaultBoard = 'b1'
       
@@ -57,10 +58,10 @@ class framework:
    def components(
       
       self, 
-      pDatabase,
-      pIntervalRate,
-      
-      pKey = 'components'
+      pData,
+      pStyle,
+      pContent,
+      pIntervalRate
       
    ):
       '''  '''
@@ -75,9 +76,9 @@ class framework:
             justify = 'center',
             children = self.header.component(
                
-               pIntervalRate = pIntervalRate,
-               pStyle = pDatabase['style']['header'],
-               pContent = pDatabase['content']['header']
+               pStyle = pStyle,
+               pContent = pContent,
+               pIntervalRate = pIntervalRate
                
             )
             
@@ -90,10 +91,10 @@ class framework:
                
                style = {
                   
-                  'paddingBottom' : 5,
                   'minWidth' : self.colWidth,
                   'maxWidth' : self.colWidth,
-                  'backgroundColor' : '#F7F5F1'
+                  **pStyle[self.file]['bodyCol'],
+                  'background' : pStyle[self.file]['colorWhite']
                   
                },
                children = dbc.Accordion(
@@ -103,8 +104,8 @@ class framework:
                   id = 'bodyAccordionId',
                   style = {
                                           
-                     'borderTop' : '1px solid #181A1B',
-                     'borderBottom' : '1px solid #181A1B'
+                     'borderTop' : pStyle[self.file]['borderBlack'],
+                     'borderBottom' : pStyle[self.file]['borderBlack']
                      
                   },
                   children = [
@@ -115,9 +116,9 @@ class framework:
                         title = v.title,
                         children = v.board(
                            
-                           pData = pDatabase['data'],
-                           pStyle = pDatabase['style'],
-                           pContent = pDatabase['content']
+                           pData = pData,
+                           pStyle = pStyle,
+                           pContent = pContent
                            
                         )
                         
@@ -135,8 +136,8 @@ class framework:
             justify = 'center',
             children = self.footer.component(
                
-               pStyle = pDatabase['style']['footer'],
-               pContent = pDatabase['content']['footer']
+               pStyle = pStyle,
+               pContent = pContent
                
             )
             
@@ -199,25 +200,22 @@ class framework:
       )
       def intervalCallback(i):
          '''  '''
-         
-         database = self.database.get()
+
+         data, style, content = self.database.get().values()
          
          return [
             
             {
                
-               'width' : '100vw',
-               'height' : '100vh',
-               'paddingTop' : '1%',
-               'paddingBottom' : '1%',
-               'overflow-x' : 'hidden',
-               'background' : '#181A1B',
-               'scrollbar-width' : 'thin'
+               **style[self.file]['frameworkDiv'],
+               'background' : style[self.file]['colorBlack']
                
             },
             self.components(
                
-               pDatabase = database,
+               pData = data,
+               pStyle = style,
+               pContent = content,
                pIntervalRate = self.database.intervalRate
                
             )

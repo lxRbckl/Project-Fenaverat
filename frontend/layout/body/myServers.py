@@ -15,7 +15,14 @@ class myServers(myProjects):
       super().__init__()
             
       self.id = 'b2'
+      self.file = 'myServers'
       self.title = 'my servers'
+      self.isHost = lambda i, j : i['borderGroup'][{
+         
+         True : 'host', 
+         False : 'swarm'
+      
+      }[j]]
       self.cards = {
          
          'image' : self.cardImage,
@@ -32,17 +39,10 @@ class myServers(myProjects):
       pStyle,
       pContent,
       
-      pKey = 'myServers'
+      pKey = 'cardServer'
    
    ):
       '''  '''
-   
-      colors = {
-         
-         True : '#13315C',
-         False : '#134074'
-         
-      }
    
       return [
          
@@ -50,22 +50,21 @@ class myServers(myProjects):
             
             style = {
                
-               'border' : 'none',
-               'borderRadius' : 0,
-               'padding' : '10px 10px 0px 10px', 
-               'border' : '3px solid {}'.format(colors[i[1]['isHost']])
-               
+               **pStyle[self.file][pKey]['cardHeader'],
+               'border' : self.isHost(pStyle[self.file][pKey], i[1]['isHost'])
+                                 
             },
             children = dbc.Row(
                
-               style = {},
                justify = 'between',
                children = [
                   
+                  # text <
+                  # image <
                   dbc.Col(
                      
                      width = 'auto',
-                     style = {'margin' : '-5px 0px -4px -1px'},
+                     style = pStyle[self.file][pKey]['textCol'],
                      children = html.H4(
                         
                         children = {
@@ -75,11 +74,9 @@ class myServers(myProjects):
                            
                         }[i[1]['isHost']](),
                         style = {
-
-                           'fontSize' : 25,
-                           'color' : '#F7F5F1',
-                           'fontWeight' : 'bold',
-                           'fontFamily' : 'helvetica'
+                           
+                           **pStyle[self.file][pKey]['textH4'],
+                           'color' : pStyle['framework']['colorWhite']
                            
                         }
                         
@@ -89,25 +86,22 @@ class myServers(myProjects):
                   dbc.Col(
                      
                      width = 'auto',
-                     style = {'margin' : '-5px 0px 0px 0px'},
+                     style = pStyle[self.file][pKey]['imageCol'],
                      children = html.Img(
                         
-                        style = {
-                           
-                           'width' : 'auto',
-                           'height' : '1.4rem'
-                           
-                        },
+                        style = pStyle[self.file][pKey]['imageImg'],
                         src = {
                            
-                           True : pContent['myServers']['icon']['host'],
-                           False : pContent['myServers']['icon']['swarm']
+                           True : pContent[self.file]['icon']['host'],
+                           False : pContent[self.file]['icon']['swarm']
                            
                         }[i[1]['isHost']]
                         
                      )
                      
                   )
+                  
+                  # >
                   
                ]
                
@@ -117,18 +111,16 @@ class myServers(myProjects):
          dbc.CardBody(
             
             style = {
-               
-               'padding' : 10,
-               'border' : 'none',
-               'overflow' : 'hidden',
-               'borderLeft' : '3px solid {}'.format(colors[i[1]['isHost']]),
-               'borderRight' : '3px solid {}'.format(colors[i[1]['isHost']]),
-               'borderBottom' : '3px solid {}'.format(colors[i[1]['isHost']])
+
+               **pStyle[self.file][pKey]['cardBody'],
+               'borderLeft' : self.isHost(pStyle[self.file][pKey], i[1]['isHost']),
+               'borderRight' : self.isHost(pStyle[self.file][pKey], i[1]['isHost']),
+               'borderBottom' : self.isHost(pStyle[self.file][pKey], i[1]['isHost'])
                
             },
             children = html.Div(
                
-               style = {'margin' : '-2px 2px 0px -2px'},
+               style = pStyle[self.file][pKey]['cardBodyDiv'],
                children = self.badge(
                   
                   pStyle = pStyle,
@@ -151,7 +143,7 @@ class myServers(myProjects):
       pStyle,
       pContent,
       
-      pKey = 'myServers'
+      pKey = 'board'
    
    ):
       '''  '''
@@ -160,17 +152,8 @@ class myServers(myProjects):
          
          style = {
 
-            'display' : 'grid',
-            'overflow-x' : 'auto',
-            'overflow-y': 'hidden',
-            'scrollbar-width' : 'thin',
-            
-            'grid-auto-flow' : 'column',
-            'padding' : '2.5px 15px 2.5px 14px',
-            
-            'backgroundSize' : 'cover',
-            'backgroundPosition' : 'center',
-            'backgroundImage' : 'url({})'.format(pContent[pKey]['background'])
+            **pStyle[self.file][pKey]['row'],
+            'backgroundImage' : 'url({})'.format(pContent[self.file]['background'])
          
          },
          children = self.cardsLoad(
@@ -180,10 +163,10 @@ class myServers(myProjects):
             pContent = pContent,
             pIterable = [
                
-               *[('image', i) for i in pContent[pKey]['image']],
-               *[('server', kv) for kv in pData[pKey]['host'].items()],
-               *[('server', kv) for kv in pData[pKey]['swarm'].items()],
-               *[('guide', kv) for kv in pContent[pKey]['guide'].items()],
+               *[('image', i) for i in pContent[self.file]['image']],
+               *[('server', kv) for kv in pData[self.file]['host'].items()],
+               *[('server', kv) for kv in pData[self.file]['swarm'].items()],
+               *[('guide', kv) for kv in pContent[self.file]['guide'].items()]
                
             ]
             

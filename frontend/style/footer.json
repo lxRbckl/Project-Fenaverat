@@ -1,3 +1,28 @@
 {
    
+   "component" : {
+
+      "col" : {
+
+         "paddingBottom" : "0.5%"
+
+      },
+      "colLink" : {
+
+         "fontSize" : 16,
+         "textDecoration" : "none",
+         "fontFamily" : "helvetica",
+         "vertical-align" : "middle"
+
+      },
+      "colIcon" : {
+
+         "height" : "1.2em",
+         "marginRight" : -25,
+         "vertical-align" : "middle"
+
+      }
+
+   }
+
 }

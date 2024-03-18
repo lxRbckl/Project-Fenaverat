@@ -1,3 +1,22 @@
 {
-   
+   "colorBlack" : "#181A1B",
+   "colorWhite" : "#F7F5F1",
+   "backdropFilter" : "blur(20px)",
+   "borderBlack" : "1px solid #181A1B",
+   "borderWhite" : "1px solid #F7F5F1",
+   "frameworkDiv" : {
+
+      "width" : "100vw",
+      "height" : "100vh",
+      "paddingTop" : "1%",
+      "paddingBottom" : "1%",
+      "overflow-x" : "hidden",
+      "scrollbar-width" : "thin"
+
+   },
+   "bodyCol" : {
+
+      "paddingBottom" : 5
+
+   }
 }
