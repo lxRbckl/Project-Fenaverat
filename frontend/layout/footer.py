@@ -61,8 +61,6 @@ class footer(framework):
                                     src = v,
                                     style = {
                                        
-                                       'color' : 'blue',
-                                       'background' : 'red',
                                        **pStyle[self.file][pKey]['colIcon'],
                                        'backgroundColor' : pStyle['framework']['colorWhite']
                                     
