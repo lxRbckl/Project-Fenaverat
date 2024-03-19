@@ -59,7 +59,14 @@ class footer(framework):
                                  'icon' : html.Img(
                                     
                                     src = v,
-                                    style = pStyle[self.file][pKey]['colIcon']
+                                    style = {
+                                       
+                                       'color' : 'blue',
+                                       'background' : 'red',
+                                       **pStyle[self.file][pKey]['colIcon'],
+                                       'backgroundColor' : pStyle['framework']['colorWhite']
+                                    
+                                    }
                                     
                                  ),
                                  'link' : html.A(
