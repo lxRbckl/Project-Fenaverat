@@ -126,7 +126,7 @@ class myProjects(aboutMe):
       
    ):
       '''  '''
-
+      
       return [
          
          dbc.CardHeader(
@@ -339,7 +339,7 @@ class myProjects(aboutMe):
          style = {
 
             **pStyle[self.file][pKey]['row'],
-            'backgroundImage' : 'url({})'.format(pContent[self.file]['background'])
+            'backgroundImage' : 'url({})'.format(pContent[self.file]['backgroundImage'])
          
          },
          children = self.cardsLoad(

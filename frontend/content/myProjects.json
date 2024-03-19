@@ -1,23 +1,29 @@
 {
    "icon" : {
 
-      "wiki" : "https://cdn.discordapp.com/attachments/1206754760280113182/1215068122038673478/Untitled_9.png?ex=65fb675f&is=65e8f25f&hm=a421a32f9ac5156bffdf014c0c943083c9a9340ef38e6b05f4b61860c8e11ee2&",
-      "repo" : "https://cdn.discordapp.com/attachments/1206754760280113182/1215068146168500224/Untitled_10.png?ex=65fb6764&is=65e8f264&hm=97611daab5ec037014fac1764e9f4a18626299033d390d9458ec3ee5d8e08cf0&"
+      "wiki" : "url(https://photos.fife.usercontent.google.com/pw/AP1GczPD2F6XgZCcpf3Ds0ZQNeKAML7onZd9--DQPUX5HzT_pqiP2ULTPBL_=w100-h98-s-no-gm?authuser=1)",
+      "repo" : "https://i.imgur.com/rVCb2oD.png"
 
    },
-   "background" : "https://i.pinimg.com/564x/bd/a8/cf/bda8cf44ae85c64af5857070d8d9d13f.jpg",
+   "backgroundImage" : "",
    "image" : [
 
-      "https://cdn.discordapp.com/attachments/768440729303253022/1199282422982922300/45222668_10156231028369580_1584177993977167872_n.jpg?ex=65f958cb&is=65e6e3cb&hm=16871eaf7708d9e117ec4d51a505dc99dc3d23ea02fa42bc995ed8a30c6f2fd0&",
-      "https://cdn.discordapp.com/attachments/768440729303253022/1199282422982922300/45222668_10156231028369580_1584177993977167872_n.jpg?ex=65f958cb&is=65e6e3cb&hm=16871eaf7708d9e117ec4d51a505dc99dc3d23ea02fa42bc995ed8a30c6f2fd0&"
+
 
    ],
    "guide" : {
 
       "Explore" : [
+
          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
          "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+      
       ]
+
+   },
+   "backgroundCard" : {
+
+      "Project-PasCam" : ""
 
    }
 }
