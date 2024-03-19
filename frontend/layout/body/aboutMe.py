@@ -1,5 +1,5 @@
 # import <
-from dash import html
+from dash import dcc, html
 from dash_player import DashPlayer
 import dash_bootstrap_components as dbc
 
@@ -144,13 +144,13 @@ class aboutMe:
                                  'backdropFilter' : pStyle['framework']['backdropFilter']
                                  
                               },
-                              children = html.P(
+                              children = dcc.Markdown(
                                  
                                  children = i,
                                  style = {
                                     
-                                    **pStyle[self.file][pKey]['contentP'],
-                                    'color' : pStyle['framework']['colorBlack']
+                                    'color' : pStyle['framework']['colorBlack'],
+                                    **pStyle[self.file][pKey]['contentMarkdown']
                                     
                                  }
                                  

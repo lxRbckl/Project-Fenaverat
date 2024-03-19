@@ -1,7 +1,7 @@
 # import <
 from .aboutMe import aboutMe
 
-from dash import html
+from dash import html, dcc
 from random import shuffle
 import dash_bootstrap_components as dbc
 
@@ -75,12 +75,12 @@ class myProjects(aboutMe):
             },
             children = [
                
-               html.P(
+               dcc.Markdown(
                   
                   children = j,
                   style = {
                      
-                     **pStyle[pFile][pKey]['cardGuideP'],
+                     **pStyle[pFile][pKey]['cardGuideMarkdown'],
                      'color' : pStyle['framework']['colorWhite']
                      
                   }
@@ -150,13 +150,13 @@ class myProjects(aboutMe):
                   }
                   
                ),
-               html.P(
+               dcc.Markdown(
                   
                   children = i[1]['description'],
                   style = {
                                           
-                     **pStyle[self.file][pKey]['cardProjectP'],
-                     'color' : pStyle['framework']['colorWhite']
+                     'color' : pStyle['framework']['colorWhite'],
+                     **pStyle[self.file][pKey]['cardProjectMarkdown']
                      
                   }
                   

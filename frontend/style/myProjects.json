@@ -23,7 +23,7 @@
          "backgroundPosition" : "center"
 
       },
-      "cardGuideP" : {
+      "cardGuideMarkdown" : {
 
          "fontSize" : 15,
          "lineHeight" : 1.5,
@@ -64,7 +64,7 @@
          "margin" : "-7px 0px 0px 0px"
 
       },
-      "cardProjectP" : {
+      "cardProjectMarkdown" : {
 
          "fontSize" : 14,
          "lineHeight" : 1.5,
