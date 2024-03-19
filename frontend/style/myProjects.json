@@ -18,7 +18,9 @@
       },
       "cardBody" : {
 
-         "padding" : 10
+         "padding" : 10,
+         "backgroundSize" : "cover",
+         "backgroundPosition" : "center"
 
       },
       "cardGuideP" : {

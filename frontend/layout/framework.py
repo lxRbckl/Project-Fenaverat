@@ -23,8 +23,8 @@ class framework:
       
       self.colWidth = 1000
       self.file = 'framework'
-      self.bodyLoadDelay = 2
       self.defaultBoard = 'b1'
+      self.bodyLoadDelay = 1.5
       
       # >
 

@@ -165,28 +165,45 @@ class myProjects(aboutMe):
             ]
             
          ),
-         dbc.CardBody(
+         html.Div(
             
             style = {
                
-               **pStyle[self.file][pKey]['cardBody'],
+               'height' : '100%',
                'borderLeft' : pStyle['framework']['borderWhite'],
-               'borderRight' : pStyle['framework']['borderWhite']
+               'borderRight' : pStyle['framework']['borderWhite'],
+               'backgroundImage' : {
+                  
+                  False : lambda : None,
+                  True : lambda : pContent[self.file]['backgroundCard'][i[0]]
+                  
+               }[i[0] in pContent[self.file]['backgroundCard'].keys()]()
                
             },
-            children = html.Div(
+            children = dbc.CardBody(
                
-               style = pStyle[self.file][pKey]['cardBodyDiv'],
-               children = self.badge(
-               
-                  pStyle = pStyle,
-                  pIterable = {
-                     
-                     'languages' : i[1]['languages'],
-                     'packages' : i[1]['packages']
-                     
-                  }
-               
+               style = {
+                  
+                  'height' : '100%',
+                  'backdropFilter' : 'blur(2.5px)',
+                  **pStyle[self.file][pKey]['cardBody']
+                  
+               },   
+               children = html.Div(
+                  
+                  style = pStyle[self.file][pKey]['cardBodyDiv'],
+                  children = self.badge(
+                  
+                     pStyle = pStyle,
+                     pIterable = {
+                        
+                        'languages' : i[1]['languages'],
+                        'packages' : i[1]['packages']
+                        
+                     }
+                  
+                  )
+                  
                )
                
             )

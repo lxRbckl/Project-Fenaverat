@@ -5,18 +5,19 @@
       "swarm" : "https://i.postimg.cc/x86Lggy5/Untitled-6.png"
 
    },
-   "background" : "https://i.pinimg.com/564x/bd/a8/cf/bda8cf44ae85c64af5857070d8d9d13f.jpg",
+   "background" : "https://i.postimg.cc/Ls58QfLv/bbackground.png",
    "image" : [
 
-      "https://cdn.discordapp.com/attachments/768440729303253022/1199282422982922300/45222668_10156231028369580_1584177993977167872_n.jpg?ex=65f958cb&is=65e6e3cb&hm=16871eaf7708d9e117ec4d51a505dc99dc3d23ea02fa42bc995ed8a30c6f2fd0&",
-      "https://cdn.discordapp.com/attachments/768440729303253022/1199282422982922300/45222668_10156231028369580_1584177993977167872_n.jpg?ex=65f958cb&is=65e6e3cb&hm=16871eaf7708d9e117ec4d51a505dc99dc3d23ea02fa42bc995ed8a30c6f2fd0&"
+
 
    ],
    "guide" : {
 
       "Explore" : [
+
          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
          "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+      
       ]
 
    }

@@ -5,7 +5,7 @@
       "repo" : "https://i.postimg.cc/SxBCZn8B/Untitled-10.png"
 
    },
-   "background" : "https://i.postimg.cc/nzZ7JN3T/IMG-01171.jpg",
+   "background" : "https://i.postimg.cc/0Qk5KB0t/project.png",
    "image" : [
 
 
@@ -23,7 +23,7 @@
    },
    "backgroundCard" : {
 
-      "Project-PasCam" : ""
+      "Project-PasCam" : "url(https://i.postimg.cc/0jFm1m7Y/pcam.png)"
 
    }
 }
