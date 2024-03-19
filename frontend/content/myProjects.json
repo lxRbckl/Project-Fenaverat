@@ -1,11 +1,11 @@
 {
    "icon" : {
 
-      "wiki" : "url(https://photos.fife.usercontent.google.com/pw/AP1GczPD2F6XgZCcpf3Ds0ZQNeKAML7onZd9--DQPUX5HzT_pqiP2ULTPBL_=w100-h98-s-no-gm?authuser=1)",
+      "wiki" : "https://photos.fife.usercontent.google.com/pw/AP1GczPD2F6XgZCcpf3Ds0ZQNeKAML7onZd9--DQPUX5HzT_pqiP2ULTPBL_=w100-h98-s-no-gm?authuser=1",
       "repo" : "https://i.imgur.com/rVCb2oD.png"
 
    },
-   "backgroundImage" : "",
+   "background" : "https://i.imgur.com/SiCVGH1.jpeg",
    "image" : [
 
 
