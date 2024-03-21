@@ -13,7 +13,7 @@ class aboutMe:
       
       self.id = 'b1'  
       self.waitVideo = 2
-      self.maxHeight = 500
+      self.maxHeight = 580
       self.file = 'aboutMe'
       self.title = 'about me'
    

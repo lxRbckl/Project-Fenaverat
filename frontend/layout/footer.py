@@ -61,7 +61,7 @@ class footer(framework):
                                     src = v,
                                     style = {
                                        
-                                       **pStyle[self.file][pKey]['colIcon'],
+                                       **pStyle[self.file][pKey]['iconImg'],
                                        'backgroundColor' : pStyle['framework']['colorWhite']
                                     
                                     }
@@ -74,7 +74,7 @@ class footer(framework):
                                     target = '_blank',
                                     style = {
                                                                               
-                                       **pStyle[self.file][pKey]['colLink'],
+                                       **pStyle[self.file][pKey]['iconA'],
                                        'color' : pStyle['framework']['colorBlack']
                                        
                                     }

@@ -24,7 +24,7 @@ class framework:
       self.colWidth = 1000
       self.file = 'framework'
       self.defaultBoard = 'b1'
-      self.bodyLoadDelay = 0
+      self.bodyLoadDelay = 1.2
       
       # >
 
@@ -78,7 +78,7 @@ class framework:
                
                pStyle = pStyle,
                pContent = pContent,
-               pIntervalRate = pIntervalRate
+               pUpdateRate = self.database.updateRate
                
             )
             

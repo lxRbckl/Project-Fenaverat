@@ -23,7 +23,7 @@
          "margin" : "5px 0 8px 0"
 
       },
-      "loaderCol" : {
+      "rightCol" : {
 
          "marginTop" : -5
    
@@ -39,9 +39,8 @@
          "animation-play-state" : "running"
    
       },
-      "loaderTooltip" : {
+      "loaderMarkdown" : {
    
-         "margin" : 0,
          "fontFamily" : "helvetica"
    
       }

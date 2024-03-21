@@ -7,18 +7,18 @@
          "paddingBottom" : 9
 
       },
-      "colLink" : {
+      "iconImg" : {
+
+         "height" : "1.4em",
+         "marginRight" : -20,
+         "vertical-align" : "middle"
+
+      },
+      "iconA" : {
 
          "fontSize" : 16,
          "textDecoration" : "none",
          "fontFamily" : "helvetica",
-         "vertical-align" : "middle"
-
-      },
-      "colIcon" : {
-
-         "height" : "1.4em",
-         "marginRight" : -20,
          "vertical-align" : "middle"
 
       }

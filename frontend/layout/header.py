@@ -1,7 +1,7 @@
 # import <
 from .framework import framework
 
-from dash import html
+from dash import dcc, html
 import dash_bootstrap_components as dbc
 
 # >
@@ -20,7 +20,7 @@ class header(framework):
       self,
       pStyle,
       pContent,
-      pIntervalRate,
+      pUpdateRate,
       
       pKey = 'component'
    
@@ -92,17 +92,18 @@ class header(framework):
                dbc.Col(
                   
                   width = 'auto',
-                  style = pStyle[self.file][pKey]['loaderCol'],
+                  style = pStyle[self.file][pKey]['rightCol'],
                   children = [
                      
+                     # loader <
                      html.Div(
                         
-                        id = 'headerTargetId',
+                        id = 'loaderDivId',
                         style = pStyle[self.file][pKey]['loaderDiv'],
                         children = dbc.Spinner(
                            
                            size = 'sm',
-                           id = 'headerSpinnerId',
+                           id = 'loaderSpinnerId',
                            color = pStyle['framework']['colorBlack'],
                            spinner_style = pStyle[self.file][pKey]['loaderSpinner']
                            
@@ -112,15 +113,17 @@ class header(framework):
                      dbc.Tooltip(
                         
                         placement = 'bottom',
-                        target = 'headerTargetId',
-                        children = html.P(
+                        target = 'loaderDivId',
+                        children = dcc.Markdown(
                            
-                           style = pStyle[self.file][pKey]['loaderTooltip'],
-                           children = f'Updated every {pIntervalRate} minutes'
+                           style = pStyle[self.file][pKey]['loaderMarkdown'],
+                           children = f'Refreshed every **{pUpdateRate}** minutes.'
                         
                         )
                            
                      )
+                     
+                     # >
                      
                   ]
                   
