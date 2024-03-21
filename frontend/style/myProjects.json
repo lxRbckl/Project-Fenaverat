@@ -1,13 +1,21 @@
 {
    "cardGuide" : {
 
+      "div" : {
+
+         "height" : "100%",
+         "border" : "none",
+         "backdropFilter" : "blur(20px)"
+
+      },
       "cardHeader" : {
 
          "padding" : 10,
+         "border" : "none",
          "borderRadius" : 0
 
       },
-      "cardGuideH4" : {
+      "cardHeaderH4" : {
 
          "padding" : 0,
          "fontSize" : 29,
@@ -18,17 +26,15 @@
       },
       "cardBody" : {
 
-         "padding" : 10,
-         "backgroundSize" : "cover",
-         "backgroundPosition" : "center"
+         "padding" : 10
 
       },
-      "cardGuideMarkdown" : {
+      "cardBodyMarkdown" : {
 
          "fontSize" : 15,
-         "lineHeight" : 1.5,
+         "lineHeight" : 1.4,
          "textAlign" : "justify",
-         "padding" : "0 0 15px 0",
+         "padding" : "0 0 5px 0",
          "fontFamily" : "helvetica",
          "margin" : "-6px 0px 0px 0px"
 
@@ -53,43 +59,42 @@
 
          "padding" : 10,
          "border" : "none",
-         "borderRadius" : 0
-
+         "borderRadius" : 0,
+         "backdropFilter" : "blur(20px)"
+      
       },
-      "cardProjectH4" : {
+      "cardHeaderH4" : {
 
          "fontSize" : 29,
          "fontWeight" : "bold",
          "fontFamily" : "helvetica",
+         "padding" : "0 0 3px 0",
          "margin" : "-7px 0px 0px 0px"
 
       },
-      "cardProjectMarkdown" : {
+      "cardHeaderMarkdown" : {
 
          "fontSize" : 14,
-         "lineHeight" : 1.5,
+         "lineHeight" : 1.4,
+         "padding" : "0 0 0 0",
          "textAlign" : "justify",
          "fontFamily" : "helvetica",
-         "margin" : "-4px -1px -7px 0px"
+         "margin" : "-4px -1px -22px 0px"
 
       },
       "cardBody" : {
 
-         "padding" : 10,
-         "border" : "none",
-         "overflow" : "hidden"
-
-      },
-      "cardBodyDiv" : {
-
-         "margin" : "-3px 2px -2px -2px"
+         "overflow" : "hidden",
+         "padding" : "7px 8px 7px 8px",
+         "backdropFilter" : "blur(2.5px)"
 
       },
       "cardFooter" : {
 
          "padding" : 10,
          "border" : "none",
-         "borderRadius" : 0
+         "borderRadius" : 0,
+         "backdropFilter" : "blur(20px)"
 
       },
       "cardFooterRow" : {
@@ -112,7 +117,7 @@
          "padding" : 0,
          "width" : "18rem",
          "height" : "21rem",
-         "margin" : "2.5px",
+         "margin" : "3px",
          "borderRadius" : 0,
          "background" : "transparent"
 
@@ -129,8 +134,8 @@
          "backgroundSize" : "cover",
          "scrollbar-width" : "thin",
          "grid-auto-flow" : "column",
-         "backgroundPosition" : "center",
-         "padding" : "2.5px 15px 2.5px 14px"
+         "padding" : "5px 16px 5px 16px",
+         "backgroundPosition" : "center"
 
       }
 

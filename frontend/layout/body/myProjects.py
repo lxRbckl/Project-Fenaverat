@@ -32,6 +32,7 @@ class myProjects(aboutMe):
       self,
       i,
       pStyle,
+      pBorder,
       pContent,
       
       pKey = 'cardGuide',
@@ -40,58 +41,56 @@ class myProjects(aboutMe):
    ):
       '''  '''
 
-      return [
+      return html.Div(
          
-         dbc.CardHeader(
+         style = pStyle[pFile][pKey]['div'],
+         children = [
             
-            style = {
+            dbc.CardHeader(
                
-               **pStyle[pFile][pKey]['cardHeader'],
-               'border' : pStyle['framework']['borderWhite']
-               
-            },
-            children = html.H4(
-               
-               children = i[0],
-               style = {
-
-                  **pStyle[pFile][pKey]['cardGuideH4'],
-                  'color' : pStyle['framework']['colorWhite']
+               style = pStyle[pFile][pKey]['cardHeader'],
+               children = html.H4(
                   
-               }
-               
-            )
-            
-         ),
-         dbc.CardBody(
-            
-            style = {
-               
-               **pStyle[pFile][pKey]['cardBody'],
-               'borderLeft' : pStyle['framework']['borderWhite'],
-               'borderRight' : pStyle['framework']['borderWhite'],
-               'borderBottom' : pStyle['framework']['borderWhite']
-               
-            },
-            children = [
-               
-               dcc.Markdown(
-                  
-                  children = j,
+                  children = i[0],
                   style = {
-                     
-                     **pStyle[pFile][pKey]['cardGuideMarkdown'],
+
+                     **pStyle[pFile][pKey]['cardHeaderH4'],
                      'color' : pStyle['framework']['colorWhite']
                      
                   }
                   
                )
                
-            for j in i[1]]
+            ),
+            dbc.CardBody(
+               
+               style = {
+                  
+                  'borderTop' : pBorder,
+                  **pStyle[pFile][pKey]['cardBody']
+               
+               },
+               children = [
+                  
+                  dcc.Markdown(
+                     
+                     children = j,
+                     style = {
+                        
+                        **pStyle[pFile][pKey]['cardBodyMarkdown'],
+                        'color' : pStyle['framework']['colorWhite']
+                        
+                     }
+                     
+                  )
+                  
+               for j in i[1]]
+               
+            )
             
-         )
+         ]
          
-      ]
+      )
    
    
    def cardImage(
@@ -99,6 +98,7 @@ class myProjects(aboutMe):
       self,
       i,
       pStyle,
+      pBorder,
       pContent,
       
       pKey = 'cardImage',
@@ -120,6 +120,7 @@ class myProjects(aboutMe):
       self,
       i,
       pStyle,
+      pBorder,
       pContent,
       
       pKey = 'cardProject'
@@ -131,12 +132,7 @@ class myProjects(aboutMe):
          
          dbc.CardHeader(
             
-            style = {
-
-               **pStyle[self.file][pKey]['cardHeader'],
-               'border' : pStyle['framework']['borderWhite']
-            
-            },
+            style = pStyle[self.file][pKey]['cardHeader'],
             children = [
                
                html.H4(
@@ -144,7 +140,7 @@ class myProjects(aboutMe):
                   children = i[0].replace('-', ' '),
                   style = {
                                           
-                     **pStyle[self.file][pKey]['cardProjectH4'],
+                     **pStyle[self.file][pKey]['cardHeaderH4'],
                      'color' : pStyle['framework']['colorWhite']
                      
                   }
@@ -156,7 +152,7 @@ class myProjects(aboutMe):
                   style = {
                                           
                      'color' : pStyle['framework']['colorWhite'],
-                     **pStyle[self.file][pKey]['cardProjectMarkdown']
+                     **pStyle[self.file][pKey]['cardHeaderMarkdown']
                      
                   }
                   
@@ -165,58 +161,31 @@ class myProjects(aboutMe):
             ]
             
          ),
-         html.Div(
+         dbc.CardBody(
             
+            children = self.badge(
+               
+               pStyle = pStyle,
+               pIterable = {
+                  
+                  'languages' : i[1]['languages'],
+                  'packages' : i[1]['packages']
+                  
+               }
+               
+            ),
             style = {
                
-               'height' : '100%',
-               'borderLeft' : pStyle['framework']['borderWhite'],
-               'borderRight' : pStyle['framework']['borderWhite'],
-               'backgroundImage' : {
-                  
-                  False : lambda : None,
-                  True : lambda : pContent[self.file]['backgroundCard'][i[0]]
-                  
-               }[i[0] in pContent[self.file]['backgroundCard'].keys()]()
+               'borderTop' : pBorder,
+               'borderBottom' : pBorder,
+               **pStyle[self.file][pKey]['cardBody'],
                
-            },
-            children = dbc.CardBody(
-               
-               style = {
-                  
-                  'height' : '100%',
-                  'backdropFilter' : 'blur(2.5px)',
-                  **pStyle[self.file][pKey]['cardBody']
-                  
-               },   
-               children = html.Div(
-                  
-                  style = pStyle[self.file][pKey]['cardBodyDiv'],
-                  children = self.badge(
-                  
-                     pStyle = pStyle,
-                     pIterable = {
-                        
-                        'languages' : i[1]['languages'],
-                        'packages' : i[1]['packages']
-                        
-                     }
-                  
-                  )
-                  
-               )
-               
-            )
+            }
             
          ),
          dbc.CardFooter(
             
-            style = {
-               
-               **pStyle[self.file][pKey]['cardFooter'],
-               'border' : pStyle['framework']['borderWhite']
-               
-            },
+            style = pStyle[self.file][pKey]['cardFooter'],
             children = [
                
                dbc.Row(
@@ -283,29 +252,31 @@ class myProjects(aboutMe):
       pContent,
       pIterable,
       
-      isShuffled = True,
       pKey = 'cardsLoad',
       pFile = 'myProjects'
       
    ):
       '''  '''
    
-      c = 0
-      rCards = []
+      rCards = {'priority' : [], 'other' : []}
       for t, i in pIterable:
-                  
-         # index <
-         # add card <
-         if (t in self.cardsPriority): c += 1
-                  
+
+         border = pStyle['framework']['borders'][{
+            
+            False : lambda : t,
+            True : lambda : {
+               
+               True : 'host',
+               False : 'swarm'
+               
+            }[i[1]['isHost']]
+            
+         }[t == 'server']()]
+              
          {
             
-            # if (not priority) <
-            # else (then priority) <
-            False : lambda i : rCards.append(i),
-            True : lambda i : rCards.insert(0, i)
-            
-            # >
+            False : lambda j : rCards['other'].append(j),
+            True : lambda j : rCards['priority'].append(j)
             
          }[t in self.cardsPriority](dbc.Card(
             
@@ -313,14 +284,26 @@ class myProjects(aboutMe):
                
                i = i,
                pStyle = pStyle,
+               pBorder = border,
                pContent = pContent
             
             ),
             style = {
                
+               'border' : border,
                **pStyle[pFile][pKey]['card'],
-               'border' : pStyle['framework']['borderBlack'],
-               'backdropFilter' : pStyle['framework']['backdropFilter']
+               **{
+                  
+                  False : lambda : {},
+                  True : lambda : {
+                     
+                     'backgroundSize' : 'cover',
+                     'backgroundPosition' : 'center',
+                     'background' : pContent[pFile]['backgroundCard'][i[0]]
+                     
+                  }
+                  
+               }[i[0] in pContent[pFile]['backgroundCard'].keys()]()
                
             }
             
@@ -328,15 +311,8 @@ class myProjects(aboutMe):
          
          # >
             
-      if (isShuffled):
-         
-         first = rCards[:c]
-         last = rCards[c:]
-         shuffle(last)
-         
-         return [*first, *last]
-      
-      else: return rCards
+      shuffle(rCards['other'])
+      return (rCards['priority'] + rCards['other'])
          
    
    def board(

@@ -1,17 +1,10 @@
 {
    "badge" : {
 
-      "colorGroup" : {
-
-         "service" : "#705854",
-         "packages" : "#AA7F74",
-         "languages" : "#96867F"
-
-      },
       "badge" : {
 
+         "margin" : 2,
          "fontFamily" : "helvetica",
-         "margin" : "1px 2px 1px 2px",
          "border" : "1px solid #F7F5F1"
 
       },
@@ -19,6 +12,7 @@
 
          "service" : {
 
+            "fontSize" : 13,
             "width" : "100%",
             "textAlign" : "left"
 
@@ -40,7 +34,7 @@
          "position" : "relative"
 
       },
-      "DashPlayer" : {
+      "dashPlayer" : {
          
          "margin" : "0 0 -5px 0"
 
@@ -54,62 +48,36 @@
          "position" : "absolute"
 
       },
-      "titleRow" : {
+      "col" : {
 
          "margin" : 0,
-         "padding" : 0
-
-      },
-      "titleCol" : {
-
-         "margin" : 0,
-         "padding" : 10
+         "padding" : 0,
+         "overflow-y" : "scroll",
+         "overflow-x" : "hidden",
+         "scrollbar-width" : "thin"
 
       },
       "titleH1" : {
 
-         "padding" : 0,
-         "fontSize" : 38,
-         "marginLeft" : -3,
-         "fontFamily" : "helvetica",
-         "margin" : "-7px 0px -11px -1px"
-
-      },
-      "contentRow" : {
-
          "margin" : 0,
-         "padding" : 0
-
-      },
-      "contentCol" : {
-
-         "padding" : 10,
-         "margin" : "0 0 0 0"
+         "fontSize" : 36,
+         "fontFamily" : "helvetica",
+         "padding" : "3px 0px 1px 9px"
 
       },
       "contentMarkdown" : {
 
          "fontSize" : 15,
          "textAlign" : "justify",
+         "margin" : "0 0 -13px 0",
          "fontFamily" : "helvetica",
-         "margin" : "-6px 0px -30px -1px"
+         "padding" : "4px 10px 1px 9px"
 
-      },
-      "ecosystemRow" : {
-
-         "margin" : 0,
-         "padding" : 0
-
-      },
-      "ecosystemCol" : {
-
-         "padding" : 10,
-         "margin" : "0 0 0 0"
-         
       },
       "ecosystemDiv" : {
 
-         "margin" : "-2px 2px -1px -2px"
+         "padding" : "7px 8px 8px 8px",
+         "margin" : "-13px 0px 0px 0px"
 
       }
 

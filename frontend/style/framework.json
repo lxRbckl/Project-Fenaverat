@@ -1,15 +1,15 @@
 {
    "colorBlack" : "#181A1B",
    "colorWhite" : "#F7F5F1",
-   "backdropFilter" : "blur(7.5px)",
+   "backdropFilter" : "blur(7px)",
    "borderBlack" : "1px solid #181A1B",
    "borderWhite" : "1px solid #F7F5F1",
    "frameworkDiv" : {
 
       "width" : "100vw",
+      "paddingTop" : 25,
       "height" : "100vh",
-      "paddingTop" : "1%",
-      "paddingBottom" : "1%",
+      "paddingBottom" : 25,
       "overflow-x" : "hidden",
       "scrollbar-width" : "thin"
 
@@ -17,6 +17,22 @@
    "bodyCol" : {
 
       "paddingBottom" : 5
+
+   },
+   "borders" : {
+
+      "host" : "1px solid #CFAE97",
+      "swarm" : "1px solid #9A6A33",
+      "guide" : "1px solid #BAD2D6",
+      "image" : "1px solid #5D8189",
+      "project" : "1px solid #676A66"
+
+   },
+   "badgeColors" : {
+
+      "service" : "#705854",
+      "packages" : "#AA7F74",
+      "languages" : "#96867F"
 
    }
 }

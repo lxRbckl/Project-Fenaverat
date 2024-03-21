@@ -17,12 +17,6 @@ class myServers(myProjects):
       self.id = 'b2'
       self.file = 'myServers'
       self.title = 'my servers'
-      self.isHost = lambda i, j : i['borderGroup'][{
-         
-         True : 'host', 
-         False : 'swarm'
-      
-      }[j]]
       self.cards = {
          
          'image' : self.cardImage,
@@ -37,6 +31,7 @@ class myServers(myProjects):
       self,
       i,
       pStyle,
+      pBorder,
       pContent,
       
       pKey = 'cardServer'
@@ -48,12 +43,7 @@ class myServers(myProjects):
          
          dbc.CardHeader(
             
-            style = {
-               
-               **pStyle[self.file][pKey]['cardHeader'],
-               'border' : self.isHost(pStyle[self.file][pKey], i[1]['isHost'])
-                                 
-            },
+            style = pStyle[self.file][pKey]['cardHeader'],
             children = dbc.Row(
                
                justify = 'between',
@@ -112,10 +102,8 @@ class myServers(myProjects):
             
             style = {
 
-               **pStyle[self.file][pKey]['cardBody'],
-               'borderLeft' : self.isHost(pStyle[self.file][pKey], i[1]['isHost']),
-               'borderRight' : self.isHost(pStyle[self.file][pKey], i[1]['isHost']),
-               'borderBottom' : self.isHost(pStyle[self.file][pKey], i[1]['isHost'])
+               'borderTop' : pBorder,
+               **pStyle[self.file][pKey]['cardBody']
                
             },
             children = html.Div(
@@ -152,7 +140,7 @@ class myServers(myProjects):
          
          style = {
 
-            **pStyle[self.file][pKey]['row'],
+            **pStyle['myProjects'][pKey]['row'],
             'backgroundImage' : 'url({})'.format(pContent[self.file]['background'])
          
          },
