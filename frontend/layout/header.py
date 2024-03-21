@@ -38,24 +38,53 @@ class header(framework):
             
          },
          children = dbc.Row(
-               
+            
             justify = 'between',
             children = [
                
-               # title <
-               # loader <
+               # left <
+               # right <
                dbc.Col(
                   
-                  width = 'auto',                  
-                  children = html.H1(
+                  width = 'auto',    
+                  children = dbc.Stack(
                      
-                     children = pContent[self.file]['title'],
-                     style = {
-                                                      
-                        **pStyle[self.file][pKey]['titleH1'],
-                        'background' : pStyle['framework']['colorWhite']
+                     gap = 3,
+                     direction = 'horizontal',
+                     children = [
                         
-                     }
+                        # title <
+                        # profiles <
+                        html.H1(
+                           
+                           children = pContent[self.file]['title'],
+                           style = {
+                              
+                              **pStyle[self.file][pKey]['titleH1'],
+                              'background' : pStyle['framework']['colorWhite']
+                              
+                           }
+                           
+                        ),
+                        *[
+                           
+                           html.Img(
+                              
+                              src = i,
+                              style = {
+                                 
+                                 **pStyle[self.file][pKey]['titleImg'],
+                                 'border' : pStyle['framework']['borderBlack']
+                                 
+                              }
+                              
+                           )
+                           
+                        for i in pContent[self.file]['profiles']]
+                        
+                        # >
+                        
+                     ]
                      
                   )
                   

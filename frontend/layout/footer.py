@@ -73,7 +73,7 @@ class footer(framework):
                                     children = i,
                                     target = '_blank',
                                     style = {
-                                       
+                                                                              
                                        **pStyle[self.file][pKey]['colLink'],
                                        'color' : pStyle['framework']['colorBlack']
                                        

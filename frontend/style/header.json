@@ -3,7 +3,7 @@
 
       "col" : {
 
-         "padding" : "5px 11px 2px 11px"
+         "padding" : "6px 11px 2px 11px"
 
       },
       "titleH1" : {
@@ -13,6 +13,14 @@
          "lineHeight" : 1,
          "margin" : "0 0 -10px 0",
          "fontFamily" : "Helveticamazing"
+
+      },
+      "titleImg" : {
+
+         "width" : "auto",
+         "height" : "4.3rem",
+         "borderRadius" : "50%",
+         "margin" : "5px 0 8px 0"
 
       },
       "loaderCol" : {

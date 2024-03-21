@@ -4,7 +4,7 @@
 
       "col" : {
 
-         "paddingBottom" : 5
+         "paddingBottom" : 9
 
       },
       "colLink" : {
@@ -17,8 +17,8 @@
       },
       "colIcon" : {
 
-         "height" : "1.2em",
-         "marginRight" : -25,
+         "height" : "1.4em",
+         "marginRight" : -20,
          "vertical-align" : "middle"
 
       }

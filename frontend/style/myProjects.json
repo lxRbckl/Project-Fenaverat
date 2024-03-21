@@ -86,7 +86,7 @@
 
          "overflow" : "hidden",
          "padding" : "7px 8px 7px 8px",
-         "backdropFilter" : "blur(2.5px)"
+         "backdropFilter" : "blur(3px)"
 
       },
       "cardFooter" : {
