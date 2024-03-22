@@ -10,7 +10,7 @@ class database:
    def __init__(self):
       '''  '''
       
-      self.updateRate = 30
+      self.updateRate = 3
       self.developerMode = True
       self.intervalRate = (60000 * self.updateRate)
       self.links = {
@@ -54,7 +54,7 @@ class database:
          for k2, v in (self.links[k1]).items():
 
             rData[k1][k2] = {
-               
+                                 
                # if (data) <
                # else (then style/content) <
                False : requestsGet(v),
@@ -68,5 +68,5 @@ class database:
                # >
                
             }[k1 in ['style', 'content']]
-         
+                     
       return rData

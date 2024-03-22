@@ -58,12 +58,23 @@
          "scrollbar-width" : "thin"
 
       },
+      "stack" : {
+
+         "padding" : "3px 0px 1px 9px"
+
+      },
       "titleH1" : {
 
          "margin" : 0,
          "fontSize" : 36,
-         "fontFamily" : "helvetica",
-         "padding" : "3px 0px 1px 9px"
+         "fontFamily" : "helvetica"
+
+      },
+      "symbolsImg" : {
+
+         "width" : "auto",
+         "height" : "2rem",
+         "borderRadius" : "50%"
 
       },
       "contentMarkdown" : {

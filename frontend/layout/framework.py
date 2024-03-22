@@ -15,12 +15,12 @@ class framework:
       '''  '''
       
       # objects <
-      # attributes <
+      # properties <
       self.body = []
       self.header = None
       self.footer = None
       self.database = None
-      
+   
       self.colWidth = 1000
       self.file = 'framework'
       self.defaultBoard = 'b1'
@@ -195,6 +195,7 @@ class framework:
          
          Output('frameworkDivId', 'style'),
          Output('frameworkDivId', 'children'),
+         
          Input('frameworkIntervalId', 'n_intervals')
          
       )
@@ -202,6 +203,7 @@ class framework:
          '''  '''
 
          data, style, content = self.database.get().values()
+
          
          return [
             

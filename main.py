@@ -27,6 +27,7 @@ obj.body = {
 }
 
 obj.registerBodyCallback()
+# obj.registerLoaderCallback()
 obj.registerAboutMeCallback()
 obj.registerIntervalCallback()
 

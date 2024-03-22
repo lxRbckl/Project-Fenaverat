@@ -104,19 +104,54 @@ class aboutMe:
                      },
                      children = [
                         
-                        # title <
+                        # stack <
                         # content <
                         # ecosystem <
-                        html.H1(
+                        dbc.Stack(
                            
-                           children = pContent[self.file]['title'],
+                           gap = 2,
+                           direction = 'horizontal',
                            style = {
                               
-                              **pStyle[self.file][pKey]['titleH1'],
-                              'color' : pStyle['framework']['colorBlack'],
+                              **pStyle[self.file][pKey]['stack'],
                               'borderBottom' : pStyle['framework']['borderBlack']
                               
-                           }
+                           },
+                           children = [
+                              
+                              # title <
+                              # symbols <
+                              html.H1(
+                                 
+                                 children = pContent[self.file]['title'],
+                                 style = {
+                                    
+                                    'fontWeight' : '900',
+                                    **pStyle[self.file][pKey]['titleH1'],
+                                    'color' : pStyle['framework']['colorBlack']
+                                 
+                                 }
+                                 
+                              ),
+                              *[
+                                 
+                                 html.Img(
+                                    
+                                    src = i,
+                                    style = {
+                                       
+                                       **pStyle[self.file][pKey]['symbolsImg'],
+                                       'border' : pStyle['framework']['borderBlack']
+                                       
+                                    }
+                                    
+                                 )
+                                 
+                              for i in pContent[self.file]['symbols']]
+                              
+                              # >
+                              
+                           ]
                            
                         ),
                         *[
