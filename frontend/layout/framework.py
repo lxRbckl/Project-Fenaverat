@@ -25,6 +25,7 @@ class framework:
       self.file = 'framework'
       self.defaultBoard = 'b1'
       self.bodyLoadDelay = 1.2
+      self.activeBoard = self.defaultBoard
       
       # >
 
@@ -161,7 +162,7 @@ class framework:
          '''  '''
                   
          sleep(self.bodyLoadDelay)
-         return self.defaultBoard
+         return self.activeBoard
       
    
    def registerAboutMeCallback(self):
@@ -175,6 +176,8 @@ class framework:
       )
       def aboutMeCallback(i):
          '''  '''
+         
+         self.activeBoard = i
          
          # if () <
          # else (then ) <

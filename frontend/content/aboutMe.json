@@ -9,9 +9,8 @@
    ],
    "content" : [
 
-      "**Lorem** Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      "Lorem Ipsum is [simply dummy text](google.com) of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      "Lorem Ipsum is [simply dummy text](google.com) of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+      "I'm a software developer who lives in Kansas City, Missouri. I have a Bachelor of Science degree in **Computer Science**. Previously I've done contract work for a group of venture capitalists where I built **algorithms**, **visualization** and **interactivity** components for large sets of data.",
+      "As a developer, I consider myself a life-long learner, so I enjoy learning more about software development and deployment every opportunity I get. I'm a fan of both object-oriented and functional paradigms and I enjoy combining the skills I learn into projects that I display on my GitHub. *You can find more about them in the segment below!*"
 
    ],
    "ecosystem" : {
@@ -27,6 +26,12 @@
 
          "Dash",
          "Plotly"
+
+      ],
+      "other" : [
+
+         "Ubuntu",
+         "VS Code"
 
       ]
 

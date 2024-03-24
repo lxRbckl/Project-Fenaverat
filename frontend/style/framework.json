@@ -21,16 +21,19 @@
    },
    "borders" : {
 
-      "host" : "1px solid #CFAE97",
-      "swarm" : "1px solid #9A6A33",
-      "guide" : "1px solid #BAD2D6",
-      "image" : "2px solid #5D8189",
-      "project" : "1px solid #676A66"
+      "host" : "2px solid #6B796A",
+      "swarm" : "2px solid #10302A",
+
+      "guide" : "2px solid #CB6B4D",
+      "image" : "2px solid #BB885E",
+      "project" : "2px solid #E5C7B1"
 
    },
    "badgeColors" : {
 
       "service" : "#705854",
+
+      "other" : "#695A46",
       "packages" : "#AA7F74",
       "languages" : "#96867F"
 

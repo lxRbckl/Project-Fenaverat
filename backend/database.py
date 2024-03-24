@@ -10,7 +10,7 @@ class database:
    def __init__(self):
       '''  '''
       
-      self.updateRate = 3
+      self.updateRate = 30
       self.developerMode = True
       self.intervalRate = (60000 * self.updateRate)
       self.links = {
@@ -37,7 +37,7 @@ class database:
             'footer' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/content/footer.json',
             'aboutMe' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/content/aboutMe.json',
             'myServers' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/content/myServers.json',
-            'myProjects' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/content/myProject.json'
+            'myProjects' : 'https://raw.githubusercontent.com/lxRbckl/Project-Fenaverat/Project-Fenaverat-3/frontend/content/myProjects.json'
          
          }
          
