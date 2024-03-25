@@ -161,6 +161,7 @@ class aboutMe:
                               children = i,
                               style = {
                                  
+                                 
                                  'color' : pStyle['framework']['colorBlack'],
                                  **pStyle[self.file][pKey]['contentMarkdown']
                                  

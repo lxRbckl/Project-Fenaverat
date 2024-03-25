@@ -10,7 +10,7 @@
    "content" : [
 
       "I'm a software developer who lives in Kansas City, Missouri. I have a Bachelor of Science degree in **Computer Science**. Previously I've done contract work for a group of venture capitalists where I built **algorithms**, **visualization** and **interactivity** components for large sets of data.",
-      "As a developer, I consider myself a life-long learner, so I enjoy learning more about software development and deployment every opportunity I get. I'm a fan of both object-oriented and functional paradigms and I enjoy combining the skills I learn into projects that I display on my GitHub. *You can find more about them in the segment below!*"
+      "As a developer, I consider myself a life-long learner, so I enjoy learning more about software development and deployment every opportunity I get. I'm a fan of both object-oriented and functional paradigms and I enjoy combining the skills I learn into projects that I display on my GitHub. *You can find more about them in **my projects**!*"
 
    ],
    "ecosystem" : {
@@ -19,19 +19,66 @@
 
          "Python",
          "C++",
-         "Javascript"
+         "JavaScript",
+         "MySQL",
+         "BASH"
 
       ],
       "packages" : [
 
          "Dash",
-         "Plotly"
+         "Plotly",
+         "pygithub",
+         "discordpy",
+         "xlrd",
+         "xlwt",
+         "matplotlib",
+         "glob",
+         "xlutils",
+         "selenium",
+         "suntime",
+         "asyncio",
+         "gunicorn",
+         "wmctrl",
+         "guvcview",
+         "ipinfodb",
+         "cv2",
+         "keras",
+         "multiprocessing",
+         "numpy",
+         "pandas",
+         "sklearn",
+         "tensorflow",
+         "pyautogui",
+         "opencv",
+         "node-cron",
+         "octokit.js",
+         "dash bootstrap components",
+         "openai-api",
+         "cryptojs",
+         "yolov5",
+         "pillow",
+         "ultralytics"
 
       ],
       "other" : [
 
-         "Ubuntu",
-         "VS Code"
+         "Git",
+         "npm",
+         "poetry",
+         "Ubuntu Desktop",
+         "VS Code",
+         "Raspberry Pi",
+         "Pi GPIOs",
+         "Docker",
+         "crontab",
+         "Git Hooks",
+         "Kubernetes",
+         "GitHub Actions",
+         "GitHub Workflows",
+         "Docker Swarm",
+         "Docker Compose",
+         "Ubuntu Server"
 
       ]
 
