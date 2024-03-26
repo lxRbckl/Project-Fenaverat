@@ -37,6 +37,7 @@
          "xlutils",
          "selenium",
          "suntime",
+         "pytest",
          "asyncio",
          "gunicorn",
          "wmctrl",
