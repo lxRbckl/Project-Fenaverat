@@ -11,7 +11,7 @@ class database:
       '''  '''
       
       self.updateRate = 30
-      self.developerMode = True
+      self.developerMode = False
       self.intervalRate = (60000 * self.updateRate)
       self.links = {
          
