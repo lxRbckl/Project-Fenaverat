@@ -71,6 +71,7 @@
          "Linux",
          "VS Code",
          "Raspberry Pi",
+         "pyenv",
          "Pi GPIOs",
          "Docker",
          "crontab",
