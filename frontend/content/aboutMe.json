@@ -9,7 +9,7 @@
    ],
    "content" : [
 
-      "I'm a software developer who lives in Kansas City, Missouri. I have a Bachelor of Science degree in **Computer Science**. Previously I've done contract work for a group of venture capitalists where I built **algorithms**, **visualization** and **interactivity** components for large sets of data.",
+      "I'm a software developer who lives in Kansas City, Missouri. I have a Bachelor of Science degree in **Computer Science**. I've previously done contract work for a group of venture capitalists where I built **algorithms**, **visualization** and **interactivity** components for large sets of data. I have had the honor of participating in university class group projects, as well as various distinctive **independent projects**, including the development of this website.",
       "As a developer, I consider myself a life-long learner, so I enjoy learning more about software development and deployment every opportunity I get. I'm a fan of both object-oriented and functional paradigms and I enjoy combining the skills I learn into projects that I display on my GitHub. *You can find more about them in **my projects**!*"
 
    ],
@@ -79,7 +79,8 @@
          "GitHub Workflows",
          "Docker Swarm",
          "Docker Compose",
-         "Ubuntu Server"
+         "Ubuntu Server",
+         "PyCharm"
 
       ]
 

@@ -31,7 +31,7 @@
       },
       "cardBodyMarkdown" : {
 
-         "fontSize" : 15,
+         "fontSize" : 14,
          "lineHeight" : 1.4,
          "textAlign" : "justify",
          "padding" : "0 0 5px 0",
