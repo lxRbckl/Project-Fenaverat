@@ -1215,10 +1215,7 @@ files = [
 ]
 
 [package.dependencies]
-Pillow = [
-    {version = ">=9.2.0", markers = "python_version == \"3.10\" or python_version == \"3.8\" or python_version == \"3.9\""},
-    {version = ">=9.3.0", markers = "python_version == \"3.11\""},
-]
+Pillow = {version = ">=9.2.0", markers = "python_version == \"3.8\""}
 
 [[package]]
 name = "pytest"
@@ -1553,5 +1550,5 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 
 [metadata]
 lock-version = "2.0"
-python-versions = "^3.8"
-content-hash = "63bf884bcfba79a18e9f82fd3cc469f95632617b2024ad8b20a47d49f2c7b95c"
+python-versions = "3.8.10"
+content-hash = "aaa9ceccf0eed7a6c803962ae7fea159eebbda0165e609dce7f4b1d9e732dfcc"
