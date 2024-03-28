@@ -482,27 +482,6 @@ async = ["asgiref (>=3.2)"]
 dotenv = ["python-dotenv"]
 
 [[package]]
-name = "gunicorn"
-version = "21.2.0"
-description = "WSGI HTTP Server for UNIX"
-category = "main"
-optional = false
-python-versions = ">=3.5"
-files = [
-    {file = "gunicorn-21.2.0-py3-none-any.whl", hash = "sha256:3213aa5e8c24949e792bcacfc176fef362e7aac80b76c56f6b5122bf350722f0"},
-    {file = "gunicorn-21.2.0.tar.gz", hash = "sha256:88ec8bff1d634f98e61b9f65bc4bf3cd918a90806c6f5c48bc5603849ec81033"},
-]
-
-[package.dependencies]
-packaging = "*"
-
-[package.extras]
-eventlet = ["eventlet (>=0.24.1)"]
-gevent = ["gevent (>=1.4.0)"]
-setproctitle = ["setproctitle"]
-tornado = ["tornado (>=0.2)"]
-
-[[package]]
 name = "h11"
 version = "0.14.0"
 description = "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
@@ -1236,7 +1215,10 @@ files = [
 ]
 
 [package.dependencies]
-Pillow = {version = ">=9.2.0", markers = "python_version == \"3.8\""}
+Pillow = [
+    {version = ">=9.2.0", markers = "python_version == \"3.10\" or python_version == \"3.8\" or python_version == \"3.9\""},
+    {version = ">=9.3.0", markers = "python_version == \"3.11\""},
+]
 
 [[package]]
 name = "pytest"
@@ -1571,5 +1553,5 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 
 [metadata]
 lock-version = "2.0"
-python-versions = "3.8.10"
-content-hash = "7a416a8bab60e432499a54df3eb0720e4573dfabfa7ec39187fd950ed1bcdc64"
+python-versions = "^3.8"
+content-hash = "63bf884bcfba79a18e9f82fd3cc469f95632617b2024ad8b20a47d49f2c7b95c"
