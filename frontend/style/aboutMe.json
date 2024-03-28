@@ -36,7 +36,9 @@
       },
       "dashPlayer" : {
          
-         "margin" : "0 0 -5px 0"
+         "overflow" : "hidden",
+         "borderRadius" : "50%",
+         "margin" : "0 0 0 -8px"
 
       },
       "row" : {

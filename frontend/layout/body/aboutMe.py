@@ -13,7 +13,7 @@ class aboutMe:
       
       self.id = 'b1'  
       self.waitVideo = 2
-      self.maxHeight = 580
+      self.maxHeight = 515
       self.file = 'aboutMe'
       self.title = 'about me'
    
@@ -74,15 +74,15 @@ class aboutMe:
          style = pStyle[self.file][pKey]['div'],
          children = [
             
-            DashPlayer(
+            html.Img(
                
-               muted = True,
-               width = '110%',
-               height = 'auto',
-               playing = False,
-               id = 'backgroundVideoId',
-               url = pContent[self.file]['background'],
-               style = pStyle[self.file][pKey]['dashPlayer']
+               style = {
+                  
+                  'width' : '100%',
+                  'maxHeight' : self.maxHeight
+                  
+               },
+               src = pContent[self.file]['coverPhoto']
                
             ),
             dbc.Row(
@@ -90,7 +90,28 @@ class aboutMe:
                style = pStyle[self.file][pKey]['row'],
                children = [
                   
-                  dbc.Col(width = 4),
+                  dbc.Col(
+                     
+                     width = 4,
+                     children = DashPlayer(
+                        
+                        muted = True,
+                        width = '300px',
+                        height = '300px',
+                        playing = False,
+                        id = 'profileVideoId',
+                        url = pContent[self.file]['profileVideo'],
+                        style = {
+                           
+                           **pStyle[self.file][pKey]['dashPlayer'],
+                           'border' : pStyle['framework']['borderBlack'],
+                           'background' : pStyle['framework']['colorBlack']
+                           
+                        }
+                        
+                     )
+                  
+                  ),
                   dbc.Col(
                      
                      width = 8,

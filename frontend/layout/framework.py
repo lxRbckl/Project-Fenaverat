@@ -170,7 +170,7 @@ class framework:
    
       @application.callback(
          
-         Output('backgroundVideoId', 'playing'),
+         Output('profileVideoId', 'playing'),
          Input('bodyAccordionId', 'active_item')
          
       )

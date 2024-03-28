@@ -14,7 +14,6 @@ class myProjects(aboutMe):
       '''  '''
       
       self.id = 'b3'
-      self.maxHeight = 350
       self.file = 'myProjects'
       self.title = 'my projects'
       self.cardsPriority = ['guide']
