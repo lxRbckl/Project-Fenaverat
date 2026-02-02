@@ -32,14 +32,6 @@ class View:
         return Div(
 
             className = f"gridItem {'blur' if (corpus and background) else ''}",
-            children = {
-
-                "video" : View.buildItemVideo,
-                "markdown" : View.buildItemMarkdown,
-                "my-projects" : lambda i : Div(id = "my-projects", className = "myProjectsDiv"),
-                "my-stack" : lambda i : Div(id = "my-stack", className = "myStackDiv")
-
-            }[contentType](corpus) if corpus else None,
             style = {
 
                 **style,
@@ -48,7 +40,15 @@ class View:
                 "backgroundImage" : f"url({background})",
                 "visibility" : "visible" if visible else "hidden"
 
-            }
+            },
+            children = {
+
+                "video" : View.buildItemVideo,
+                "markdown" : View.buildItemMarkdown,
+                "my-stack" : lambda i : Div(id = "my-stack", className = "myStackDiv"),
+                "my-projects" : lambda i : Div(id = "my-projects", className = "myProjectsDiv")
+
+            }[contentType](corpus) if corpus else None
             
         )
 
