@@ -12,7 +12,7 @@ class View:
 
         self.items = items
         self._dataIntervalMinutes = 60
-        self._videoIntervalSeconds = 60
+        self._videoIntervalSeconds = 120
 
 
     def _buildItem(
@@ -37,7 +37,7 @@ class View:
                 "video" : View.buildItemVideo,
                 "markdown" : View.buildItemMarkdown,
                 "my-projects" : lambda i : Div(id = "my-projects", className = "myProjectsDiv"),
-                "my-tech-stack" : lambda i : Div(id = "my-tech-stack", className = "myTechStackDiv")
+                "my-stack" : lambda i : Div(id = "my-stack", className = "myStackDiv")
 
             }[contentType](corpus) if corpus else None,
             style = {
@@ -99,11 +99,11 @@ class View:
                 
                 url = v["url"],
                 title = v["title"],
-                stack = v["stack"],
                 description = v["description"],
-                background = data.get("repositoryBackgrounds").get(k)
+                stack = [f"`{s}`" for s in v["stack"]],
+                background = data.get("repositoryBackgrounds").get(k),
 
-            )
+            ) if v["show"] else None
 
         for k, v in data["repositories"].items()] if (data and type(data) == dict) else None
 
@@ -169,15 +169,15 @@ class View:
 
 
     @staticmethod
-    def buildItemTechstack(data, fields = ["languages", "packages", "tools"]):
-        """Build the tech stack section from categorized data fields."""
+    def buildItemStack(data, fields = ["languages", "packages", "tools"]):
+        """Build the stack section from categorized data fields."""
 
         return [
 
-            Div(children = View.buildItemMarkdown(markdown = ["## My *Tech Stack*"])),
+            Div(children = View.buildItemMarkdown(markdown = ["## My *Stack*"])),
             *[Div(
 
-                className = "myTechStackSubDiv",
+                className = "myStackSubDiv",
                 children = View.buildItemMarkdown(markdown = [
                     
                     f"### {f.capitalize()}",

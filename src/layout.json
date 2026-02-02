@@ -40,11 +40,11 @@
     "background" : "https://immich.lxrbckl.com/api/assets/276f620b-c3bf-47ce-af84-a9a69f10881e/thumbnail?key=Y8GJidaGEtt9MJzuEboobxIOr-Fo8KXABnrJTtZVVCHtkGlslmbmaWY6NIJW-sz7-w4&size=preview&c=SzkGFwIIsnl5aIdhu2aWeYeYe2EGCHYA"
   },
 
-  "my-tech-stack": {
+  "my-stack": {
     "width": 2,
     "height": 4,
-    "corpus": "my-tech-stack",
-    "contentType" : "my-tech-stack",
+    "corpus": "my-stack",
+    "contentType" : "my-stack",
     "style" : {
       "text-align" : "justify"
     }

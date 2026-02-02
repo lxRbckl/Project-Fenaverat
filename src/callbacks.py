@@ -41,7 +41,7 @@ class Callbacks:
             output = [
 
                 Output("my-projects", "children"),
-                Output("my-tech-stack", "children")
+                Output("my-stack", "children")
 
             ]
             
@@ -58,7 +58,7 @@ class Callbacks:
                     "repositoryBackgrounds": data["repositoryBackgrounds"]
                     
                 }),
-                View.buildItemTechstack(data = {
+                View.buildItemStack(data = {
                     
                     "backgrounds" : data["repositoryBackgrounds"],
                     "languages": data["languages"], 

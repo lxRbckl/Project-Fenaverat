@@ -187,10 +187,10 @@ html, body {
 }
 
 
-.myTechStackDiv {
+.myStackDiv {
     display: flex;
     flex-direction: column;
 }
-.myTechStackSubDiv {
+.myStackSubDiv {
     flex: 1;
 }
