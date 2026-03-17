@@ -84,8 +84,7 @@
   "block-11": {
     "width": 1,
     "height": 1,
-    "contentType": "video",
-    "corpus": "https://immich.lxrbckl.com/api/assets/4a1151b9-7ca9-4c0f-bdae-b676c0598183/video/playback?key=M0A5o4zVnme4KdII0W0PXeQMAJKHp1SArHDbvRGkijSbEXFkLNRjYlt2TSpXR9MJtlA&c=GfgJDwSYh4Z%2FiHVlh3p4qGmIdy8DxjAA"
+    "background": "https://immich.lxrbckl.com/api/assets/e62a32ca-6c40-4175-be80-8e95a380af03/thumbnail?slug=lxrbckl&size=preview&c=mRcSHwh3h4d%2FiHeMh6h4l4eIqAV3OmAG&edited=true"
   },
 
   "block-12": {

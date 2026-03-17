@@ -8,8 +8,8 @@ port = getenv("PORT", 8056)
 host = getenv("HOST", "0.0.0.0")
 
 root = Path(__file__).resolve().parent.parent
-fileLayout = root / "src" / "layout.json"
 dirAssets = root / "src" / "assets"
+fileLayout = dirAssets / "layout.json"
 
 
 app = Dash(

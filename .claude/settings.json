@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(source venv/bin/activate)",
+      "Bash(python -m pip install -r requirements.txt)",
+      "Bash(python app.py)",
+      "Bash(lsof -ti:8050)",
+      "Bash(xargs kill:*)"
+    ]
+  }
+}
