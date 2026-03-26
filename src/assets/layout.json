@@ -19,19 +19,27 @@
   "block-3": {
     "width": 3,
     "height": 1,
+    "style" : {
+      "text-align" : "justify"
+    },
     "corpus": [
-      "This is a test of me typing things to see how the text deals with image insertions."
+      "### My Homelab",
+      "My homelab runs on a Mac Mini M4 Pro that I've turned into a personal infrastructure platform powering my entire household with a Docker-based stack of self-hosted services covering everything from notification infrastructure to home automation. I run local LLMs, set up AI-powered workflows and automations, and integrate cutting-edge AI tooling in ways that quietly sharpen how I think about AI in my professional work too. Outside of software, I run two Bambu Lab P1S 3D printers, they stay busy, and they shape the way I think about robotics projects."
     ]
   },
 
   "block-4": {
     "width": 2,
     "height": 3,
+    "style" : {
+      "text-align" : "justify"
+    },
     "corpus": [
-      "## ***My Server***",
-      "text in the biggest cell we have. what will be next"
-    ],
-    "background" : "https://immich.lxrbckl.com/api/assets/6ea1bda4-d755-40d5-9b35-723d27d42581/thumbnail?key=_bMnWPXNbt2caguVRBcOBNY7lTiMh3yV0QnoRHtYxYl2JFBol06EFL_hY289G8AIbY0&size=preview&c=kfcFBQBgYmWsJYdpO4qHivfBjT%2F9"
+      "## *About Me*",
+      "I'm a full stack software engineer with a B.S. in Computer Science from the University of Missouri\u2013Kansas City, I graduated Cum Laude, with a focus in AI. For nearly three years, spanning college and beyond, I worked as a software engineer for a venture capital group specializing in risk assessment and investment. I wrote multi-variable Monte Carlo simulation software to predict probable outcomes on plays involving millions of dollars, modeled wheel biases from visual ballistics, and engineered multiple proprietary algorithms. This was work that sat right at the edge of applied mathematics and software engineering.",
+      "\n",
+      "Today I work at Herzog Technologies building enterprise software for the transit industry, including data pipelines, database integrations, and workflows that operate under serious reliability requirements. When the problem calls for it, I bring AI into the stack strategically. I care about clean code, systems built to last, and shipping work that holds up in the real world. I consider myself a lifelong learner, the field moves fast and I move with it. I do my best to hold my work to a high standard and I'm always looking for ways to raise that bar."
+    ]
   },
 
   "block-5": {
@@ -60,11 +68,12 @@
   "block-8": {
     "width": 2,
     "height": 2,
+    "style" : {
+      "text-align" : "justify"
+    },
     "corpus": [
-      "## we're going what's *going on*",
-      "here is some more text",
-      "and here",
-      "scrolling features horizontally need to be upgraded."
+      "## **Lifelong** Learner",
+      "I'm currently developing apps targeting iOS and Android, building things that work everywhere without compromise. I actively explore AI agents and apply them across my development process, the products I build, and my personal infrastructure. On the physical side, robotics and 3D printing are increasingly intersecting with longer term projects I'm actively researching and building toward, software that tackles real problems in aerodynamics and fluid dynamics, spanning simulation and physical prototyping. I'm passionate about software that works alongside robotics and aerodynamics. At the end of the day, I'm just always trying to learn something new."
     ]
   },
 
@@ -96,7 +105,9 @@
       "[LinkedIn](https://www.linkedin.com/in/lxrbckl), ",
       "[GitHub](https://github.com/lxRbckl), ",
       "[Email](mailto:lxRbckl@protonmail.com), and ",
-      "[Discord](https://discord.com/users/944664224179843153)."
+      "[Discord](https://discord.com/users/944664224179843153).",
+      "[LeetCode](https://leetcode.com/u/lxRbckl/)",
+      "."
     ]
   },
   "block-13": {
