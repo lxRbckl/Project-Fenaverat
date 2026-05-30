@@ -96,14 +96,20 @@ class View:
         return [
 
             View.buildItemProjectCard(
-                
+
                 url = v["url"],
                 title = v["title"],
                 description = v["description"],
                 stack = [f"`{s}`" for s in v["stack"]],
                 background = data.get("repositoryBackgrounds").get(k),
 
-            ) if v["show"] else None
+            ) if (
+                v.get("show") and
+                v.get("title") and
+                v.get("url") and
+                v.get("description") and
+                v.get("stack") is not None
+            ) else None
 
         for k, v in data["repositories"].items()] if (data and type(data) == dict) else None
 
