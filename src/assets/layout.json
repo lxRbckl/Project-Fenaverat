@@ -24,7 +24,7 @@
     },
     "corpus": [
       "### My Homelab",
-      "My homelab is a **Mac Mini M4 Pro** that I've turned into a personal infrastructure platform powering my entire household with a *Docker-based stack* of self-hosted services covering everything from notification infrastructure to home automation. I run **local LLMs**, set up AI-powered workflows and automations, and integrate cutting-edge AI tooling in ways that quietly sharpen how I think about AI in my professional work too. Outside of software, I run two **Bambu Lab P1S** 3D printers, and they shape the way I think about *robotics projects*."
+      "My homelab is a Mac Mini that I've turned into a personal infrastructure platform powering my entire household with a *Docker-based stack* of self-hosted services covering everything from notification infrastructure to home automation. I run **local LLMs**, set up AI-powered workflows and automations, and integrate cutting-edge AI tooling in ways that quietly sharpen how I think about AI in my professional work too. Outside of software, I run two **Bambu Lab P1S** 3D printers, and they shape the way I think about *robotics projects*."
     ]
   },
 
