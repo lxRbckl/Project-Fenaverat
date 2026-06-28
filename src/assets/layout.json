@@ -36,7 +36,7 @@
     },
     "corpus": [
       "## *About Me*",
-      "I'm a **full stack software engineer** with a *B.S. in Computer Science* from the **University of Missouri–Kansas City**, I graduated *Cum Laude*, with a focus in **AI**. Starting in college for nearly three years I worked as a software engineer for a venture capital group where I collaborated to build probabilistic modeling software. This was work that sat right at the intersection of applied mathematics and software engineering.",
+      "I'm a **full stack software engineer** with a *B.S. in Computer Science* from the **University of Missouri–Kansas City**, I graduated *Cum Laude*, with a focus in **AI**. Starting in college for nearly three years I worked as a software engineer for a venture capital group where I collaborated to build *probabilistic modeling software*. This was work that sat right at the intersection of applied mathematics and software engineering.",
       "\n",
       "Today I work at **Herzog Technologies** building enterprise software code-first applications, including *data pipelines*, *database integrations*, and workflows that operate under serious **reliability requirements**. When the problem calls for it, I bring **AI** into the stack strategically. I care about *clean code*, systems built to last, and shipping work that holds up in the real world. I consider myself a **lifelong learner**, the field moves fast and I move with it. I do my best to hold my work to a high standard and I'm always looking for ways to raise that bar."
     ]
