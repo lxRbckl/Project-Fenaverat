@@ -164,6 +164,9 @@ html, body {
     min-height: var(--itemSize);
     max-height: var(--itemSize);
 }
+.projectCardHeader p {
+    text-align: justify;
+}
 .projectCardBody {
     min-height: calc(var(--itemSize) * 0.75);
     max-height: calc(var(--itemSize) * 0.75);
