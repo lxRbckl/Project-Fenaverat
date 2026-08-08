@@ -16,8 +16,8 @@ class Services:
         }
         self.dataUrls = [
 
-            "https://raw.githubusercontent.com/lxrbckl-dev/Project-SelfStack/refs/heads/V3/data/manual.json",
-            "https://raw.githubusercontent.com/lxrbckl-dev/Project-SelfStack/refs/heads/V3/data/automated.json"
+            "https://raw.githubusercontent.com/lxrbckl-labs/Project-SelfStack/refs/heads/V3/data/manual.json",
+            "https://raw.githubusercontent.com/lxrbckl-labs/Project-SelfStack/refs/heads/V3/data/automated.json"
             
         ]
 
